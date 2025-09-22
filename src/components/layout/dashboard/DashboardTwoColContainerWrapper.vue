@@ -1,5 +1,5 @@
 <template>
-  <div class="two-col-container gap-6 m-4">
+  <div class="p-2 flex flex-col gap-6 dark:bg-dark-primary-bg">
     <slot />
   </div>
 </template>

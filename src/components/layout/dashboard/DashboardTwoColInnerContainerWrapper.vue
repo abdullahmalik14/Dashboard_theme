@@ -1,11 +1,12 @@
 <template>
-  <div class="two-col-inner bg-[#ae969680] p-6 rounded-lg shadow ">
+  <div
+    class="flex flex-col gap-6 [backdrop-filter:blur(25px)] bg-light-bg-section [box-shadow:0px_4px_6px_-2px_rgba(16,_24,_40,_0.08)] dark:bg-dark-bg-section dark:[box-shadow:0px_4px_6px_-2px_rgba(13,_19,_32,_0.08)]"
+  >
     <slot />
   </div>
 </template>
 
 <script setup lang="ts"></script>
-
 
 <!-- <template>
   <div :class="['inner-container', customClass]">
@@ -31,5 +32,3 @@ const props = defineProps({
   border: 1px solid #e2e8f0; /* light border */
 }
 </style> -->
-
-
