@@ -22,6 +22,12 @@ export default defineConfigWithVueTs(
   vueTsConfigs.recommended,
   
   {
+    rules: {
+      'vue/block-lang': 'off', 
+    },
+  },
+
+  {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },

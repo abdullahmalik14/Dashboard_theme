@@ -13,7 +13,7 @@
   </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import DashboardMobileHeaderPart from '@/components/layout/dashboard/DashboardMobileHeaderPart.vue'
-import DashboardDesktopHeaderPart from '@/components/layout/dashboard/DashboardDesktopHeaderPart.vue'
+import DashboardDesktopHeaderPart from '@/components/ui/nav/DashboardDesktopHeaderPart.vue'
 </script>

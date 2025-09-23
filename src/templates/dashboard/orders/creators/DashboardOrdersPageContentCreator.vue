@@ -1,13 +1,10 @@
 <template>
-  <DashboardTwoColContainerWrapper>
-    <DashboardTwoColInnerContainerWrapper>
+  <DashboardOverviewMainSectionWrapper>
       <!-- your orders body goes here (table/cards/etc) -->
       <slot />
-    </DashboardTwoColInnerContainerWrapper>
-  </DashboardTwoColContainerWrapper>
+  </DashboardOverviewMainSectionWrapper>
 </template>
 
-<script setup lang="ts">
-import DashboardTwoColContainerWrapper from '@/components/layout/dashboard/DashboardTwoColContainerWrapper.vue'
-import DashboardTwoColInnerContainerWrapper from '@/components/layout/dashboard/DashboardTwoColInnerContainerWrapper.vue'
+<script setup>
+import DashboardOverviewMainSectionWrapper from '@/components/layout/dashboard/DashboardOverviewMainSectionWrapper.vue'
 </script>
