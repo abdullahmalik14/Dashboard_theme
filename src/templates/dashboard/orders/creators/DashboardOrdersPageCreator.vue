@@ -31,10 +31,11 @@
               >Last updated at
               <span
                 class="text-sm font-sans leading-5 text-light-text-quaternary dark:text-dark-text-quaternary"
-                >7:14 PM</span
+                >{{ formatTime(lastUpdated) }}</span
               ></span
             >
             <button
+             @click="handleRefresh"
               class="group flex items-center justify-center gap-1 pl-[0.9375rem] pr-2 py-1 bg-light-bg-button
                dark:bg-dark-bg-button [clip-path:polygon(0_0,100%_0,105%_105%,16%_105%)] hover:bg-light-primary
                 dark:hover:bg-dark-primaryHover [outline: none] border-0"
@@ -116,7 +117,7 @@
                         <span>
                           <span
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                            >--</span
+                            >{{ store.subscribers?.new ?? '--' }}</span
                           >
                         </span>
                         <div></div>
@@ -146,7 +147,7 @@
                         <span>
                           <span
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                            >--</span
+                            >{{ store.subscribers?.recurring ?? '--' }}</span
                           >
                         </span>
                         <div></div>
@@ -208,7 +209,7 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
-                          >--</span
+                          > {{ store.fans?.newFollowers ?? '--' }}</span
                         >
                         <div></div>
                       </div>
@@ -223,7 +224,7 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-semibold font-sans leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
-                          >--</span
+                          >  {{ store.fans?.profileVisit ?? '--' }}</span
                         >
                         <div></div>
                       </div>
@@ -275,7 +276,7 @@
                   <span>
                     <span
                       class="text-[2.25rem] font-semibold leading-[2.75rem] font-sans tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                      >--</span
+                      >{{ store.earnings?.daily?.[0]?.total ?? '--' }}</span
                     >
                   </span>
                   <div></div>
@@ -315,7 +316,7 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
-                          >--</span
+                          >  {{ store.likes?.media ?? '--' }}</span
                         >
                         <div></div>
                       </div>
@@ -330,7 +331,7 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
-                          >--</span
+                          >{{ store.likes?.merch ?? '--' }}</span
                         >
                         <div></div>
                       </div>
@@ -354,7 +355,7 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-semibold font-sans leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
-                          >--</span
+                          >{{ store.likes?.profile ?? '--' }}</span
                         >
                         <div></div>
                       </div>
@@ -369,7 +370,7 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-semibold leading-[2.375rem] font-sans text-light-text-primary dark:text-dark-text-primary"
-                          >--</span
+                          >{{ store.likes?.feed ?? '--' }}</span
                         >
                         <div></div>
                       </div>
@@ -467,8 +468,10 @@
                     </div>
                   </div>
                 </div>
+
               </div>
             </DashboardOrderCard>
+
           </div>
         </div>
       </div>
@@ -786,4 +789,23 @@ import DashboardOrderCard from '@/components/ui/card/DashboardOrderCard.vue'
 import DashboardOrdersPageContentCreator from './DashboardOrdersPageContentCreator.vue'
 import DashboardTrendCard from '@/components/ui/card/DashboardTrendCard.vue'
 import DashboardTrendContent from '@/components/ui/content/DashboardTrendContent.vue'
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
+import { onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
+const store = useDashboardAnalytics()
+const { lastUpdated } = storeToRefs(store)
+
+function formatTime(dateString) {
+  if (!dateString) return 'Never'
+  const date = new Date(dateString)
+  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+}
+
+async function handleRefresh() {
+  await store.loadAnalytics()  // yeh andar hi 15 min wali logic check karega
+}
+// when component load so data will be here
+onMounted(() => {
+  store.loadAnalytics()
+})
 </script>

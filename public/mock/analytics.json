@@ -1,0 +1,35 @@
+{
+  "subscribers": {
+    "new": 15,
+    "recurring": 8
+  },
+  "fans": {
+    "newFollowers": 20,
+    "profileVisit": 45
+  },
+  "earnings": {
+    "daily": [
+      {
+        "period": "2025-08-11",
+        "total": 49,
+        "subscription": 24,
+        "paytoview": 12,
+        "merch": 7,
+        "wishtender": 3,
+        "customrequest": 3,
+        "subscriptionTokens": 16,
+        "paytoviewTokens": 7,
+        "merchTokens": 2,
+        "wishtenderTokens": 1,
+        "customrequestTokens": 1,
+        "totalTokens": 27
+      }
+    ]
+  },
+  "likes": {
+    "media": 120,
+    "merch": 35,
+    "profile": 80,
+    "feed": 52
+  }
+}
