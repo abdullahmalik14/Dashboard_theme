@@ -1,11 +1,15 @@
 {
   "subscribers": {
     "new": 15,
-    "recurring": 8
+    "recurring": 8,
+    "newPercentage": 100,
+    "recurringPercentage": 150
   },
   "fans": {
     "newFollowers": 20,
-    "profileVisit": 45
+    "newFollowersPercentage": 80,
+    "profileVisit": 45,
+    "profileVisitPercentage": 90
   },
   "earnings": {
     "daily": [
@@ -22,14 +26,19 @@
         "merchTokens": 2,
         "wishtenderTokens": 1,
         "customrequestTokens": 1,
-        "totalTokens": 27
+        "totalTokens": 27,
+        "earningsPercentage": 120
       }
     ]
   },
   "likes": {
     "media": 120,
+    "mediaPercentage": 110,
     "merch": 35,
+    "merchPercentage": 95,
     "profile": 80,
-    "feed": 52
+    "profilePercentage": 130,
+    "feed": 52,
+    "feedPercentage": 125
   }
 }
