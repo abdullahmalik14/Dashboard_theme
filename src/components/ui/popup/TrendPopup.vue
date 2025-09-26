@@ -17,7 +17,7 @@ const config = {
   closeOnOutside: true,
   escToClose: true,
   width: {
-    default: '80vw',
+    default: '70vw',
     '<640': '95vw',
     // '640-1024': '500px',
   },
@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
     :config="config"
   >
     <div
-      class="max-w-[59.5rem] w-full flex flex-col gap-4 bg-white/90 dark:bg-[#181a1b]/90 md:p-6 p-4 px-2"
+      class=" w-full flex flex-col gap-4 bg-white/90 dark:bg-[#181a1b]/90 md:p-6 p-4 px-2"
     >
       <!-- popup-header -->
       <div
