@@ -28,7 +28,7 @@ export default {
             trendRed: '#bc1b06',
           },
           bg: {
-            container: 'hsla(0, 0%, 100%, 0.7)',
+            container: 'hsla(0, 0%, 200%, 0.7)',
             section: 'hsla(0, 0%, 100%, 0.4)',
             button: '#fff',
           },

@@ -119,26 +119,29 @@
                         </span>
 
                         <!-- right part only show when data are here -->
-                         <div
-                         v-if="store.subscribers?.newPercentage !== undefined && store.subscribers?.newPercentage !== null"
-                         class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <img
-                                src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp"
-                                alt="trend-up"
-                                class="h-5 w-5"
-                              />
-                              <span
-                                class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium"
-                                >{{ store.subscribers?.newPercentage }}%</span
-                              >
-                            </span>
+                        <div
+                          v-if="
+                            store.subscribers?.newPercentage !== undefined &&
+                            store.subscribers?.newPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
+                            <img
+                              src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp"
+                              alt="trend-up"
+                              class="h-5 w-5"
+                            />
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium"
+                              >{{ store.subscribers?.newPercentage }}%</span
                             >
-                          </div>
-
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -165,29 +168,33 @@
                         <span>
                           <span
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                            >{{ store.subscribers?.recurring}}</span
+                            >{{ store.subscribers?.recurring }}</span
                           >
                         </span>
-                         <!-- right part only show when data are here -->
-                         <div 
-                         v-if="store.subscribers?.recurringPercentage !== undefined && store.subscribers?.recurringPercentage !== null"
-                         class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <img
-                                src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp"
-                                alt="trend-up"
-                                class="h-5 w-5"
-                              />
-                              <span
-                                class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium"
-                                >{{ store.subscribers?.recurringPercentage }}%</span
-                              >
-                            </span>
+                        <!-- right part only show when data are here -->
+                        <div
+                          v-if="
+                            store.subscribers?.recurringPercentage !== undefined &&
+                            store.subscribers?.recurringPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
+                            <img
+                              src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp"
+                              alt="trend-up"
+                              class="h-5 w-5"
+                            />
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium"
+                              >{{ store.subscribers?.recurringPercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -248,27 +255,31 @@
                         <span
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
                         >
-                          {{ store.fans?.newFollowers}}</span
+                          {{ store.fans?.newFollowers }}</span
                         >
-                         <div
-                         v-if="store.fans?.newFollowersPercentage !== undefined && store.fans?.newFollowersPercentage !== null"
-                         class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <img
-                                src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp"
-                                alt="trend-down"
-                                class="h-5 w-5"
-                              />
-                              <span
-                                class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium"
-                                >{{ store.fans?.newFollowersPercentage}}%</span
-                              >
-                            </span>
+                        <div
+                          v-if="
+                            store.fans?.newFollowersPercentage !== undefined &&
+                            store.fans?.newFollowersPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
+                            <img
+                              src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp"
+                              alt="trend-down"
+                              class="h-5 w-5"
+                            />
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium"
+                              >{{ store.fans?.newFollowersPercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
 
@@ -284,25 +295,29 @@
                         >
                           {{ store.fans?.profileVisit ?? '--' }}</span
                         >
-                       <div 
-                        v-if="store.fans?.profileVisitPercentage !== undefined && store.fans?.profileVisitPercentage !== null"
-                       class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <img
-                                src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp"
-                                alt="trend-down"
-                                class="h-5 w-5"
-                              />
-                              <span
-                                class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium"
-                                >{{ store.fans?.profileVisitPercentage }}%</span
-                              >
-                            </span>
+                        <div
+                          v-if="
+                            store.fans?.profileVisitPercentage !== undefined &&
+                            store.fans?.profileVisitPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
+                            <img
+                              src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp"
+                              alt="trend-down"
+                              class="h-5 w-5"
+                            />
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium"
+                              >{{ store.fans?.profileVisitPercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -356,25 +371,29 @@
                       >{{ store.earnings?.daily?.[0]?.total ?? '--' }}</span
                     >
                   </span>
-                  <div 
-                  v-if="store.earnings?.daily?.[0]?.earningsPercentage !== undefined && store.earnings?.daily?.[0]?.earningsPercentage !== null"
-                  class="flex flex-col items-center gap-1">
-                      <span class="flex gap-1">
-                        <img
-                          src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp"
-                          alt="trend-up"
-                          class="h-5 w-5"
-                        />
-                        <span
-                          class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium"
-                          >{{ store.earnings?.daily?.[0]?.earningsPercentage }}%</span
-                        >
-                      </span>
+                  <div
+                    v-if="
+                      store.earnings?.daily?.[0]?.earningsPercentage !== undefined &&
+                      store.earnings?.daily?.[0]?.earningsPercentage !== null
+                    "
+                    class="flex flex-col items-center gap-1"
+                  >
+                    <span class="flex gap-1">
+                      <img
+                        src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp"
+                        alt="trend-up"
+                        class="h-5 w-5"
+                      />
                       <span
-                        class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                        >vs yesterday</span
+                        class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium"
+                        >{{ store.earnings?.daily?.[0]?.earningsPercentage }}%</span
                       >
-                    </div>
+                    </span>
+                    <span
+                      class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                      >vs yesterday</span
+                    >
+                  </div>
                 </div>
               </div>
             </DashboardOrderCard>
@@ -436,19 +455,23 @@
                           {{ store.likes?.media ?? '--' }}</span
                         >
                         <div
-                        v-if="store.likes?.mediaPercentage !== undefined && store.likes?.mediaPercentage !== null"
-                        class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <span
-                                class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
-                                >{{ store.likes?.mediaPercentage }}%</span
-                              >
-                            </span>
+                          v-if="
+                            store.likes?.mediaPercentage !== undefined &&
+                            store.likes?.mediaPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
+                              >{{ store.likes?.mediaPercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
 
@@ -463,20 +486,24 @@
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
                           >{{ store.likes?.merch ?? '--' }}</span
                         >
-                       <div
-                       v-if="store.likes?.merchPercentage !== undefined && store.likes?.merchPercentage !== null" 
-                       class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <span
-                                class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
-                                >{{ store.likes?.merchPercentage }}%</span
-                              >
-                            </span>
+                        <div
+                          v-if="
+                            store.likes?.merchPercentage !== undefined &&
+                            store.likes?.merchPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
+                              >{{ store.likes?.merchPercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -500,20 +527,24 @@
                           class="text-[1.875rem] font-semibold font-sans leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary"
                           >{{ store.likes?.profile ?? '--' }}</span
                         >
-                         <div 
-                           v-if="store.likes?.profilePercentage !== undefined && store.likes?.profilePercentage !== null" 
-                         class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <span
-                                class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
-                                >{{ store.likes?.profilePercentage }}%</span
-                              >
-                            </span>
+                        <div
+                          v-if="
+                            store.likes?.profilePercentage !== undefined &&
+                            store.likes?.profilePercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
+                              >{{ store.likes?.profilePercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
 
@@ -529,19 +560,23 @@
                           >{{ store.likes?.feed ?? '--' }}</span
                         >
                         <div
-                          v-if="store.likes?.feedPercentage !== undefined && store.likes?.feedPercentage !== null" 
-                        class="flex flex-col items-center gap-1">
-                            <span class="flex gap-1">
-                              <span
-                                class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
-                                >{{ store.likes?.feedPercentage }}%</span
-                              >
-                            </span>
+                          v-if="
+                            store.likes?.feedPercentage !== undefined &&
+                            store.likes?.feedPercentage !== null
+                          "
+                          class="flex flex-col items-center gap-1"
+                        >
+                          <span class="flex gap-1">
                             <span
-                              class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
-                              >vs yesterday</span
+                              class="text-light-text-primary dark:text-dark-text-primary leading-5 text-sm font-medium"
+                              >{{ store.likes?.feedPercentage }}%</span
                             >
-                          </div>
+                          </span>
+                          <span
+                            class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs"
+                            >vs yesterday</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -938,255 +973,565 @@
     </DashboardOrdersPageContentCreator>
 
     <!-- Subscribers popup -->
-    <PopupHandler ref="subscribersRef" v-model="isSubscribersOpen" :config="subscribersConfig">
-      <div class="h-full flex flex-col">
-        <div class="p-4 border-b flex items-center justify-between bg-[#f2ecef]">
-          <h3 class="text-base font-semibold">Subscribers</h3>
-          <button data-popup-close class="hover:text-black" aria-label="Close">&times;</button>
-        </div>
+    <TrendPopup
+      v-model="isSubscribersOpen"
+      title="Subscriptions Insight"
+      logo="https://i.ibb.co.com/MyhfGRNH/svgviewer-png-output-12.webp"
+    >
+      <!-- row -->
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <!-- left-column -->
+        <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem]">
+          <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">
+            Subscriptions Insight
+          </h3>
 
-        <div
-          class="flex-1 bg-light-bg-container flex flex-col justify-between p-4 text-sm overflow-hidden"
-        >
-          <div class="p-4 flex-1 overflow-hidden space-y-3 text-sm">
-            <!-- data-content (new) -->
-            <div class="flex justify-between items-center">
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >NEW</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                  >{{ store.subscribers?.new ?? '--' }}</span
-                >
-              </div>
-
-              <!-- data-content (recurring) -->
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >RECURRING</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                >
-                  {{ store.subscribers?.recurring ?? '--' }}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex gap-2 mt-4">
-            <button class="px-2 py-1 bg-slate-200 rounded text-xs" @click="closeSubscribers">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </PopupHandler>
-
-    <!-- Earnings popup -->
-    <PopupHandler ref="earningsRef" v-model="isEarningsOpen" :config="earningsConfig">
-      <div class="h-full flex flex-col">
-        <div class="p-4 border-b flex items-center justify-between bg-[#f2ecef]">
-          <h3 class="text-base font-semibold">Earnings</h3>
-          <button data-popup-close class="hover:text-black" aria-label="Close">&times;</button>
-        </div>
-
-        <div
-          class="flex-1 flex flex-col justify-between p-4 text-sm overflow-hidden bg-light-bg-container"
-        >
-          <div class="p-4 flex-1 overflow-hidden space-y-3 text-sm">
-            <!-- data-content (new) -->
-            <div>
-              <h3
-                class="m-0 font-medium text-base leading-6 font-sans text-light-text-secondary dark:text-dark-text-secondary"
-              >
-                EARNINGS
-              </h3>
-              <span
-                class="text-[2.25rem] font-semibold leading-[2.75rem] font-sans tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                >{{ store.earnings?.daily?.[0]?.total ?? '--' }}</span
-              >
-            </div>
-          </div>
-
-          <div class="flex gap-2 mt-4">
-            <button class="px-2 py-1 bg-slate-200 rounded text-xs" @click="closeEarnings">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </PopupHandler>
-
-    <!-- Fans popup -->
-    <PopupHandler ref="fansRef" v-model="isFansOpen" :config="fansConfig">
-      <div class="h-full flex flex-col">
-        <div class="p-4 border-b flex items-center justify-between bg-[#f2ecef]">
-          <h3 class="text-base font-semibold">Fans</h3>
-          <button data-popup-close class="hover:text-black" aria-label="Close">&times;</button>
-        </div>
-
-        <div
-          class="flex-1 flex flex-col justify-between p-4 text-sm overflow-hidden bg-light-bg-container"
-        >
-          <div class="p-4 flex-1 overflow-hidden text-sm">
-            <!-- data-content (new followers) -->
-            <div class="flex justify-between items-center">
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >NEW FOLLOWERS</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                  >{{ store.fans?.newFollowers ?? '--' }}</span
-                >
-              </div>
-
-              <!-- data-content (profile visit) -->
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >PROFILE VISIT</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                >
-                  {{ store.fans?.profileVisit ?? '--' }}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex gap-2 mt-4">
-            <button class="px-2 py-1 bg-slate-200 rounded text-xs" @click="closeFans">Close</button>
-          </div>
-        </div>
-      </div>
-    </PopupHandler>
-
-    <!-- Likes popup -->
-    <PopupHandler ref="likesRef" v-model="isLikesOpen" :config="likesConfig">
-      <div class="h-full flex flex-col">
-        <div class="p-4 border-b flex items-center justify-between bg-[#f2ecef]">
-          <h3 class="text-base font-semibold">Likes</h3>
-          <button data-popup-close class="hover:text-black" aria-label="Close">&times;</button>
-        </div>
-
-        <div
-          class="flex-1 flex flex-col justify-between p-4 text-sm overflow-hidden bg-light-bg-container"
-        >
-          <div class="p-4 flex flex-col gap-6 overflow-hidden text-sm">
-            <div class="flex justify-between items-center">
-              <!-- data-content (Media) -->
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >MEDIA</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                  >{{ store.likes?.media ?? '--' }}</span
-                >
-              </div>
-
-              <!-- data-content (profile visit) -->
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >MERCH</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                >
-                  {{ store.likes?.merch ?? '--' }}
-                </span>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >PROFILE</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                  >{{ store.likes?.profile ?? '--' }}</span
-                >
-              </div>
-
-              <!-- data-content (profile visit) -->
-              <div class="flex flex-col">
-                <span
-                  class="text-xs font-sans font-medium leading-[1.125rem] text-light-text-tertiary dark:text-dark-text-tertiary"
-                  >FEED</span
-                >
-                <span
-                  class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary"
-                >
-                  {{ store.likes?.feed ?? '--' }}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex gap-2 mt-4">
-            <button class="px-2 py-1 bg-slate-200 rounded text-xs" @click="closeLikes">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </PopupHandler>
-
-    <!-- contributors popup -->
-    <PopupHandler ref="contributorsRef" v-model="isContributorsOpen" :config="contributorsConfig">
-      <div class="h-full flex flex-col">
-        <div class="p-4 border-b flex items-center justify-between bg-[#f2ecef]">
-          <h3 class="text-base font-semibold">TOP CONTRIBUTORS</h3>
-          <button data-popup-close class="hover:text-black" aria-label="Close">&times;</button>
-        </div>
-
-        <div
-          class="flex-1 flex flex-col justify-between p-4 text-sm overflow-hidden bg-light-bg-container"
-        >
-          <div class="flex flex-col items-center justify-center">
-            <div class="flex items-center justify-center">
-              <div class="relative flex items-center justify-center w-[10.0625rem] h-[10.0625rem]">
-                <img
-                  src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
-                  alt="list"
-                  class="w-32 h-32"
-                />
-              </div>
+          <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+              <img
+                src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png"
+                alt="pie-chart"
+                class="w-32 h-32"
+              />
             </div>
 
             <div class="flex flex-col items-center text-center gap-2">
               <span
-                class="text-base leading-6 font-sans text-light-text-secondary dark:text-dark-text-secondary"
+                class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
                 >No trend to show at the moment</span
               >
               <a href="#" class="text-base leading-6">
                 <span
-                  class="text-base leading-6 font-sans text-light-text-secondary dark:text-dark-text-secondary underline"
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
                   >Learn ways to earn</span
                 >
               </a>
             </div>
           </div>
+        </div>
 
-          <div class="flex gap-2 mt-4">
-            <button class="px-2 py-1 bg-slate-200 rounded text-xs" @click="closeContributors">
-              Close
-            </button>
+        <!-- right-column -->
+        <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem]">
+          <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">
+            Tiers Breakdown
+          </h3>
+
+          <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+              <img
+                src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png"
+                alt="pie-chart"
+                class="w-32 h-32"
+              />
+            </div>
+
+            <div class="flex flex-col items-center text-center gap-2">
+              <span
+                class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                >No trend to show at the moment</span
+              >
+              <a href="#" class="text-base leading-6">
+                <span
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                  >Learn ways to earn</span
+                >
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </PopupHandler>
+    </TrendPopup>
+
+    <!-- Earnings popup -->
+    <TrendPopup
+      v-model="isEarningsOpen"
+      title="Earnings Insight"
+      logo="https://i.ibb.co.com/rGSXLKX4/money.webp"
+    >
+     <div class="flex flex-col gap-4">
+
+       <!-- row -->
+      <div class="grid grid-cols-2">
+        <div
+          class="flex w-full flex-col gap-4 rounded-[0.125rem] border-r border-light-border-primary bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:border-dark-border-primary dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold"
+          >
+            Total Earnings
+          </h3>
+
+          <div class="flex flex-col justify-center items-center gap-4">
+            <span
+              class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]"
+              >--</span
+            >
+
+            <div class="flex flex-col gap-2 justify-center items-center">
+              <span
+                class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary"
+                >--</span
+              >
+              <span
+                class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary"
+                >vs yesterday</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex w-full flex-col gap-4 rounded-[0.125rem] bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold"
+          >
+            Total Earnings
+          </h3>
+
+          <div class="flex flex-col justify-center items-center gap-4">
+            <span
+              class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]"
+              >--</span
+            >
+
+            <div class="flex flex-col gap-2 justify-center items-center">
+              <span
+                class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary"
+                >--</span
+              >
+              <span
+                class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary"
+                >vs yesterday</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- row -->
+      <div class="flex flex-col md:flex-row gap-4">
+        <!-- left-column -->
+        <div
+          class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container"
+        >
+          <div class="flex justify-between items-center gap-2">
+            <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
+              Sales Insight
+            </h3>
+          </div>
+
+          <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+              <img
+                src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png"
+                alt="pie-chart"
+                class="w-32 h-32"
+              />
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+              <span
+                class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                >No trend to show at the moment</span
+              >
+              <a href="#" class="text-base leading-6">
+                <span
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                  >Learn ways to earn</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- right-column -->
+        <div
+          class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container"
+        >
+          <div class="flex justify-between items-center gap-2">
+            <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
+              Tokens Trend
+            </h3>
+          </div>
+
+          <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+              <img
+                src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png"
+                alt="pie-chart"
+                class="w-32 h-32"
+              />
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+              <span
+                class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                >No trend to show at the moment</span
+              >
+              <a href="#" class="text-base leading-6">
+                <span
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                  >Learn ways to earn</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- row -->
+      <div
+        class="flex flex-col gap-4 p-4 rounded-sm bg-light-bg-container backdrop-blur-[25px] dark:bg-dark-bg-container"
+      >
+        <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
+          Top Countries
+        </h3>
+
+        <!-- data-content -->
+        <div
+          class="flex flex-col items-start flex-grow flex-shrink [flex-basis: auto] self-stretch -ml-4 min-w-0 min-h-0"
+        >
+          <!-- data-content -->
+          <div
+            class="flex flex-col items-start justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-4 min-w-0 min-h-0"
+          >
+            <div
+              class="flex flex-col items-center justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-2 pt-6 pb-6 min-h-[21.25rem] min-w-0"
+            >
+              <div class="flex items-center justify-center p-4">
+                <div
+                  class="relative flex items-center justify-center w-[10.0625rem] h-[10.0625rem]"
+                >
+                  <img
+                    src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                    alt="list"
+                    class="w-32 h-32"
+                  />
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center gap-2 text-center">
+                <span
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                  >No trend to show at the moment</span
+                >
+                <a href="#" class="text-base leading-6">
+                  <span
+                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                    >Learn ways to earn</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+    </TrendPopup>
+
+    <!-- fans popup -->
+    <TrendPopup
+      v-model="isFansOpen"
+      title="Fans Insight"
+      logo="https://i.ibb.co.com/rGSXLKX4/money.webp"
+    >
+     <div class="flex flex-col gap-4">
+       <!-- row -->
+      <div class="grid grid-cols-2">
+        <div
+          class="flex w-full flex-col gap-4 rounded-[0.125rem] border-r border-light-border-primary bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:border-dark-border-primary dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold"
+          >
+            New Followers
+          </h3>
+
+          <!-- <div class="flex flex-col justify-center items-center gap-4">
+            <span
+              class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]"
+              >--</span
+            >
+
+            <div class="flex flex-col gap-2 justify-center items-center">
+              <span
+                class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary"
+                >--</span
+              >
+              <span
+                class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary"
+                >vs yesterday</span
+              >
+            </div>
+          </div> -->
+        </div>
+
+        <div
+          class="flex w-full flex-col gap-4 rounded-[0.125rem] bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold"
+          >
+           Total Profile Visit
+          </h3>
+
+          <div class="flex flex-col justify-center items-center gap-4">
+            <span
+              class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]"
+              >--</span
+            >
+
+            <!-- <div class="flex flex-col gap-2 justify-center items-center">
+              <span
+                class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary"
+                >--</span
+              >
+              <span
+                class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary"
+                >vs yesterday</span
+              >
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- row -->
+      <div class="flex flex-col md:flex-row gap-4">
+        <!-- left-column -->
+        <div
+          class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container"
+        >
+          <div class="flex justify-between items-center gap-2">
+            <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
+              Traffic Source
+            </h3>
+          </div>
+
+          <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+              <img
+                src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png"
+                alt="pie-chart"
+                class="w-32 h-32"
+              />
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+              <span
+                class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                >No trend to show at the moment</span
+              >
+              <a href="#" class="text-base leading-6">
+                <span
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                  >Learn ways to earn</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- right-column -->
+        <div
+          class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container"
+        >
+          <div class="flex justify-between items-center gap-2">
+            <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
+              Top Countries
+            </h3>
+          </div>
+
+          <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+              <img
+                src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png"
+                alt="pie-chart"
+                class="w-32 h-32"
+              />
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+              <span
+                class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                >No trend to show at the moment</span
+              >
+              <a href="#" class="text-base leading-6">
+                <span
+                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                  >Learn ways to earn</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+     </div>
+
+    </TrendPopup>
+
+
+    <!-- contributors popup -->
+    <TrendPopup
+      v-model="isContributorsOpen"
+       title="Contributors Insight"
+      logo="https://i.ibb.co.com/rGSXLKX4/money.webp"
+       >
+      <div class="flex flex-col gap-4">
+          <!-- row -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-sm bg-light-bg-container backdrop-blur-[25px] dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-lg font-semibold"
+          >
+            Top Contributors
+          </h3>
+
+          <!-- data-content -->
+          <div
+            class="flex flex-col items-start flex-grow flex-shrink [flex-basis: auto] self-stretch -ml-4 min-w-0 min-h-0"
+          >
+            <!-- data-content -->
+            <div
+              class="flex flex-col items-start justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-4 min-w-0 min-h-0"
+            >
+              <div
+                class="flex flex-col items-center justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-2 pt-6 pb-6 min-h-[21.25rem] min-w-0"
+              >
+                <div class="flex items-center justify-center p-4">
+                  <div
+                    class="relative flex items-center justify-center w-[10.0625rem] h-[10.0625rem]"
+                  >
+                    <img
+                      src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                      alt="list"
+                      class="w-32 h-32"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 text-center">
+                  <span
+                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                    >No trend to show at the moment</span
+                  >
+                  <a href="#" class="text-base leading-6">
+                    <span
+                      class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                      >Learn ways to earn</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- row -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-sm bg-light-bg-container backdrop-blur-[25px] dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-lg font-semibold"
+          >
+            Top Fans
+          </h3>
+
+          <!-- data-content -->
+          <div
+            class="flex flex-col items-start flex-grow flex-shrink [flex-basis: auto] self-stretch -ml-4 min-w-0 min-h-0"
+          >
+            <!-- data-content -->
+            <div
+              class="flex flex-col items-start justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-4 min-w-0 min-h-0"
+            >
+              <div
+                class="flex flex-col items-center justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-2 pt-6 pb-6 min-h-[21.25rem] min-w-0"
+              >
+                <div class="flex items-center justify-center p-4">
+                  <div
+                    class="relative flex items-center justify-center w-[10.0625rem] h-[10.0625rem]"
+                  >
+                    <img
+                      src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                      alt="list"
+                      class="w-32 h-32"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 text-center">
+                  <span
+                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                    >No trend to show at the moment</span
+                  >
+                  <a href="#" class="text-base leading-6">
+                    <span
+                      class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                      >Learn ways to earn</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- row -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-sm bg-light-bg-container backdrop-blur-[25px] dark:bg-dark-bg-container"
+        >
+          <h3
+            class="text-light-text-darkgray dark:text-white text-lg font-semibold"
+          >
+            Top Order Spenders
+          </h3>
+
+          <!-- data-content -->
+          <div
+            class="flex flex-col items-start flex-grow flex-shrink [flex-basis: auto] self-stretch -ml-4 min-w-0 min-h-0"
+          >
+            <!-- data-content -->
+            <div
+              class="flex flex-col items-start justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-4 min-w-0 min-h-0"
+            >
+              <div
+                class="flex flex-col items-center justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-2 pt-6 pb-6 min-h-[21.25rem] min-w-0"
+              >
+                <div class="flex items-center justify-center p-4">
+                  <div
+                    class="relative flex items-center justify-center w-[10.0625rem] h-[10.0625rem]"
+                  >
+                    <img
+                      src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                      alt="list"
+                      class="w-32 h-32"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 text-center">
+                  <span
+                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary"
+                    >No trend to show at the moment</span
+                  >
+                  <a href="#" class="text-base leading-6">
+                    <span
+                      class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline"
+                      >Learn ways to earn</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </TrendPopup>
   </div>
 </template>
 
@@ -1199,140 +1544,31 @@ import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
-import PopupHandler from '../../../../components/ui/popup/PopupHandler.vue'
+import TrendPopup from '@/components/ui/popup/TrendPopup.vue'
 
 // --- Subscribers popup state/config ---
-const subscribersRef = ref(null)
 const isSubscribersOpen = ref(false)
-
-// --- Config for subscribers center popup ---
-const subscribersConfig = {
-  actionType: 'popup',
-  showOverlay: true,
-  closeOnOutside: true,
-  escToClose: true,
-  width: {
-    default: '320px',
-    '<640': '95vw',
-    '640-1024': '500px',
-  },
-  height: {
-    default: '200px',
-    '<640': '80vh',
-    '640-1024': '250px',
-  },
-  speed: '200ms',
-  effect: 'ease',
-  customEffect: 'fade',
-}
-
-// --- Earnings popup state/config ---
-const earningsRef = ref(null)
-const isEarningsOpen = ref(false)
-
-// --- Config for earnings center popup ---
-const earningsConfig = {
-  actionType: 'popup',
-  showOverlay: true,
-  closeOnOutside: true,
-  escToClose: true,
-  width: { default: '400px', '<640': '95vw', '640-1024': '520px' },
-  height: { default: '250px', '<640': '80vh', '640-1024': '300px' },
-  speed: '200ms',
-  effect: 'ease',
-  customEffect: 'fade',
-}
-
-// --- fans popup state/config ---
-const fansRef = ref(null)
-const isFansOpen = ref(false)
-
-// --- Config for fans center popup ---
-const fansConfig = {
-  actionType: 'popup',
-  showOverlay: true,
-  closeOnOutside: true,
-  escToClose: true,
-  width: { default: '400px', '<640': '95vw', '640-1024': '520px' },
-  height: { default: '250px', '<640': '80vh', '640-1024': '300px' },
-  speed: '200ms',
-  effect: 'ease',
-  customEffect: 'fade',
-}
-
-// --- Likes popup state/config ---
-const likesRef = ref(null)
-const isLikesOpen = ref(false)
-
-// --- Config for likes center popup ---
-const likesConfig = {
-  actionType: 'popup',
-  showOverlay: true,
-  closeOnOutside: true,
-  escToClose: true,
-  width: { default: '500px', '<640': '95vw', '640-1024': '520px' },
-  height: { default: '350px', '<640': '80vh', '640-1024': '300px' },
-  speed: '200ms',
-  effect: 'ease',
-  customEffect: 'fade',
-}
-
-// --- contributors popup state/config ---
-const contributorsRef = ref(null)
-const isContributorsOpen = ref(false)
-
-// --- Config for contributors center popup ---
-const contributorsConfig = {
-  actionType: 'popup',
-  showOverlay: true,
-  closeOnOutside: true,
-  escToClose: true,
-  width: { default: '500px', '<640': '95vw', '640-1024': '520px' },
-  height: { default: '400px', '<640': '80vh', '640-1024': '300px' },
-  speed: '200ms',
-  effect: 'ease',
-  customEffect: 'fade',
-}
-
-// --- Methods ---
 function openSubscribers() {
-  subscribersRef.value?.open()
-}
-function closeSubscribers() {
-  subscribersRef.value?.close()
+  isSubscribersOpen.value = true
 }
 
+const isEarningsOpen = ref(false)
 function openEarnings() {
-  earningsRef.value?.open()
-}
-function closeEarnings() {
-  earningsRef.value?.close()
+  isEarningsOpen.value = true
 }
 
+const isFansOpen = ref(false)
 function openFans() {
-  fansRef.value?.open()
-}
-function closeFans() {
-  fansRef.value?.close()
+  isFansOpen.value = true
 }
 
-function openLikes() {
-  likesRef.value?.open()
-}
-function closeLikes() {
-  likesRef.value?.close()
-}
-
+const isContributorsOpen = ref(false)
 function openContributors() {
-  contributorsRef.value?.open()
-}
-function closeContributors() {
-  contributorsRef.value?.close()
+  isContributorsOpen.value = true
 }
 
 const store = useDashboardAnalytics()
 const { lastUpdated } = storeToRefs(store)
-
 
 function formatTime(dateString) {
   if (!dateString) return 'Never'
@@ -1341,12 +1577,11 @@ function formatTime(dateString) {
 }
 
 async function handleRefresh() {
-  await store.loadAnalytics() // yeh andar hi 15 min wali logic check karega
+  await store.loadAnalytics() 
 }
 // when component load so data will be here
- 
+
 onMounted(() => {
   store.loadAnalytics()
 })
-
 </script>
