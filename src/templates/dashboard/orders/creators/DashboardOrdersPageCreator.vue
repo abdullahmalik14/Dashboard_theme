@@ -969,6 +969,8 @@
             </div>
           </div>
         </div>
+
+        <ChartContainer/>
       </div>
     </DashboardOrdersPageContentCreator>
 
@@ -1545,6 +1547,7 @@ import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import TrendPopup from '@/components/ui/popup/TrendPopup.vue'
+import ChartContainer from '@/components/ui/chart/ChartContainer.vue'
 
 // --- Subscribers popup state/config ---
 const isSubscribersOpen = ref(false)
@@ -1579,9 +1582,12 @@ function formatTime(dateString) {
 async function handleRefresh() {
   await store.loadAnalytics() 
 }
-// when component load so data will be here
 
+// when component load so data will be here
 onMounted(() => {
   store.loadAnalytics()
 })
+
 </script>
+
+ 

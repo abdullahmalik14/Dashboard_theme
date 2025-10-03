@@ -18,6 +18,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.13.6",
+    "@amcharts/amcharts5-geodata": "^5.1.5",
     "pinia": "^3.0.3",
     "pinia-plugin-persistedstate": "^4.5.0",
     "vue": "^3.5.18",

@@ -2,7 +2,12 @@
   <DashboardMainWrapperDesktop>
     <DashboardBaseContainerWrapper>
       <div 
-        class="grid min-h-screen grid-cols-1 md:grid-cols-[100px_1fr] grid-rows-[auto_1fr_auto] bg-fade-lr"
+       style="
+    background-image: url('https://dd9wrrdfti3m1.cloudfront.net/dev/images/dash/background-gradient.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  "
+        class="grid min-h-screen grid-cols-1 md:grid-cols-[100px_1fr] grid-rows-[auto_1fr_auto]"
       >
         <!-- Sidebar -->
         <aside class="hidden md:block row-span-3 bg-white">

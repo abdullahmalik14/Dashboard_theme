@@ -255,9 +255,9 @@ const contentClassList = computed(() => {
   ];
   
   // Add border radius only for popups, not slide-ins
-  if (isPopup.value) {
-    base.push('rounded-xl');
-  }
+  // if (isPopup.value) {
+  //   base.push('rounded-xl');
+  // }
   
   // NEW: Add scrollable behavior with hidden scrollbar if enabled
   if (cfg.value.scrollable !== false) {

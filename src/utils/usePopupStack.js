@@ -16,10 +16,14 @@ function ensureOverlay() {
     position: 'fixed',
     inset: '0',
     opacity: '0',
-    background: 'rgba(0,0,0,0.4)',
+    // background: 'rgba(0,0,0,0.4)',
     transition: 'opacity 150ms ease',
     visibility: 'hidden',
-    zIndex: '1999' // will be overridden dynamically
+    zIndex: '1999', // will be overridden dynamically
+    width: '100vw',
+height: '100vh',
+backdropFilter: 'blur(7.5px)',
+backgroundColor: 'rgba(0, 0, 0, 0.05)'
   });
   document.body.appendChild(overlayEl);
   overlayEl.addEventListener('click', () => {

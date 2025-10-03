@@ -12,9 +12,24 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script id="charts-config" type="application/json">
+      {
+        "datasetsSrc": "/chartsData.bundle.json",
+        "baseConfigsSrc": "/chartConfigs.bundle.json"
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
+    <!-- Ye line add karo: -->
+ <script src="/index2.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
