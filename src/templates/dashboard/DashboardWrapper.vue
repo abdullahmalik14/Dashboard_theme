@@ -2,32 +2,26 @@
   <DashboardMainWrapperDesktop>
     <DashboardBaseContainerWrapper>
       <div 
-       style="
-    background-image: url('https://dd9wrrdfti3m1.cloudfront.net/dev/images/dash/background-gradient.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  "
-        class="grid min-h-screen grid-cols-1 md:grid-cols-[100px_1fr] grid-rows-[auto_1fr_auto]"
-      >
-        <!-- Sidebar -->
-        <aside class="hidden md:block row-span-3 bg-white">
-          <DashboardSidebar />
-        </aside>
+   class="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr_auto] w-full flex-1 bg-[#F9FAFBE5] min-h-screen md:bg-transparent md:h-auto dark:bg-background-dark-app before:content-[''] 
+        before:fixed before:bg-[url('https://i.ibb.co.com/dw910Z5b/gradient-main-bg.webp')]
+         before:bg-cover before:w-full before:bg-no-repeat before:h-full 
+         before:left-0 before:top-0 before:pointer-events-none md:p-[40px]">
+
 
         <!-- Header -->
-        <header class="col-span-1 md:col-start-2">
+        <header class="w-full">
           <slot name="header">
             <DashboardHeader />
           </slot>
         </header>
 
         <!-- Main Content -->
-        <section class="col-span-1 md:col-start-2 w-full h-full min-w-0">
+        <section class="w-full h-full min-w-0">
           <router-view />
         </section>
 
         <!-- Footer -->
-        <footer class="col-span-1 md:col-start-2">
+        <footer class="w-full">
           <slot name="footer">
             <DashboardFooter />
           </slot>
@@ -40,7 +34,7 @@
 <script setup>
 import DashboardMainWrapperDesktop from '@/components/layout/dashboard/DashboardMainWrapperDesktop.vue'
 import DashboardBaseContainerWrapper from '@/components/layout/dashboard/DashboardBaseContainerWrapper.vue'
-import DashboardSidebar from '@/templates/dashboard/DashboardSidebar.vue'
+
 import DashboardFooter from './DashboardFooter.vue'
 import DashboardHeader from './DashboardHeader.vue'
 </script>

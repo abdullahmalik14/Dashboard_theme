@@ -1,11 +1,7 @@
 <template>
-  <header class="dashboard-header">
-    <div class="block md:hidden">
-      <slot name="mobile">
-        <DashboardMobileHeaderPart />
-      </slot>
-    </div>
-    <div class="hidden md:block">
+  <header>
+    
+    <div class="">
       <slot name="desktop">
         <DashboardDesktopHeaderPart />
       </slot>

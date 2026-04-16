@@ -1,7 +1,20 @@
 <template>
-  <div class="px-4 py-6 flex items-center justify-between">
-    <h2 class="text-xl font-semibold font-sans">Header</h2>
-  </div>
+ <div class="w-full inline-flex flex-col md:flex-row justify-between md:items-center gap-6 ">
+    <div class="flex-1 justify-center text-gray-900 text-4xl font-semibold font-['Poppins'] leading-10">Welcome back, Jenny!</div>
+    <div class="flex-1 md:pt-[16px] rounded-[10px] inline-flex flex-col gap-2.5">
+        <div class="w-full  text-slate-700 text-sm font-normal font-['Poppins'] leading-5">“Those who flow as life flows know they need no other force.” ~ Lao Tzu</div>
+        <div class="inline-flex justify-start items-center gap-0.5">
+            <div class="w-4 h-4 relative overflow-hidden">
+                 <img
+                    src="https://i.ibb.co.com/tPv74nnJ/svgviewer-png-output-1.webp"
+                    alt="refresh"
+                    class="w-[.875rem] h-[.875rem]"
+                  />
+            </div>
+            <div class="justify-start text-blue-600 text-xs font-medium font-['Poppins'] leading-4">New Quote</div>
+        </div>
+    </div>
+</div>
 </template>
 
 <script setup></script>
