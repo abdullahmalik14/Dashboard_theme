@@ -20,12 +20,7 @@
           <router-view />
         </section>
 
-        <!-- Footer -->
-        <footer class="w-full">
-          <slot name="footer">
-            <DashboardFooter />
-          </slot>
-        </footer>
+  
       </div>
     </DashboardBaseContainerWrapper>
   </DashboardMainWrapperDesktop>
@@ -35,6 +30,5 @@
 import DashboardMainWrapperDesktop from '@/components/layout/dashboard/DashboardMainWrapperDesktop.vue'
 import DashboardBaseContainerWrapper from '@/components/layout/dashboard/DashboardBaseContainerWrapper.vue'
 
-import DashboardFooter from './DashboardFooter.vue'
 import DashboardHeader from './DashboardHeader.vue'
 </script>

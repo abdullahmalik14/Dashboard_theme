@@ -496,7 +496,8 @@
     <DashboardOrdersPageContentCreator>
       <div class="flex flex-col justify-start items-start gap-6">
         <!-- Header & Tabs -->
-        <div class="w-full px-4 pt-4 flex justify-between flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-4">
+        <div
+          class="w-full px-4 pt-4 flex justify-between flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-4">
           <div class="flex justify-start  gap-2">
             <div class="w-6 h-6 flex items-center justify-center">
               <img src="/images/cartIcon.png" alt="Cart" class="w-5 h-5 opacity-70" />
@@ -542,25 +543,32 @@
 
         <!-- Table -->
         <div class="self-stretch w-full">
-          <div class="w-full">
-            <FlexTable :columns="ordersColumns" :rows="ordersRows" :theme="ordersTheme">
+          <div v-if="currentRows && currentRows.length > 0" class="w-full">
+            <FlexTable :columns="currentColumns" :rows="currentRows" :theme="ordersTheme">
               <!-- Order Slot -->
               <template #cell.order="{ row }">
                 <!-- Desktop View (Visible on md and up) -->
                 <div class="hidden md:flex items-center gap-4 h-full w-full pr-4">
-                  <div class="h-full w-20 shrink-0 overflow-hidden">
+                  <div v-if="selectedTab === 'Merch' || selectedTab === 'Custom Request'" :class="['w-[4rem] h-full flex-shrink-0 grid place-items-center', row.bg]">
+                    <img :src="row.bg === 'bg-black' ? '/images/merch.png' : '/images/cartIcon.png'" class="w-8 h-8 object-contain" />
+                  </div>
+                  <div v-else class="relative w-[3.5rem] sm:w-[4rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
                     <img src="/images/profile-thumbnail.png" class="w-full h-full object-cover" />
                   </div>
-                  <div class="flex flex-col justify-center items-start gap-1 overflow-hidden">
-                    <div class="self-stretch text-gray-900 text-sm font-semibold leading-tight line-clamp-1">{{ row.tier
-                    }}</div>
-                    <div class="self-stretch text-slate-500 text-xs font-normal leading-tight">{{ row.orderId }}</div>
+                  <div class="flex flex-col justify-center items-start gap-0.5 overflow-hidden">
+                    <div v-if="row.tier" class="self-stretch text-gray-900 text-sm font-semibold leading-tight line-clamp-1">{{ row.tier }}</div>
+                    <div v-else-if="row.title" class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">{{ row.title }}</div>
+                    <div v-else-if="row.type" class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">{{ row.type }}</div>
+                    <div class="self-stretch text-slate-500 text-xs font-normal leading-4 line-clamp-1">{{ row.orderId }}</div>
                   </div>
                 </div>
 
                 <!-- Mobile View (Visible below md) -->
                 <div class="flex md:hidden items-center gap-3 h-full w-full py-2">
-                  <div class="h-16 w-16 shrink-0 rounded overflow-hidden">
+                  <div v-if="selectedTab === 'Merch' || selectedTab === 'Custom Request'" :class="['h-full w-16 shrink-0 grid place-items-center', row.bg]">
+                    <img :src="row.bg === 'bg-black' ? '/images/merch.png' : '/images/cartIcon.png'" class="w-10 h-10 object-contain" />
+                  </div>
+                  <div v-else class="h-16 w-16 shrink-0 rounded overflow-hidden">
                     <img src="/images/profile-thumbnail.png" class="w-full h-full object-cover" />
                   </div>
                   <div class="flex flex-col justify-center items-start gap-1 overflow-hidden">
@@ -586,6 +594,18 @@
                 </div>
               </template>
 
+              <!-- Status Slot -->
+              <template #cell.status="{ row }">
+                <div class="flex items-center h-full px-4 w-full">
+                  <div class="p-1 bg-yellow-400 backdrop-blur-[10px] flex justify-center items-center gap-2">
+                    <img src="/images/mangoes.png" class="w-4 h-4 object-cover" />
+                  </div>
+                  <div class="h-6 px-1.5 py-[3px] bg-black backdrop-blur-[10px] flex justify-center items-center gap-2">
+                    <div class="justify-start text-yellow-400 text-xs font-medium font-['Poppins'] leading-4">{{ row.status }}</div>
+                  </div>
+                </div>
+              </template>
+
               <!-- Date Slot -->
               <template #cell.date="{ row }">
                 <div class="px-4 text-slate-600 text-[13px] font-normal h-full flex items-center">{{ row.date }}</div>
@@ -595,7 +615,7 @@
               <template #cell.total="{ row }">
                 <div
                   class="pr-4 text-gray-900 text-[13px] font-bold h-full flex items-center justify-end md:justify-start w-full whitespace-nowrap">
-                  <span class="mr-1">USD$</span> 9.99
+                  <span>USD$</span> 9.99
                 </div>
               </template>
 
@@ -613,19 +633,17 @@
                 </div>
               </template>
 
-              <!-- Empty State -->
-              <template #empty>
-                <div class="py-12 flex flex-col justify-center items-center gap-4">
-                  <img src="/images/shopping-cart.png" alt="Empty Cart" class="w-32 h-32 opacity-80" />
-                  <div class="flex flex-col items-center gap-1">
-                    <p class="text-slate-700 text-base font-normal">You don’t have any orders at the moment</p>
-                    <a href="#" class="text-slate-700 text-base font-normal underline decoration-slate-400">Learn how
-                      you
-                      can earn</a>
-                  </div>
-                </div>
-              </template>
             </FlexTable>
+          </div>
+          <!-- Empty State -->
+          <div v-else class="py-12 flex flex-col justify-center items-center gap-4 w-full">
+            <img src="/images/shopping-cart.png" alt="Empty Cart" class="w-32 h-32 opacity-80" />
+            <div class="flex flex-col items-center gap-1">
+              <p class="text-slate-700 text-base font-normal">You don’t have any orders at the moment</p>
+              <a href="#" class="text-slate-700 text-base font-normal underline decoration-slate-400">Learn how
+                you
+                can earn</a>
+            </div>
           </div>
         </div>
 
@@ -648,7 +666,7 @@
     <DashboardOrdersPageContentCreator>
       <div class="relative gap-6 flex flex-col">
         <!-- section-header -->
-        <div class="flex flex-col sm:flex-row px-4 pt-4 pb-0 justify-between items-start md:items-center">
+        <div class="flex flex-col gap-4 sm:flex-row px-4 pt-4 pb-0 justify-between items-start md:items-center">
           <!-- title -->
           <div class="title flex items-center gap-2 flex-grow flex-shrink basis-auto min-w-0 min-h-0">
             <span>
@@ -661,7 +679,7 @@
           </div>
 
           <!-- tabs-button-group -->
-          <div class="flex flex-col md:flex-row md:items-center gap-4">
+          <div class="flex flex-col md:flex-row md:items-center gap-4 w-full sm:w-auto">
             <!-- last-date -->
             <!-- <div class="flex items-center gap-4 w-full justify-between sm:justify-end sm:w-auto">
               <span class="text-sm leading-5 font-sans text-light-text-quaternary dark:text-dark-text-quaternary">Last
@@ -691,7 +709,7 @@
             </div>
 
             <!-- select-dropdown -->
-            <div class="md:hidden relative flex w-full sm:w-auto justify-start sm:justify-end">
+            <div class="md:hidden relative w-full sm:w-auto">
               <button @click="isTrendDropdownOpen = !isTrendDropdownOpen"
                 class="w-full sm:w-[200px] px-4 py-2 bg-white/70 backdrop-blur-md border border-gray-200 rounded-lg flex justify-center gap-2 items-center outline-none hover:bg-white/90 transition-colors">
                 <span class="text-gray-900 font-semibold text-sm">{{ selectedTrendTab }}</span>
@@ -705,10 +723,11 @@
               </button>
               <div v-if="isTrendDropdownOpen"
                 class="absolute right-0 z-20 w-full sm:w-[200px] top-full mt-1.5 bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden animate-in fade-in zoom-in duration-200">
-                <div v-for="tab in trendsTabs" :key="tab" @click="selectedTrendTab = tab; isTrendDropdownOpen = false" :class="[
-                  'px-4 py-3 text-sm transition-colors cursor-pointer text-center',
-                  selectedTrendTab === tab ? 'bg-blue-50/80 text-blue-700 font-bold' : 'text-gray-600 hover:bg-gray-50/80'
-                ]">
+                <div v-for="tab in trendsTabs" :key="tab" @click="selectedTrendTab = tab; isTrendDropdownOpen = false"
+                  :class="[
+                    'px-4 py-3 text-sm transition-colors cursor-pointer text-center',
+                    selectedTrendTab === tab ? 'bg-blue-50/80 text-blue-700 font-bold' : 'text-gray-600 hover:bg-gray-50/80'
+                  ]">
                   {{ tab }}
                 </div>
               </div>
@@ -725,31 +744,68 @@
               <!-- white-card -->
               <DashboardTrendCard>
                 <!-- tabs-container -->
-                <div>
+                <div
+                  class="w-full px-4 flex justify-between flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-4">
                   <!-- title -->
-                  <div class="flex items-center justify-between gap-2">
-                    <h3
-                      class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-slate-700 m-0 leading-6 text-base font-medium font-['Poppins']">
                       Top Media
                     </h3>
-                    <!-- tabs-button-group -->
-                    <div
-                      class="trends-tabs-wrapper hidden md:flex px-1 py-1 rounded-[3rem] bg-gradient-to-r from-[rgba(251,_91,_162,_0.15)] to-[rgba(251,_91,_162,_0.08)] border-none shadow-[0_1px_2px_0_rgba(16,_24,_40,_0.05)] overflow-hidden items-start">
-                      <button
-                        class="trends-tabs-wrapper-button font-sans active px-4 py-2 text-sm font-medium leading-5 justify-center items-center flex gap-2 outline-none border-none rounded-[3rem] bg-black text-white">
-                        Views
-                      </button>
-                      <button
-                        class="trends-tabs-wrapper-button font-sans px-4 py-2 text-sm font-medium leading-5 justify-center items-center flex gap-2 outline-none border-none">
-                        P2V Sales
-                      </button>
+                  </div>
+
+                  <!-- tabs-button-group -->
+                  <div
+                    class="flex w-full sm:w-auto bg-white/30 rounded-lg justify-start items-start overflow-hidden border border-gray-200 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                    <div v-for="tab in topMediaTabs" :key="tab" @click="selectedTopMediaTab = tab" :class="[
+                      'flex-1 sm:flex-initial whitespace-nowrap cursor-pointer h-full px-4 py-2 flex justify-center items-center gap-2 transition-all font-[\'Poppins\'] text-sm outline-none border-r border-gray-200 last:border-r-0',
+                      selectedTopMediaTab === tab ? 'bg-white text-gray-800 font-bold' : 'bg-transparent text-gray-500 font-medium hover:bg-gray-50'
+                    ]">
+                      {{ tab }}
                     </div>
                   </div>
                 </div>
 
                 <!-- tabs-content -->
-                <DashboardTrendContent image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
-                  message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
+                <div v-if="(selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows).length > 0" class="w-full flex-1 pt-4">
+                  <FlexTable :columns="selectedTopMediaTab === 'Views' ? topMediaColumns : p2vSalesColumns" :rows="selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows" :theme="topMediaTheme">
+                    <template #cell.media="{ row }">
+                      <div class="flex items-center gap-3 h-full">
+                        <div class="relative w-[3.5rem] sm:w-[5rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
+                          <img :src="row.image" alt="media" class="w-full h-full object-cover">
+                          <div class="w-5 h-5 left-0 top-0 absolute bg-black flex justify-center items-center">
+                            <span class="text-white text-xs font-bold font-['Poppins'] leading-5">{{ row.rank }}</span>
+                          </div>
+                        </div>
+                        <div
+                          class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3">
+                          {{ row.title }}
+                        </div>
+                      </div>
+                    </template>
+                    <template #cell.clicks="{ row }">
+                      <div class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4">
+                        {{ row.clicks }}
+                      </div>
+                    </template>
+                    <template #cell.duration="{ row }">
+                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4">
+                        {{ row.duration }}
+                      </div>
+                    </template>
+                    <template #cell.sales_count="{ row }">
+                      <div class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                        {{ row.sales_count }}
+                      </div>
+                    </template>
+                    <template #cell.sales_usd="{ row }">
+                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                        {{ row.sales_usd }}
+                      </div>
+                    </template>
+                  </FlexTable>
+                </div>
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                  alt="list" message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
 
@@ -760,16 +816,38 @@
                 <!-- tabs-container -->
                 <div>
                   <!-- title -->
-                  <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center justify-between gap-2 px-[16px]">
                     <h3
                       class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
                       Top Tags
                     </h3>
                   </div>
                 </div>
+                <!-- table-content -->
+                <div v-if="topTagsRows && topTagsRows.length > 0" class="w-full h-full pt-4">
+                  <FlexTable :columns="topTagsColumns" :rows="topTagsRows" :theme="topTagsTheme">
+                    <!-- tag column -->
+                    <template #cell.tag="{ row }">
+                      <div class="flex justify-start items-center gap-2.5 h-full w-full sm:px-1">
+                        <div class="w-5 h-5 bg-black flex justify-center items-center shrink-0">
+                          <span class="text-white text-sm font-bold font-['Poppins']">{{ row.rank }}</span>
+                        </div>
+                        <div class="px-1.5 py-0.5 bg-gray-200 rounded-md border border-gray-200 flex justify-start items-center">
+                          <span class="text-slate-700 text-xs font-medium font-['Poppins']">{{ row.name }}</span>
+                        </div>
+                      </div>
+                    </template>
 
-                <!-- tabs-content -->
-                <DashboardTrendContent image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
+                    <!-- views column -->
+                    <template #cell.views="{ row }">
+                      <div class="text-gray-900 text-xs font-semibold font-['Poppins'] text-right w-full sm:px-1">
+                        {{ row.views }}
+                      </div>
+                    </template>
+                  </FlexTable>
+                </div>
+                <!-- empty-state -->
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
                   message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
@@ -781,7 +859,7 @@
                 <!-- tabs-container -->
                 <div>
                   <!-- title -->
-                  <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center justify-between gap-2 px-[16px]">
                     <h3
                       class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
                       Top Merch
@@ -789,8 +867,41 @@
                   </div>
                 </div>
 
-                <!-- tabs-content -->
-                <DashboardTrendContent image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
+                <!-- table-content -->
+                <div v-if="topMerchRows && topMerchRows.length > 0" class="w-full flex-1 pt-4">
+                  <FlexTable :columns="topMerchColumns" :rows="topMerchRows" :theme="topMerchTheme">
+                    <!-- merch column -->
+                    <template #cell.merch="{ row }">
+                      <div class="flex items-center gap-3 h-full w-full">
+                        <div class="relative w-[3.5rem] sm:w-[4rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
+                          <img :src="row.image" alt="merch" class="w-full h-full object-cover">
+                          <div class="w-5 h-5 left-0 top-0 absolute bg-black flex justify-center items-center">
+                            <span class="text-white text-sm font-bold font-['Poppins'] leading-none">{{ row.rank }}</span>
+                          </div>
+                        </div>
+                        <div class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3 w-[200px] text-wrap text-left whitespace-normal break-words sm:px-1">
+                          {{ row.title }}
+                        </div>
+                      </div>
+                    </template>
+
+                    <!-- views column -->
+                    <template #cell.views="{ row }">
+                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                        {{ row.views }}
+                      </div>
+                    </template>
+
+                    <!-- sales column -->
+                    <template #cell.sales="{ row }">
+                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                        {{ row.sales }}
+                      </div>
+                    </template>
+                  </FlexTable>
+                </div>
+                <!-- empty-state -->
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
                   message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
@@ -802,7 +913,7 @@
                 <!-- tabs-container -->
                 <div>
                   <!-- title -->
-                  <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center justify-between gap-2 px-[16px]">
                     <h3
                       class="text-light-text-secondary font- dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
                       Top Countries
@@ -810,8 +921,31 @@
                   </div>
                 </div>
 
-                <!-- tabs-content -->
-                <DashboardTrendContent image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
+                <!-- table-content -->
+                <div v-if="topCountriesRows && topCountriesRows.length > 0" class="w-full flex-1 pt-4">
+                  <FlexTable :columns="topCountriesColumns" :rows="topCountriesRows" :theme="topCountriesTheme">
+                    <!-- tags column -->
+                    <template #cell.tags="{ row }">
+                      <div class="flex justify-start items-center gap-2.5 h-full w-full sm:px-1">
+                        <div class="w-5 h-5 bg-black flex justify-center items-center shrink-0">
+                          <span class="text-white text-sm font-bold font-['Poppins']">{{ row.rank }}</span>
+                        </div>
+                        <div class="flex-1 text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">
+                          {{ row.country }}
+                        </div>
+                      </div>
+                    </template>
+
+                    <!-- sales column -->
+                    <template #cell.sales="{ row }">
+                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                        {{ row.sales }}
+                      </div>
+                    </template>
+                  </FlexTable>
+                </div>
+                <!-- empty-state -->
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
                   message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
@@ -1249,9 +1383,8 @@ import DashboardOrdersPageContentCreator from './DashboardOrdersPageContentCreat
 import DashboardTrendCard from '@/components/ui/card/DashboardTrendCard.vue'
 import DashboardTrendContent from '@/components/ui/content/DashboardTrendContent.vue'
 import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
-import { onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
 import TrendPopup from '@/components/ui/popup/TrendPopup.vue'
 import FlexTable from '@/components/ui/FlexTable.vue'
 // --- Contributors Table Data ---
@@ -1273,7 +1406,7 @@ const contributorsTheme = {
   header: 'bg-transparent text-gray-500',
   headerRow: 'flex items-center',
   headerCell: 'px-4 py-2.5 text-sm font-normal border-b border-gray-500',
-  row: 'flex items-center min-h-16 odd:bg-transparent even:bg-[#F2F4F780] border-b border-gray-200/50 hover:bg-gray-100/30',
+  row: 'flex items-center min-h-16 odd:bg-transparent even:bg-[#F2F4F780]  hover:bg-gray-100/30',
   cell: 'py-2 flex items-center h-full',
   footer: 'hidden'
 }
@@ -1282,7 +1415,7 @@ const contributorsTheme = {
 const ordersColumns = [
   { key: 'order', label: 'Order#', basis: { default: 'grow md:grow-0 md:basis-[300px]' }, align: 'left' },
   { key: 'from', label: 'From', basis: 'basis-[220px]', align: 'left', hiddenAt: ['xs', 'sm'] },
-  { key: 'date', label: 'Date received', basis: 'basis-[180px]', align: 'left', hiddenAt: ['xs', 'sm'] },
+  { key: 'date', label: 'Date', basis: 'basis-[180px]', align: 'left', hiddenAt: ['xs', 'sm'] },
   { key: 'total', label: 'Total', basis: { default: 'ml-auto basis-[80px]' }, align: 'right' },
   { key: 'details', label: '', basis: { default: 'shrink-0 basis-[80px]' }, align: 'right', hiddenAt: ['xs', 'sm'] }
 ]
@@ -1295,12 +1428,72 @@ const ordersRows = ref([
   { id: 5, tier: 'Tier 5 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' }
 ])
 
+const p2vOrdersRows = ref([
+  { id: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' }
+])
+
+const merchOrdersColumns = [
+  { key: 'order', label: 'Order#', basis: { default: 'grow md:grow-0 md:basis-[280px]' }, align: 'left' },
+  { key: 'from', label: 'From', basis: 'basis-[180px]', align: 'left', hiddenAt: ['xs', 'sm'] },
+  { key: 'status', label: 'Status', basis: 'basis-[160px]', align: 'left', hiddenAt: ['xs', 'sm'] },
+  { key: 'date', label: 'Date', basis: 'basis-[150px]', align: 'left', hiddenAt: ['xs', 'sm'] },
+  { key: 'total', label: 'Total', basis: { default: 'ml-auto basis-[80px]' }, align: 'right' },
+  { key: 'details', label: '', basis: { default: 'shrink-0 basis-[80px]' }, align: 'right', hiddenAt: ['xs', 'sm'] }
+]
+
+const merchOrdersRows = ref([
+  { id: 1, type: 'Merch', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black', innerBg: 'bg-green-500' },
+  { id: 2, type: 'Merch', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black', innerBg: 'bg-green-500' },
+  { id: 3, type: 'Mixed', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
+  { id: 4, type: 'Mixed', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
+  { id: 5, type: 'Mixed', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black', innerBg: 'bg-green-500' }
+])
+
+const customRequestOrdersColumns = merchOrdersColumns
+
+const customRequestOrdersRows = ref([
+  { id: 1, type: 'Kinks', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black' },
+  { id: 2, type: 'Kinks', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black' },
+  { id: 3, type: 'Clips', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500' },
+  { id: 4, type: 'Clips', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500' },
+  { id: 5, type: 'Clips', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black' }
+])
+
+const wishtenderOrdersRows = ref([
+  { id: 1, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 2, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 3, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 4, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 5, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' }
+])
+
+const currentRows = computed(() => {
+  switch (selectedTab.value) {
+    case 'Merch': return merchOrdersRows.value
+    case 'Pay to View': return p2vOrdersRows.value
+    case 'Custom Request': return customRequestOrdersRows.value
+    case 'Wishtender': return wishtenderOrdersRows.value
+    default: return ordersRows.value
+  }
+})
+
+const currentColumns = computed(() => {
+  if (selectedTab.value === 'Merch' || selectedTab.value === 'Custom Request') {
+    return merchOrdersColumns
+  }
+  return ordersColumns
+})
+
 const ordersTheme = {
   container: 'relative bg-transparent border-none w-full overflow-x-auto font-["Poppins"]',
   header: 'text-[#667085]',
   headerRow: 'flex items-center h-12',
   headerCell: 'px-4 text-[13px] font-normal tracking-tight',
-  row: 'relative group/row flex items-center h-20 odd:bg-transparent even:bg-[#F2F4F780] border-b border-gray-100/80 hover:bg-gray-100/30 transition-all',
+  row: 'relative group/row flex items-center h-20 odd:bg-transparent even:bg-[#F2F4F780] transition-all',
   cell: 'flex items-center h-full',
   footer: 'hidden'
 }
@@ -1341,6 +1534,132 @@ function formatTime(dateString) {
   if (!dateString) return 'Never'
   const date = new Date(dateString)
   return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+}
+
+// --- Top Media Table Configuration ---
+const topMediaTabs = ['Views', 'P2V Sales']
+const selectedTopMediaTab = ref('Views')
+const isTopMediaDropdownOpen = ref(false)
+
+const topMediaColumns = [
+  { key: 'media', label: 'Media', basis: 'basis-1/3', grow: true, align: 'left' },
+  { key: 'clicks', label: '# of Clicks', basis: 'basis-1/3', grow: true, align: 'center' },
+  { key: 'duration', label: 'Watch Duration', basis: 'basis-1/3', grow: true, align: 'right' }
+]
+
+const p2vSalesColumns = [
+  { key: 'media', label: 'Media', basis: 'basis-1/3', grow: true, align: 'left' },
+  { key: 'sales_count', label: '# of Sales', basis: 'basis-1/3', grow: true, align: 'center' },
+  { key: 'sales_usd', label: 'Sales(USD)', basis: 'basis-1/3', grow: true, align: 'right' }
+]
+
+const topMediaRows = [
+  { id: 1, rank: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
+  { id: 2, rank: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
+  { id: 3, rank: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
+  { id: 4, rank: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
+  { id: 5, rank: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' }
+]
+
+const p2vSalesRows = [
+  { id: 1, rank: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 5123.45', image: '/images/profile-thumbnail.png' },
+  { id: 2, rank: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 4123.45', image: '/images/profile-thumbnail.png' },
+  { id: 3, rank: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 3123.45', image: '/images/profile-thumbnail.png' },
+  { id: 4, rank: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 2123.45', image: '/images/profile-thumbnail.png' },
+  { id: 5, rank: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 1123.45', image: '/images/profile-thumbnail.png' }
+]
+
+const topMediaTheme = {
+  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  header: 'bg-transparent text-gray-500',
+  headerRow: 'flex items-center border-b border-gray-500',
+  headerCell: 'px-2.5 py-2.5 text-sm font-normal',
+  row: 'flex items-center min-h-[6rem] odd:bg-transparent even:bg-gray-100/50 ',
+  cell: 'px-2.5 py-2 flex items-center h-full',
+  footer: 'hidden'
+}
+
+// --- Top Tags Table Configuration ---
+const topTagsColumns = [
+  { key: 'tag', label: 'Tags', basis: 'basis-1/2', grow: true, align: 'left' },
+  { key: 'views', label: '# of views', basis: 'basis-1/2', grow: true, align: 'right' }
+]
+
+const topTagsRows = [
+  { id: 1, rank: 1, name: 'Big Foot', views: '2,345' },
+  { id: 2, rank: 2, name: 'Big hands', views: '2,345' },
+  { id: 3, rank: 3, name: 'Big smile', views: '2,345' },
+  { id: 4, rank: 4, name: 'Big appetite', views: '2,345' },
+  { id: 5, rank: 5, name: 'Big dreams', views: '2,345' },
+  { id: 6, rank: 6, name: 'Big dreams', views: '2,345' },
+  { id: 7, rank: 7, name: 'Big dreams', views: '2,345' },
+  { id: 8, rank: 8, name: 'Big dreams', views: '2,345' },
+  { id: 9, rank: 9, name: 'Big dreams', views: '2,345' },
+  { id: 10, rank: 10, name: 'Big dreams', views: '2,345' }
+]
+
+const topTagsTheme = {
+  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  header: 'bg-transparent text-gray-500',
+  headerRow: 'flex items-center border-b border-gray-500',
+  headerCell: 'px-2.5 py-2.5 text-sm font-normal',
+  row: 'flex items-center min-h-[3rem] odd:bg-transparent even:bg-gray-100/50  hover:bg-gray-50 transition-colors',
+  cell: 'px-2.5 py-2 flex items-center h-full',
+  footer: 'hidden'
+}
+
+// --- Top Merch Table Configuration ---
+const topMerchColumns = [
+  { key: 'merch', label: 'Merch', basis: 'basis-1/2', grow: true, align: 'left' },
+  { key: 'views', label: '# of views', basis: 'basis-1/4', grow: true, align: 'right' },
+  { key: 'sales', label: 'Sales (USD)', basis: 'basis-1/4', grow: true, align: 'right' }
+]
+
+const topMerchRows = [
+  { id: 1, rank: 1, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
+  { id: 2, rank: 2, title: 'Socks (White, Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
+  { id: 3, rank: 3, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
+  { id: 4, rank: 4, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
+  { id: 5, rank: 5, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' }
+]
+
+const topMerchTheme = {
+  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  header: 'bg-transparent text-gray-500',
+  headerRow: 'flex items-center border-b border-gray-500 w-full',
+  headerCell: 'px-2.5 py-2.5 text-sm font-normal',
+  row: 'flex items-center min-h-[6rem] odd:bg-transparent even:bg-gray-100/50 hover:bg-gray-50 transition-colors w-full',
+  cell: 'px-2.5 py-2 flex items-center h-full',
+  footer: 'hidden'
+}
+
+// --- Top Countries Table Configuration ---
+const topCountriesColumns = [
+  { key: 'tags', label: 'Tags', basis: 'basis-1/2', grow: true, align: 'left' },
+  { key: 'sales', label: 'Sales (USD)', basis: 'basis-1/2', grow: true, align: 'right' }
+]
+
+const topCountriesRows = [
+  { id: 1, rank: 1, country: 'Hong Kong', sales: 'USD$ 512,345.99' },
+  { id: 2, rank: 2, country: 'United States of America', sales: 'USD$ 412,345.99' },
+  { id: 3, rank: 3, country: 'Singapore', sales: 'USD$ 312,345.99' },
+  { id: 4, rank: 4, country: 'Australia', sales: 'USD$ 212,345.99' },
+  { id: 5, rank: 5, country: 'Taiwan', sales: 'USD$ 112,345.99' },
+  { id: 6, rank: 6, country: 'Hong Kong', sales: 'USD$ 92,345.99' },
+  { id: 7, rank: 7, country: 'United States of America', sales: 'USD$ 72,345.99' },
+  { id: 8, rank: 8, country: 'Singapore', sales: 'USD$ 52,345.99' },
+  { id: 9, rank: 9, country: 'Australia', sales: 'USD$ 42,345.99' },
+  { id: 10, rank: 10, country: 'Taiwan', sales: 'USD$ 12,345.99' }
+]
+
+const topCountriesTheme = {
+  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  header: 'bg-transparent text-gray-500',
+  headerRow: 'flex items-center border-b border-gray-500 w-full',
+  headerCell: 'px-3 py-2.5 text-sm font-normal',
+  row: 'flex items-center min-h-[3rem] odd:bg-transparent even:bg-gray-100/50 hover:bg-gray-50 transition-colors w-full',
+  cell: 'px-3 py-2 flex items-center h-full',
+  footer: 'hidden'
 }
 
 async function handleRefresh() {
