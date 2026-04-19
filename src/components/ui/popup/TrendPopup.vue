@@ -7,9 +7,10 @@ const props = defineProps({
   modelValue: Boolean,
   title: String,
   logo: String,
+  period: String,
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'update:period'])
 
 const config = {
   actionType: 'popup',
@@ -17,14 +18,13 @@ const config = {
   closeOnOutside: true,
   escToClose: true,
   width: {
-    default: '85%',
-    '<640': '95vw',
+    default: '90%',
+    '<640': '100%',
     // '640-1024': '500px',
   },
   height: {
-    default: '500px',
-    '<640': '95vh',
-    '640-1024': '500px',
+    default: '90%',
+    '<640': '100%'
   },
   speed: '200ms',
   effect: 'ease',
@@ -40,7 +40,10 @@ const options = ref([
   { label: 'All Time', value: 'all-time' },
 ])
 
-const selected = ref('yearly') // default local value
+const selected = computed({
+  get: () => props.period || 'yearly',
+  set: (val) => emit('update:period', val)
+})
 const isOpen = ref(false)
 const dropdownDirection = ref('downward')
 const optionsRef = ref(null)

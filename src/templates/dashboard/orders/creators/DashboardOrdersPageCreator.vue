@@ -77,20 +77,20 @@
                         <span>
                           <span
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary">{{
-                              store.subscribers?.new ?? '--' }}</span>
+                              store.subscribers?.daily?.new ?? '--' }}</span>
                         </span>
 
                         <!-- right part only show when data are here -->
                         <div v-if="
-                          store.subscribers?.newPercentage !== undefined &&
-                          store.subscribers?.newPercentage !== null
+                          store.subscribers?.daily?.newPercentage !== undefined &&
+                          store.subscribers?.daily?.newPercentage !== null
                         " class="flex flex-col items-center gap-1">
                           <span class="flex gap-1">
                             <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
                               class="h-5 w-5" />
                             <span
                               class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
-                                store.subscribers?.newPercentage }}%</span>
+                                store.subscribers?.daily?.newPercentage }}%</span>
                           </span>
                           <span
                             class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
@@ -115,19 +115,19 @@
                         <span>
                           <span
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary">{{
-                              store.subscribers?.recurring }}</span>
+                              store.subscribers?.daily?.recurring ?? '--' }}</span>
                         </span>
                         <!-- right part only show when data are here -->
                         <div v-if="
-                          store.subscribers?.recurringPercentage !== undefined &&
-                          store.subscribers?.recurringPercentage !== null
+                          store.subscribers?.daily?.recurringPercentage !== undefined &&
+                          store.subscribers?.daily?.recurringPercentage !== null
                         " class="flex flex-col items-center gap-1">
                           <span class="flex gap-1">
                             <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
                               class="h-5 w-5" />
                             <span
                               class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
-                                store.subscribers?.recurringPercentage }}%</span>
+                                store.subscribers?.daily?.recurringPercentage }}%</span>
                           </span>
                           <span
                             class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
@@ -177,17 +177,17 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">
-                          {{ store.fans?.newFollowers }}</span>
+                          {{ store.fans?.daily?.newFollowers ?? '--' }}</span>
                         <div v-if="
-                          store.fans?.newFollowersPercentage !== undefined &&
-                          store.fans?.newFollowersPercentage !== null
+                          store.fans?.daily?.newFollowersPercentage !== undefined &&
+                          store.fans?.daily?.newFollowersPercentage !== null
                         " class="flex flex-col items-center gap-1">
                           <span class="flex gap-1">
                             <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
                               class="h-5 w-5" />
                             <span
                               class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
-                                store.fans?.newFollowersPercentage }}%</span>
+                                store.fans?.daily?.newFollowersPercentage }}%</span>
                           </span>
                           <span
                             class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
@@ -204,17 +204,17 @@
                       <div class="flex items-end justify-between w-full gap-1">
                         <span
                           class="text-[1.875rem] font-semibold font-sans leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">
-                          {{ store.fans?.profileVisit ?? '--' }}</span>
+                          {{ store.fans?.daily?.profileVisit ?? '--' }}</span>
                         <div v-if="
-                          store.fans?.profileVisitPercentage !== undefined &&
-                          store.fans?.profileVisitPercentage !== null
+                          store.fans?.daily?.profileVisitPercentage !== undefined &&
+                          store.fans?.daily?.profileVisitPercentage !== null
                         " class="flex flex-col items-center gap-1">
                           <span class="flex gap-1">
                             <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
                               class="h-5 w-5" />
                             <span
                               class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
-                                store.fans?.profileVisitPercentage }}%</span>
+                                store.fans?.daily?.profileVisitPercentage }}%</span>
                           </span>
                           <span
                             class="-ml-4 text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
@@ -471,7 +471,7 @@
                   <template #cell.total="{ row }">
                     <div class="px-4 w-full text-right">
                       <span class="text-gray-900 text-xs font-semibold leading-4 whitespace-nowrap">{{ row.total
-                        }}</span>
+                      }}</span>
                     </div>
                   </template>
                   <template #empty>
@@ -549,24 +549,35 @@
               <template #cell.order="{ row }">
                 <!-- Desktop View (Visible on md and up) -->
                 <div class="hidden md:flex items-center gap-4 h-full w-full pr-4">
-                  <div v-if="selectedTab === 'Merch' || selectedTab === 'Custom Request'" :class="['w-[4rem] h-full flex-shrink-0 grid place-items-center', row.bg]">
-                    <img :src="row.bg === 'bg-black' ? '/images/merch.png' : '/images/cartIcon.png'" class="w-8 h-8 object-contain" />
+                  <div v-if="selectedTab === 'Merch' || selectedTab === 'Custom Request'"
+                    :class="['w-[4rem] h-full flex-shrink-0 grid place-items-center', row.bg]">
+                    <img :src="row.bg === 'bg-black' ? '/images/merch.png' : '/images/cartIcon.png'"
+                      class="w-8 h-8 object-contain" />
                   </div>
                   <div v-else class="relative w-[3.5rem] sm:w-[4rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
                     <img src="/images/profile-thumbnail.png" class="w-full h-full object-cover" />
                   </div>
                   <div class="flex flex-col justify-center items-start gap-0.5 overflow-hidden">
-                    <div v-if="row.tier" class="self-stretch text-gray-900 text-sm font-semibold leading-tight line-clamp-1">{{ row.tier }}</div>
-                    <div v-else-if="row.title" class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">{{ row.title }}</div>
-                    <div v-else-if="row.type" class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">{{ row.type }}</div>
-                    <div class="self-stretch text-slate-500 text-xs font-normal leading-4 line-clamp-1">{{ row.orderId }}</div>
+                    <div v-if="row.tier"
+                      class="self-stretch text-gray-900 text-sm font-semibold leading-tight line-clamp-1">{{ row.tier }}
+                    </div>
+                    <div v-else-if="row.title"
+                      class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">
+                      {{ row.title }}</div>
+                    <div v-else-if="row.type"
+                      class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">
+                      {{ row.type }}</div>
+                    <div class="self-stretch text-slate-500 text-xs font-normal leading-4 line-clamp-1">{{ row.orderId
+                      }}</div>
                   </div>
                 </div>
 
                 <!-- Mobile View (Visible below md) -->
                 <div class="flex md:hidden items-center gap-3 h-full w-full py-2">
-                  <div v-if="selectedTab === 'Merch' || selectedTab === 'Custom Request'" :class="['h-full w-16 shrink-0 grid place-items-center', row.bg]">
-                    <img :src="row.bg === 'bg-black' ? '/images/merch.png' : '/images/cartIcon.png'" class="w-10 h-10 object-contain" />
+                  <div v-if="selectedTab === 'Merch' || selectedTab === 'Custom Request'"
+                    :class="['h-full w-16 shrink-0 grid place-items-center', row.bg]">
+                    <img :src="row.bg === 'bg-black' ? '/images/merch.png' : '/images/cartIcon.png'"
+                      class="w-10 h-10 object-contain" />
                   </div>
                   <div v-else class="h-16 w-16 shrink-0 rounded overflow-hidden">
                     <img src="/images/profile-thumbnail.png" class="w-full h-full object-cover" />
@@ -601,7 +612,8 @@
                     <img src="/images/mangoes.png" class="w-4 h-4 object-cover" />
                   </div>
                   <div class="h-6 px-1.5 py-[3px] bg-black backdrop-blur-[10px] flex justify-center items-center gap-2">
-                    <div class="justify-start text-yellow-400 text-xs font-medium font-['Poppins'] leading-4">{{ row.status }}</div>
+                    <div class="justify-start text-yellow-400 text-xs font-medium font-['Poppins'] leading-4">{{
+                      row.status }}</div>
                   </div>
                 </div>
               </template>
@@ -766,8 +778,10 @@
                 </div>
 
                 <!-- tabs-content -->
-                <div v-if="(selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows).length > 0" class="w-full flex-1 pt-4">
-                  <FlexTable :columns="selectedTopMediaTab === 'Views' ? topMediaColumns : p2vSalesColumns" :rows="selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows" :theme="topMediaTheme">
+                <div v-if="(selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows).length > 0"
+                  class="w-full flex-1 pt-4">
+                  <FlexTable :columns="selectedTopMediaTab === 'Views' ? topMediaColumns : p2vSalesColumns"
+                    :rows="selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows" :theme="topMediaTheme">
                     <template #cell.media="{ row }">
                       <div class="flex items-center gap-3 h-full">
                         <div class="relative w-[3.5rem] sm:w-[5rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
@@ -793,12 +807,14 @@
                       </div>
                     </template>
                     <template #cell.sales_count="{ row }">
-                      <div class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                      <div
+                        class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
                         {{ row.sales_count }}
                       </div>
                     </template>
                     <template #cell.sales_usd="{ row }">
-                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                      <div
+                        class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
                         {{ row.sales_usd }}
                       </div>
                     </template>
@@ -832,7 +848,8 @@
                         <div class="w-5 h-5 bg-black flex justify-center items-center shrink-0">
                           <span class="text-white text-sm font-bold font-['Poppins']">{{ row.rank }}</span>
                         </div>
-                        <div class="px-1.5 py-0.5 bg-gray-200 rounded-md border border-gray-200 flex justify-start items-center">
+                        <div
+                          class="px-1.5 py-0.5 bg-gray-200 rounded-md border border-gray-200 flex justify-start items-center">
                           <span class="text-slate-700 text-xs font-medium font-['Poppins']">{{ row.name }}</span>
                         </div>
                       </div>
@@ -847,8 +864,8 @@
                   </FlexTable>
                 </div>
                 <!-- empty-state -->
-                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
-                  message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                  alt="list" message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
 
@@ -876,10 +893,12 @@
                         <div class="relative w-[3.5rem] sm:w-[4rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
                           <img :src="row.image" alt="merch" class="w-full h-full object-cover">
                           <div class="w-5 h-5 left-0 top-0 absolute bg-black flex justify-center items-center">
-                            <span class="text-white text-sm font-bold font-['Poppins'] leading-none">{{ row.rank }}</span>
+                            <span class="text-white text-sm font-bold font-['Poppins'] leading-none">{{ row.rank
+                              }}</span>
                           </div>
                         </div>
-                        <div class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3 w-[200px] text-wrap text-left whitespace-normal break-words sm:px-1">
+                        <div
+                          class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3 w-[200px] text-wrap text-left whitespace-normal break-words sm:px-1">
                           {{ row.title }}
                         </div>
                       </div>
@@ -887,22 +906,24 @@
 
                     <!-- views column -->
                     <template #cell.views="{ row }">
-                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                      <div
+                        class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
                         {{ row.views }}
                       </div>
                     </template>
 
                     <!-- sales column -->
                     <template #cell.sales="{ row }">
-                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                      <div
+                        class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
                         {{ row.sales }}
                       </div>
                     </template>
                   </FlexTable>
                 </div>
                 <!-- empty-state -->
-                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
-                  message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                  alt="list" message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
 
@@ -938,15 +959,16 @@
 
                     <!-- sales column -->
                     <template #cell.sales="{ row }">
-                      <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
+                      <div
+                        class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
                         {{ row.sales }}
                       </div>
                     </template>
                   </FlexTable>
                 </div>
                 <!-- empty-state -->
-                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="list"
-                  message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
+                <DashboardTrendContent v-else image="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+                  alt="list" message="No trend to show at the moment" link="#" linkText="Learn ways to earn" />
               </DashboardTrendCard>
             </div>
           </div>
@@ -957,62 +979,123 @@
     </DashboardOrdersPageContentCreator>
 
     <!-- Subscribers popup -->
-    <TrendPopup v-model="isSubscribersOpen" title="Subscriptions Insight"
+    <TrendPopup v-model="isSubscribersOpen" v-model:period="subscribersPeriod" title="Subscriptions Insight"
       logo="https://i.ibb.co.com/MyhfGRNH/svgviewer-png-output-12.webp">
-      <!-- row -->
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <!-- left-column -->
-        <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem]">
-          <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">
-            Subscriptions Insight
-          </h3>
+      <div class="flex flex-col gap-4">
+        <!-- row -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <!-- left-column -->
+          <div
+            class="flex w-full flex-col gap-4 rounded-[0.125rem] border-r border-light-border-primary bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:border-dark-border-primary dark:bg-dark-bg-container">
+            <h3 class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold">
+              New Subscribers
+            </h3>
 
-          <div class="flex flex-col justify-center items-center gap-6 h-full">
-            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
-              <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32" />
+            <div class="flex flex-col justify-center items-center gap-4">
+              <span
+                class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
+                {{ currentSubscribersInsightData.new ? currentSubscribersInsightData.new.toLocaleString() : '--' }}
+              </span>
+
+              <div class="inline-flex items-center gap-2">
+                <div class="w-14 flex justify-center items-center gap-1">
+                  <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                    class="h-5 w-5" />
+                  <div
+                    class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">
+                    20%
+                  </div>
+                </div>
+                <div class=" text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(subscribersPeriod) }}
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div class="flex flex-col items-center text-center gap-2">
-              <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to show
-                at
-                the moment</span>
-              <a href="#" class="text-base leading-6">
-                <span
-                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline">Learn
-                  ways to earn</span>
-              </a>
+          <div
+            class="flex w-full flex-col gap-4 rounded-[0.125rem] bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:bg-dark-bg-container">
+            <h3 class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold">
+              Recurring Subscribers
+            </h3>
+
+            <div class="flex flex-col justify-center items-center gap-4">
+              <span
+                class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
+                {{ currentSubscribersInsightData.recurring ? currentSubscribersInsightData.recurring.toLocaleString() : '--' }}
+              </span>
+
+              <div class="inline-flex items-center gap-2">
+                <div class="w-14 flex justify-center items-center gap-1">
+                  <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                    class="h-5 w-5" />
+                  <div
+                    class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">
+                    20%
+                  </div>
+                </div>
+                <div class=" text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(subscribersPeriod) }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- right-column -->
-        <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem]">
-          <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">
-            Tiers Breakdown
-          </h3>
+        <!-- row -->
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- left-column -->
+          <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container">
+            <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">
+              Subscriptions Insight
+            </h3>
 
-          <div class="flex flex-col justify-center items-center gap-6 h-full">
-            <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
-              <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32" />
+            <div class="flex flex-col justify-center items-center gap-6 h-full">
+              <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+                <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32" />
+              </div>
+
+              <div class="flex flex-col items-center text-center gap-2">
+                <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to show
+                  at
+                  the moment</span>
+                <a href="#" class="text-base leading-6">
+                  <span
+                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline">Learn
+                    ways to earn</span>
+                </a>
+              </div>
             </div>
+          </div>
 
-            <div class="flex flex-col items-center text-center gap-2">
-              <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to show
-                at
-                the moment</span>
-              <a href="#" class="text-base leading-6">
-                <span
-                  class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline">Learn
-                  ways to earn</span>
-              </a>
+          <!-- right-column -->
+          <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container">
+            <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">
+              Tiers Breakdown
+            </h3>
+
+            <div class="flex flex-col justify-center items-center gap-6 h-full">
+              <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
+                <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32" />
+              </div>
+
+              <div class="flex flex-col items-center text-center gap-2">
+                <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to show
+                  at
+                  the moment</span>
+                <a href="#" class="text-base leading-6">
+                  <span
+                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline">Learn
+                    ways to earn</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </TrendPopup>
 
+
     <!-- Earnings popup -->
-    <TrendPopup v-model="isEarningsOpen" title="Earnings Insight" logo="https://i.ibb.co.com/rGSXLKX4/money.webp">
+    <TrendPopup v-model="isEarningsOpen" v-model:period="earningsPeriod" title="Earnings Insight" logo="https://i.ibb.co.com/rGSXLKX4/money.webp">
       <div class="flex flex-col gap-4">
 
         <!-- row -->
@@ -1024,13 +1107,26 @@
             </h3>
 
             <div class="flex flex-col justify-center items-center gap-4">
-              <span
-                class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">--</span>
+              <template v-if="currentEarningsInsightData?.total">
+                <div >
+                  <span class="text-gray-900 text-4xl font-semibold font-['Poppins'] leading-10">{{ currentEarningsInsightData.total.toLocaleString() }} </span>
+                  <span class="text-gray-900 text-xl font-bold font-['Poppins'] leading-8">USD</span>
+                </div>
+              </template>
+              <span v-else
+                class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">--</span>
 
-              <div class="flex flex-col gap-2 justify-center items-center">
-                <span class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary">--</span>
-                <span class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary">vs
-                  yesterday</span>
+              <div class="inline-flex  items-center gap-2">
+                <div class="w-14 flex justify-center items-center gap-1">
+                  <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                    class="h-5 w-5" />
+                  <div
+                    class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">
+                    20%
+                  </div>
+                </div>
+                <div class=" text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(earningsPeriod) }}
+                </div>
               </div>
             </div>
           </div>
@@ -1038,17 +1134,29 @@
           <div
             class="flex w-full flex-col gap-4 rounded-[0.125rem] bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:bg-dark-bg-container">
             <h3 class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold">
-              Total Earnings
+              Tokens Received
             </h3>
 
             <div class="flex flex-col justify-center items-center gap-4">
-              <span
-                class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">--</span>
+              <template v-if="currentEarningsInsightData?.totalTokens">
+                <div class="text-gray-900 text-4xl font-semibold font-['Poppins'] leading-10">
+                  {{ currentEarningsInsightData.totalTokens.toLocaleString() }}
+                </div>
+              </template>
+              <span v-else
+                class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">--</span>
 
-              <div class="flex flex-col gap-2 justify-center items-center">
-                <span class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary">--</span>
-                <span class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary">vs
-                  yesterday</span>
+              <div class="inline-flex  items-center gap-2">
+                <div class="w-14 flex justify-center items-center gap-1">
+                  <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                    class="h-5 w-5" />
+                  <div
+                    class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">
+                    20%
+                  </div>
+                </div>
+                <div class=" text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(earningsPeriod) }}
+                </div>
               </div>
             </div>
           </div>
@@ -1073,7 +1181,8 @@
                 <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to
                   show
                   at the moment</span>
-                <a href="#" class="text-base leading-6">
+                <a href="#" class="text-base l
+                eading-6">
                   <span
                     class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline">Learn
                     ways to earn</span>
@@ -1116,8 +1225,49 @@
             Top Countries
           </h3>
 
-          <!-- data-content -->
-          <div class="flex flex-col items-start flex-grow flex-shrink [flex-basis: auto] w-full -ml-4 min-w-0 min-h-0">
+          <div v-if="currentEarningsInsightData?.topCountries?.length > 0" class="flex flex-col md:flex-row gap-8 w-full mt-2">
+            <!-- Left: Table Section -->
+            <div class="flex-1 min-w-0">
+               <FlexTable 
+                  :columns="earningsTopCountriesColumns" 
+                  :rows="currentEarningsInsightData.topCountries" 
+                  :theme="earningsTopCountriesTheme"
+               >
+                  <!-- Custom slot for Rank + Country -->
+                  <template #cell.media="{ row }">
+                    <div class="flex items-center gap-3 w-full px-3">
+                      <div class="w-8 flex justify-start items-center shrink-0">
+                        <span class="text-gray-900 text-xs font-semibold">{{ row.rank }}</span>
+                      </div>
+                      <span class="flex-1 text-gray-900 text-sm font-normal truncate">{{ row.country }}</span>
+                    </div>
+                  </template>
+
+                  <!-- Custom slot for Sales -->
+                  <template #cell.sales="{ value }">
+                    <div class="flex justify-end items-center px-3 w-full">
+                      <span class="text-gray-900 text-sm font-medium">{{ value }}</span>
+                    </div>
+                  </template>
+               </FlexTable>
+            </div>
+
+            <!-- Right: Chart Placeholder -->
+            <div class="flex-1 min-w-0 flex flex-col items-center justify-center  p-6 min-h-[300px]">
+               <div class="flex flex-col items-center gap-4 text-center">
+                  <div class="w-40 h-40 flex justify-center items-center backdrop-blur-[50px] bg-white/20 rounded-full">
+                    <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32 opacity-40" />
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span class="text-gray-500 font-medium">Chart Visualization</span>
+                    <span class="text-xs text-gray-400">Detailed breakdown will appear here</span>
+                  </div>
+               </div>
+            </div>
+          </div>
+
+          <!-- data-content (Empty State) -->
+          <div v-else class="flex flex-col items-start flex-grow flex-shrink [flex-basis: auto] w-full -ml-4 min-w-0 min-h-0">
             <!-- data-content -->
             <div
               class="flex flex-col items-start justify-center flex-grow flex-shrink [flex-basis: auto] w-full gap-4 min-w-0 min-h-0">
@@ -1148,7 +1298,7 @@
     </TrendPopup>
 
     <!-- fans popup -->
-    <TrendPopup v-model="isFansOpen" title="Fans Insight" logo="https://i.ibb.co.com/rGSXLKX4/money.webp">
+    <TrendPopup v-model="isFansOpen" v-model:period="fansPeriod" title="Fans Insight" logo="https://i.ibb.co.com/rGSXLKX4/money.webp">
       <div class="flex flex-col gap-4">
         <!-- row -->
         <div class="grid grid-cols-2">
@@ -1158,23 +1308,25 @@
               New Followers
             </h3>
 
-            <!-- <div class="flex flex-col justify-center items-center gap-4">
-            <span
-              class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]"
-              >--</span
-            >
+            <div class="flex flex-col justify-center items-center gap-4">
+              <span
+                class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
+                {{ currentFansInsightData.newFollowers ? currentFansInsightData.newFollowers.toLocaleString() : '--' }}
+              </span>
 
-            <div class="flex flex-col gap-2 justify-center items-center">
-              <span
-                class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary"
-                >--</span
-              >
-              <span
-                class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary"
-                >vs yesterday</span
-              >
+              <div class="inline-flex items-center gap-2">
+                <div class="w-14 flex justify-center items-center gap-1">
+                  <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                    class="h-5 w-5" />
+                  <div
+                    class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">
+                    20%
+                  </div>
+                </div>
+                <div class=" text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(fansPeriod) }}
+                </div>
+              </div>
             </div>
-          </div> -->
           </div>
 
           <div
@@ -1185,25 +1337,29 @@
 
             <div class="flex flex-col justify-center items-center gap-4">
               <span
-                class="text-light-text-primary dark:text-dark-text-primary tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">--</span>
+                class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
+                {{ currentFansInsightData.profileVisit ? currentFansInsightData.profileVisit.toLocaleString() : '--' }}
+              </span>
 
-              <!-- <div class="flex flex-col gap-2 justify-center items-center">
-              <span
-                class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary"
-                >--</span
-              >
-              <span
-                class="text-xs leading-normal text-light-text-secondary dark:text-dark-text-secondary"
-                >vs yesterday</span
-              >
-            </div> -->
+              <div class="inline-flex items-center gap-2">
+                <div class="w-14 flex justify-center items-center gap-1">
+                  <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                    class="h-5 w-5" />
+                  <div
+                    class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">
+                    20%
+                  </div>
+                </div>
+                <div class=" text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(fansPeriod) }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- row -->
         <div class="flex flex-col md:flex-row gap-4">
-          <!-- left-column -->
+          <!-- left-column: Chart Placeholder -->
           <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container">
             <div class="flex justify-between items-center gap-2">
               <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
@@ -1211,38 +1367,57 @@
               </h3>
             </div>
 
-            <div class="flex flex-col justify-center items-center gap-6 h-full">
-              <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
-                <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32" />
+            <div class="flex flex-col justify-center items-center gap-6 h-full text-center">
+              <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40 bg-white/20 rounded-full">
+                <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32 opacity-40" />
               </div>
 
-              <div class="flex flex-col items-center gap-2">
-                <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to
-                  show
-                  at the moment</span>
-                <a href="#" class="text-base leading-6">
-                  <span
-                    class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary underline">Learn
-                    ways to earn</span>
-                </a>
+              <div class="flex flex-col gap-1">
+                <span class="text-gray-500 font-medium">Chart Visualization</span>
+                <span class="text-xs text-gray-400">Detailed source breakdown will appear here</span>
               </div>
             </div>
           </div>
 
-          <!-- right-column -->
-          <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container">
+          <!-- right-column: Top Countries Table -->
+          <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container overflow-hidden">
             <div class="flex justify-between items-center gap-2">
               <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">
                 Top Countries
               </h3>
             </div>
 
-            <div class="flex flex-col justify-center items-center gap-6 h-full">
+            <div v-if="currentFansInsightData?.topCountries?.length > 0" class="w-full h-full overflow-hidden">
+               <FlexTable 
+                  :columns="fansTopCountriesColumns" 
+                  :rows="currentFansInsightData.topCountries" 
+                  :theme="earningsTopCountriesTheme"
+               >
+                  <!-- Custom slot for Rank + Country -->
+                  <template #cell.media="{ row }">
+                    <div class="flex items-center gap-3 w-full px-3">
+                      <div class="w-8 h-8 rounded-sm bg-black flex justify-center items-center shrink-0">
+                        <span class="text-white text-xs font-semibold">{{ row.rank }}</span>
+                      </div>
+                      <span class="flex-1 text-gray-900 text-sm font-normal truncate">{{ row.country }}</span>
+                    </div>
+                  </template>
+
+                  <!-- Custom slot for Profile Visits -->
+                  <template #cell.visits="{ value }">
+                    <div class="flex justify-end items-center px-3 w-full">
+                      <span class="text-gray-900 text-sm font-medium">{{ value }}</span>
+                    </div>
+                  </template>
+               </FlexTable>
+            </div>
+
+            <div v-else class="flex flex-col justify-center items-center gap-6 h-full">
               <div class="flex justify-center items-center backdrop-blur-[50px] w-40 h-40">
                 <img src="https://i.ibb.co.com/Kzh3f1Rr/pie-chart.png" alt="pie-chart" class="w-32 h-32" />
               </div>
 
-              <div class="flex flex-col items-center gap-2">
+              <div class="flex flex-col items-center gap-2 text-center">
                 <span class="text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">No trend to
                   show
                   at the moment</span>
@@ -1255,12 +1430,8 @@
             </div>
           </div>
         </div>
-
-
       </div>
-
     </TrendPopup>
-
 
     <!-- contributors popup -->
     <TrendPopup v-model="isContributorsOpen" title="Contributors Insight"
@@ -1387,6 +1558,10 @@ import { ref, computed, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import TrendPopup from '@/components/ui/popup/TrendPopup.vue'
 import FlexTable from '@/components/ui/FlexTable.vue'
+
+const store = useDashboardAnalytics()
+const { lastUpdated } = storeToRefs(store)
+
 // --- Contributors Table Data ---
 const contributorsColumns = [
   { key: 'fan', label: 'Fan', grow: true, align: 'left' },
@@ -1402,7 +1577,7 @@ const contributorsRows = [
 ]
 
 const contributorsTheme = {
-  container: 'relative bg-transparent border-none w-full min-w-72 font-["Poppins"]',
+  container: 'relative bg-transparent border-none w-full min-w-72 ',
   header: 'bg-transparent text-gray-500',
   headerRow: 'flex items-center',
   headerCell: 'px-4 py-2.5 text-sm font-normal border-b border-gray-500',
@@ -1489,7 +1664,7 @@ const currentColumns = computed(() => {
 })
 
 const ordersTheme = {
-  container: 'relative bg-transparent border-none w-full overflow-x-auto font-["Poppins"]',
+  container: 'relative bg-transparent border-none w-full overflow-x-auto ',
   header: 'text-[#667085]',
   headerRow: 'flex items-center h-12',
   headerCell: 'px-4 text-[13px] font-normal tracking-tight',
@@ -1498,6 +1673,28 @@ const ordersTheme = {
   footer: 'hidden'
 }
 
+// --- Earnings Top Countries Table ---
+const earningsTopCountriesColumns = [
+  { key: 'media', label: 'Media', grow: true, align: 'left' },
+  { key: 'sales', label: 'Sales (USD)', basis: 'basis-32', align: 'right' }
+]
+
+const earningsTopCountriesTheme = {
+  container: 'relative bg-transparent border-none w-full ',
+  header: 'bg-transparent text-slate-600',
+  headerRow: 'flex items-center',
+  headerCell: 'px-3 py-3 text-xs font-medium border-b border-gray-500',
+  row: 'flex items-center h-10 odd:bg-transparent even:bg-gray-100/80 transition-colors',
+  cell: 'flex items-center h-10',
+  footer: 'hidden'
+}
+
+// --- Fans Top Countries Table ---
+const fansTopCountriesColumns = [
+  { key: 'media', label: 'Countries', grow: true, align: 'left' },
+  { key: 'visits', label: 'Profile Visits', basis: 'basis-32', align: 'right' }
+]
+
 const orderTabs = ['Subscriptions', 'Pay to View', 'Merch', 'Custom Request', 'Wishtender']
 const selectedTab = ref('Subscriptions')
 const isDropdownOpen = ref(false)
@@ -1505,6 +1702,46 @@ const isDropdownOpen = ref(false)
 const trendsTabs = ['Yearly', 'Monthly', 'Weekly', 'Daily']
 const selectedTrendTab = ref('Daily')
 const isTrendDropdownOpen = ref(false)
+
+const subscribersPeriod = ref('yearly')
+const earningsPeriod = ref('yearly')
+const fansPeriod = ref('yearly')
+
+function getVsLabel(period) {
+  switch (period.toLowerCase()) {
+    case 'daily': return 'vs last 24 hour'
+    case 'weekly': return 'vs last week'
+    case 'monthly': return 'vs last 30 days'
+    case 'yearly': return 'vs last year'
+    default: return 'vs yesterday'
+  }
+}
+
+const currentEarningsInsightData = computed(() => {
+  const tab = earningsPeriod.value.toLowerCase()
+  return store.earnings[tab]?.[0] || null
+})
+
+const currentSubscribersInsightData = computed(() => {
+  const p = subscribersPeriod.value.toLowerCase()
+  return store.subscribers[p] || { new: null, recurring: null }
+})
+
+const currentFansInsightData = computed(() => {
+  const p = fansPeriod.value.toLowerCase()
+  return store.fans[p] || { newFollowers: null, profileVisit: null }
+})
+
+const trendComparisonLabel = computed(() => {
+  switch (selectedTrendTab.value) {
+    case 'Daily': return 'vs last 24 hour'
+    case 'Weekly': return 'vs last week'
+    case 'Monthly': return 'vs last 30 days'
+    case 'Yearly': return 'vs last year'
+    default: return 'vs yesterday'
+  }
+})
+
 
 // --- Subscribers popup state/config ---
 const isSubscribersOpen = ref(false)
@@ -1527,8 +1764,7 @@ function openContributors() {
   isContributorsOpen.value = true
 }
 
-const store = useDashboardAnalytics()
-const { lastUpdated } = storeToRefs(store)
+// --- Popups State ---
 
 function formatTime(dateString) {
   if (!dateString) return 'Never'
@@ -1570,7 +1806,7 @@ const p2vSalesRows = [
 ]
 
 const topMediaTheme = {
-  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  container: 'relative bg-transparent border-none w-full ',
   header: 'bg-transparent text-gray-500',
   headerRow: 'flex items-center border-b border-gray-500',
   headerCell: 'px-2.5 py-2.5 text-sm font-normal',
@@ -1599,7 +1835,7 @@ const topTagsRows = [
 ]
 
 const topTagsTheme = {
-  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  container: 'relative bg-transparent border-none w-full ',
   header: 'bg-transparent text-gray-500',
   headerRow: 'flex items-center border-b border-gray-500',
   headerCell: 'px-2.5 py-2.5 text-sm font-normal',
@@ -1624,7 +1860,7 @@ const topMerchRows = [
 ]
 
 const topMerchTheme = {
-  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  container: 'relative bg-transparent border-none w-full ',
   header: 'bg-transparent text-gray-500',
   headerRow: 'flex items-center border-b border-gray-500 w-full',
   headerCell: 'px-2.5 py-2.5 text-sm font-normal',
@@ -1653,7 +1889,7 @@ const topCountriesRows = [
 ]
 
 const topCountriesTheme = {
-  container: 'relative bg-transparent border-none w-full font-["Poppins"]',
+  container: 'relative bg-transparent border-none w-full ',
   header: 'bg-transparent text-gray-500',
   headerRow: 'flex items-center border-b border-gray-500 w-full',
   headerCell: 'px-3 py-2.5 text-sm font-normal',

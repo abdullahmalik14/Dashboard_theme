@@ -5,15 +5,22 @@ import { fetchMockAnalytics } from '../api/analytics'
 export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
   state: () => ({
     subscribers: {
-      new: null,
-      recurring: null,
+      daily: { new: null, recurring: null },
+      weekly: { new: null, recurring: null },
+      monthly: { new: null, recurring: null },
+      yearly: { new: null, recurring: null },
     },
     fans: {
-      newFollowers: null,
-      profileVisit: null,
+      daily: { newFollowers: null, profileVisit: null },
+      weekly: { newFollowers: null, profileVisit: null },
+      monthly: { newFollowers: null, profileVisit: null },
+      yearly: { newFollowers: null, profileVisit: null },
     },
     earnings: {
       daily: [],
+      weekly: [],
+      monthly: [],
+      yearly: [],
     },
     likes: {
       media: null,
@@ -53,9 +60,19 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
     },
 
     resetAnalytics() {
-      this.subscribers = { new: null, recurring: null }
-      this.fans = { newFollowers: null, profileVisit: null }
-      this.earnings = { daily: [] }
+      this.subscribers = {
+        daily: { new: null, recurring: null },
+        weekly: { new: null, recurring: null },
+        monthly: { new: null, recurring: null },
+        yearly: { new: null, recurring: null },
+      }
+      this.fans = {
+        daily: { newFollowers: null, profileVisit: null },
+        weekly: { newFollowers: null, profileVisit: null },
+        monthly: { newFollowers: null, profileVisit: null },
+        yearly: { newFollowers: null, profileVisit: null },
+      }
+      this.earnings = { daily: [], weekly: [], monthly: [], yearly: [] }
       this.likes = { media: null, merch: null, profile: null, feed: null }
       this.lastUpdated = null
     },
