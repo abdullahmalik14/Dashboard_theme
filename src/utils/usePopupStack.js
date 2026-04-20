@@ -21,9 +21,10 @@ function ensureOverlay() {
     visibility: 'hidden',
     zIndex: '1999', // will be overridden dynamically
     width: '100vw',
-height: '100vh',
-backdropFilter: 'blur(7.5px)',
-backgroundColor: 'rgba(0, 0, 0, 0.05)'
+    height: '100vh',
+    backdropFilter: 'blur(7.5px)',
+    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+    touchAction: 'none'
   });
   document.body.appendChild(overlayEl);
   overlayEl.addEventListener('click', () => {

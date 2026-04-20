@@ -247,14 +247,16 @@ const isModal = computed(() => !!cfg.value.showOverlay);
 // container class: minimal Tailwind; visual decisions mostly from config / inline transforms
 const containerClassList = computed(() => {
   const base = [
-    // positioning controlled inline; still add isolation and text settings
     'isolate',
     'text-base',
     'antialiased',
-    'overflow-auto',
+    'pointer-events-auto',
     'outline-none'
   ];
-  // Allow custom class string/array
+  // Hide scrollbar via CSS (for Chrome/Safari — inline styles can't target ::webkit-scrollbar)
+  if (cfg.value.scrollable !== false) {
+    base.push('scrollbar-hide');
+  }
   if (cfg.value.containerClass) {
     if (Array.isArray(cfg.value.containerClass)) base.push(...cfg.value.containerClass);
     else base.push(cfg.value.containerClass);
@@ -264,25 +266,9 @@ const containerClassList = computed(() => {
 });
 
 const contentClassList = computed(() => {
-  // Provide a minimal default for white bg and shadow; caller can override via slot classes if desired
-  const base = [
-    'h-full',
-    'w-full'
-  ];
-  
-  // Add border radius only for popups, not slide-ins
-  // if (isPopup.value) {
-  //   base.push('rounded-xl');
-  // }
-  
-  // NEW: Add scrollable behavior with hidden scrollbar if enabled
-  if (cfg.value.scrollable !== false) {
-    base.push('overflow-auto', 'scrollbar-hide');
-  } else {
-    base.push('overflow-visible');
-  }
-  
-  return base;
+  // contentRef is a pure pass-through — panelRef itself is the scroll container.
+  // Slot content just needs to fill the parent naturally (no height or overflow constraint here).
+  return ['w-full'];
 });
 
 const containerBindAttrs = computed(() => {
@@ -516,9 +502,22 @@ function applyInitialStyles(panel) {
   panel.style.zIndex = String(currentZ.value);
   panel.style.visibility = 'visible';
   panel.style.width = (normalizedW ?? 'auto');
-  // Height logic changed below for slide-ins
   panel.style.maxHeight = window.innerHeight + 'px';
-  panel.style.overflow = 'visible';
+
+  // panelRef IS the scroll container. This means:
+  // - Mouse wheel fires on panelRef (or its children) → scrolls panelRef ✓
+  // - Arrow keys work because panelRef is focused (tabindex=-1) and overflow-y: auto ✓
+  // - Touch scroll works naturally ✓
+  // - overscroll-behavior: contain prevents scroll chain leaking to the locked body ✓
+  if (cfg.value.scrollable !== false) {
+    panel.style.overflowY = 'auto';
+    panel.style.overflowX = 'hidden';
+    panel.style.overscrollBehavior = 'contain';
+    panel.style.scrollbarWidth = 'none';       // Firefox: hide scrollbar
+    panel.style.msOverflowStyle = 'none';      // IE/Edge: hide scrollbar
+  } else {
+    panel.style.overflow = 'visible';
+  }
 
   // --- POPUP LOGIC ---
   if (isPopup.value) {
@@ -687,10 +686,11 @@ function focusFirstFocusable() {
   lastActive = document.activeElement;
   const el = panelRef.value;
   if (!el) return;
-  // Try to focus the first focusable inside content
-  const selectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-  const first = el.querySelector(selectors);
-  (first || el).focus({ preventScroll: true });
+  // Focus the panel itself (tabindex=-1 for modals).
+  // This is critical: when panelRef is focused, arrow keys and Page Up/Down
+  // scroll the panelRef (which is overflow-y: auto). If we focused a child
+  // button instead, arrow keys would do nothing (buttons don't respond to arrow keys).
+  el.focus({ preventScroll: true });
 }
 
 function restoreFocus() {
