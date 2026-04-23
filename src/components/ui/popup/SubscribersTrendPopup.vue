@@ -3,106 +3,300 @@
     :model-value="modelValue"
     @update:model-value="$emit('update:modelValue', $event)"
     :period="period"
-    @update:period="$emit('update:period', $event)"
+    @update:period="onPeriodChange"
     title="Subscriptions Insight"
     logo="https://i.ibb.co.com/MyhfGRNH/svgviewer-png-output-12.webp"
   >
-    <div class="flex flex-col gap-4">
-      <!-- row: stats -->
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <!-- New Subscribers -->
-        <div
-          class="flex w-full flex-col gap-4 rounded-[0.125rem]  bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:border-dark-border-primary dark:bg-dark-bg-container">
-          <h3 class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold">
-            New Subscribers
-          </h3>
-          <div class="flex flex-col justify-center items-center gap-4">
-            <span class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
-              {{ insightData?.new ? insightData.new.toLocaleString() : '--' }}
-            </span>
-            <div class="inline-flex items-center gap-2">
-              <div class="w-14 flex justify-center items-center gap-1">
-                <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up" class="h-5 w-5" />
-                <div class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">20%</div>
-              </div>
-              <div class="text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(period) }}</div>
-            </div>
-          </div>
-        </div>
+    <div class="flex flex-col gap-6">
 
-        <!-- Recurring Subscribers -->
-        <div
-          class="flex w-full flex-col gap-4 rounded-[0.125rem] bg-light-bg-container p-4 text-center backdrop-blur-[25px] dark:bg-dark-bg-container">
-          <h3 class="text-light-text-darkgray dark:text-white text-base leading-7 md:text-lg font-semibold">
-            Recurring Subscribers
-          </h3>
-          <div class="flex flex-col justify-center items-center gap-4">
-            <span class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
-              {{ insightData?.recurring ? insightData.recurring.toLocaleString() : '--' }}
-            </span>
-            <div class="inline-flex items-center gap-2">
-              <div class="w-14 flex justify-center items-center gap-1">
-                <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up" class="h-5 w-5" />
-                <div class="text-center text-emerald-700 text-sm font-medium font-['Poppins'] leading-5">20%</div>
-              </div>
-              <div class="text-slate-700 text-xs font-normal font-['Poppins'] leading-4">{{ getVsLabel(period) }}</div>
-            </div>
-          </div>
+      <!-- STAT CARDS -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-2 rounded bg-light-bg-container dark:bg-dark-bg-container p-4 text-center">
+          <h3 class="text-sm font-semibold text-[#101828] dark:text-white">New Subscribers</h3>
+          <span class="text-3xl font-semibold text-gray-900 dark:text-white">{{ newCount ?? '--' }}</span>
+          <span v-if="newPct !== null" :class="newPct >= 0 ? 'text-emerald-600' : 'text-red-500'" class="text-sm font-medium">
+            {{ newPct >= 0 ? '+' : '' }}{{ newPct }}% {{ vsLabel }}
+          </span>
+        </div>
+        <div class="flex flex-col gap-2 rounded bg-light-bg-container dark:bg-dark-bg-container p-4 text-center">
+          <h3 class="text-sm font-semibold text-[#101828] dark:text-white">Recurring Subscribers</h3>
+          <span class="text-3xl font-semibold text-gray-900 dark:text-white">{{ recurringCount ?? '--' }}</span>
+          <span v-if="recurringPct !== null" :class="recurringPct >= 0 ? 'text-emerald-600' : 'text-red-500'" class="text-sm font-medium">
+            {{ recurringPct >= 0 ? '+' : '' }}{{ recurringPct }}% {{ vsLabel }}
+          </span>
         </div>
       </div>
 
-      <!-- row: charts -->
-      <div class="flex flex-col md:flex-row gap-4">
-        <!-- Subscriptions Insight -->
-        <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container">
-          <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">Subscriptions Insight</h3>
-          <div class="flex flex-col justify-center items-center gap-6 h-full text-center">
-            <div class="relative flex justify-center items-center ">
-              <img src="/images/noTrendImg.png" alt="illustration" class="w-32 h-32 object-contain" />
-            </div>
-            <div class="flex flex-col gap-1">
-              <span class="text-base font-medium text-light-text-secondary dark:text-dark-text-secondary">No trend to show at the moment</span>
-              <a href="#" class="text-sm text-light-text-secondary dark:text-dark-text-secondary underline">Learn ways to earn</a>
-            </div>
+      <!-- SUBSCRIPTIONS INSIGHT -->
+      <div class="flex flex-col gap-3 p-4 bg-light-bg-container dark:bg-dark-bg-container rounded">
+        <div class="flex justify-between items-center">
+          <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Subscriptions Insight</h3>
+          <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="subsView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('bar')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="subsView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </button>
+            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="subsView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('line')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="subsView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </button>
           </div>
         </div>
 
-        <!-- Tiers Breakdown -->
-        <div class="flex flex-col gap-4 p-4 w-full h-[25.875rem] bg-light-bg-container dark:bg-dark-bg-container">
-          <h3 class="text-base font-medium leading-6 text-[#0C111D] dark:text-[#dbd8d3]">Tiers Breakdown</h3>
-          <div class="flex flex-col justify-center items-center gap-6 h-full text-center">
-            <div class="relative flex justify-center items-center ">
-              <img src="/images/noTrendImg.png" alt="illustration" class="w-32 h-32 object-contain" />
-            </div>
-            <div class="flex flex-col gap-1">
-              <span class="text-base font-medium text-light-text-secondary dark:text-dark-text-secondary">No trend to show at the moment</span>
-              <a href="#" class="text-sm text-light-text-secondary dark:text-dark-text-secondary underline">Learn ways to earn</a>
-            </div>
-          </div>
+        <!-- Daily Donut -->
+        <div data-chart-container data-chart-id="subs-daily-donut" :hidden="!isDaily||undefined" style="width:100%"
+          :data-chart-config='JSON.stringify({type:"donut",period:"slot",datasetKey:"subs-donut",fields:{category:"name",total:"value"},categoryKeyMap:{sub:"sub",tip:"tip"},seriesStyles:{sub:{color:"#4CC9F0",name:"New Subscriber"},tip:{color:"#4361EE",name:"Recurring Subscriber"}},legentHint:{enabled:true,class:"flex flex-wrap justify-center gap-2 mt-3",itemClass:"inline-flex items-center gap-2 rounded-xl px-3 py-1 text-sm bg-white shadow-sm ring-1 ring-gray-200",markerClass:"w-3 h-3 rounded-full",labelClass:"text-gray-700"}})'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+
+        <!-- Weekly bar/line -->
+        <div data-chart-container data-chart-id="subs-weekly-bar" :hidden="isDaily||!(activePeriod==='weekly'&&subsView==='bar')||undefined" style="width:100%"
+          :data-chart-config='subsBarCfg("subs-weekly")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+        <div data-chart-container data-chart-id="subs-weekly-line" :hidden="isDaily||!(activePeriod==='weekly'&&subsView==='line')||undefined" style="width:100%"
+          :data-chart-config='subsLineCfg("subs-weekly")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+
+        <!-- Monthly bar/line -->
+        <div data-chart-container data-chart-id="subs-monthly-bar" :hidden="isDaily||!(activePeriod==='monthly'&&subsView==='bar')||undefined" style="width:100%"
+          :data-chart-config='subsBarCfg("subs-monthly")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+        <div data-chart-container data-chart-id="subs-monthly-line" :hidden="isDaily||!(activePeriod==='monthly'&&subsView==='line')||undefined" style="width:100%"
+          :data-chart-config='subsLineCfg("subs-monthly")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+
+        <!-- Yearly bar/line -->
+        <div data-chart-container data-chart-id="subs-yearly-bar" :hidden="isDaily||!(activePeriod==='yearly'&&subsView==='bar')||undefined" style="width:100%"
+          :data-chart-config='subsBarCfg("subs-yearly")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+        <div data-chart-container data-chart-id="subs-yearly-line" :hidden="isDaily||!(activePeriod==='yearly'&&subsView==='line')||undefined" style="width:100%"
+          :data-chart-config='subsLineCfg("subs-yearly")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+
+        <!-- Alltime bar/line -->
+        <div data-chart-container data-chart-id="subs-alltime-bar" :hidden="isDaily||!(activePeriod==='alltime'&&subsView==='bar')||undefined" style="width:100%"
+          :data-chart-config='subsBarCfg("subs-alltime")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+        <div data-chart-container data-chart-id="subs-alltime-line" :hidden="isDaily||!(activePeriod==='alltime'&&subsView==='line')||undefined" style="width:100%"
+          :data-chart-config='subsLineCfg("subs-alltime")'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
         </div>
       </div>
+
+      <!-- TIERS BREAKDOWN -->
+      <div class="flex flex-col gap-3 p-4 bg-light-bg-container dark:bg-dark-bg-container rounded">
+        <div class="flex justify-between items-center">
+          <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Tiers Breakdown</h3>
+          <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tiersView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('bar')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="tiersView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </button>
+            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tiersView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('line')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="tiersView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Daily Donut -->
+        <div data-chart-container data-chart-id="tiers-daily-donut" :hidden="!isDaily||undefined" style="width:100%"
+          :data-chart-config='JSON.stringify({type:"donut",period:"slot",datasetKey:"tiers-donut",fields:{category:"name",total:"value"},categoryKeyMap:{tier1:"tier1",tier2:"tier2",tier3:"tier3",tier4:"tier4",tier5:"tier5"},seriesStyles:{tier1:{color:"#4CC9F0",name:"Tier 1"},tier2:{color:"#4361EE",name:"Tier 2"},tier3:{color:"#3A0CA3",name:"Tier 3"},tier4:{color:"#7209B7",name:"Tier 4"},tier5:{color:"#F72585",name:"Tier 5"}},legentHint:{enabled:true,class:"flex flex-wrap justify-center gap-2 mt-3",itemClass:"inline-flex items-center gap-2 rounded-xl px-3 py-1 text-sm bg-white shadow-sm ring-1 ring-gray-200",markerClass:"w-3 h-3 rounded-full",labelClass:"text-gray-700"}})'>
+          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        </div>
+
+        <!-- Weekly -->
+        <div data-chart-container data-chart-id="tiers-weekly-bar" :hidden="isDaily||!(activePeriod==='weekly'&&tiersView==='bar')||undefined" style="width:100%"
+          :data-chart-config='tiersBarCfg("subs-weekly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+        <div data-chart-container data-chart-id="tiers-weekly-line" :hidden="isDaily||!(activePeriod==='weekly'&&tiersView==='line')||undefined" style="width:100%"
+          :data-chart-config='tiersLineCfg("subs-weekly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+
+        <!-- Monthly -->
+        <div data-chart-container data-chart-id="tiers-monthly-bar" :hidden="isDaily||!(activePeriod==='monthly'&&tiersView==='bar')||undefined" style="width:100%"
+          :data-chart-config='tiersBarCfg("subs-monthly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+        <div data-chart-container data-chart-id="tiers-monthly-line" :hidden="isDaily||!(activePeriod==='monthly'&&tiersView==='line')||undefined" style="width:100%"
+          :data-chart-config='tiersLineCfg("subs-monthly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+
+        <!-- Yearly -->
+        <div data-chart-container data-chart-id="tiers-yearly-bar" :hidden="isDaily||!(activePeriod==='yearly'&&tiersView==='bar')||undefined" style="width:100%"
+          :data-chart-config='tiersBarCfg("subs-yearly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+        <div data-chart-container data-chart-id="tiers-yearly-line" :hidden="isDaily||!(activePeriod==='yearly'&&tiersView==='line')||undefined" style="width:100%"
+          :data-chart-config='tiersLineCfg("subs-yearly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+
+        <!-- Alltime -->
+        <div data-chart-container data-chart-id="tiers-alltime-bar" :hidden="isDaily||!(activePeriod==='alltime'&&tiersView==='bar')||undefined" style="width:100%"
+          :data-chart-config='tiersBarCfg("subs-alltime")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+        <div data-chart-container data-chart-id="tiers-alltime-line" :hidden="isDaily||!(activePeriod==='alltime'&&tiersView==='line')||undefined" style="width:100%"
+          :data-chart-config='tiersLineCfg("subs-alltime")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
+      </div>
+
     </div>
   </TrendPopup>
 </template>
 
 <script setup>
 import TrendPopup from './TrendPopup.vue'
+import { ref, computed, watch, nextTick, onMounted } from 'vue'
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
 
-defineProps({
-  modelValue: Boolean,
-  period: String,
-  insightData: Object
+const props = defineProps({ modelValue: Boolean, period: String, insightData: Object })
+const emit = defineEmits(['update:modelValue', 'update:period'])
+
+const store = useDashboardAnalytics()
+const bundle = computed(() => store.subscriptionsBundle || {})
+
+// Active period mapping
+const activePeriod = computed(() => {
+  const p = (props.period || 'yearly').toLowerCase().trim()
+  if (p === 'all-time' || p === 'alltime') return 'alltime'
+  return p // daily | weekly | monthly | yearly
 })
 
-defineEmits(['update:modelValue', 'update:period'])
+const isDaily = computed(() => activePeriod.value === 'daily')
 
-function getVsLabel(period) {
-  switch ((period || '').toLowerCase()) {
-    case 'daily': return 'vs last 24 hour'
-    case 'weekly': return 'vs last week'
-    case 'monthly': return 'vs last 30 days'
-    case 'yearly': return 'vs last year'
-    default: return 'vs last year'
+const subsView = ref('bar')
+const tiersView = ref('bar')
+
+// ===== CONFIG HELPERS (Said's field names) =====
+const LEGEND = { enabled:true, class:"flex flex-wrap justify-center gap-2 mt-3", itemClass:"inline-flex items-center gap-2 rounded-xl px-3 py-1 text-sm bg-white shadow-sm ring-1 ring-gray-200", markerClass:"w-3 h-3 rounded-full", labelClass:"text-gray-700" }
+const SUBS_STYLES = { sub:{color:"#4CC9F0",name:"New Subscriber"}, tip:{color:"#4361EE",name:"Recurring Subscriber"} }
+const TIERS_STYLES = { tier1:{color:"#4CC9F0",name:"Tier 1"}, tier2:{color:"#4361EE",name:"Tier 2"}, tier3:{color:"#3A0CA3",name:"Tier 3"}, tier4:{color:"#7209B7",name:"Tier 4"}, tier5:{color:"#F72585",name:"Tier 5"} }
+
+function subsBarCfg(dk) {
+  return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["sub","tip"], stacked:true, seriesStyles:SUBS_STYLES, bar:{widthPercent:25}, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND })
+}
+function subsLineCfg(dk) {
+  return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["sub","tip"], stacked:true, seriesStyles:SUBS_STYLES, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND })
+}
+function tiersBarCfg(dk) {
+  return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["tier1","tier2","tier3","tier4","tier5"], stacked:true, seriesStyles:TIERS_STYLES, bar:{widthPercent:25}, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND })
+}
+function tiersLineCfg(dk) {
+  return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["tier1","tier2","tier3","tier4","tier5"], stacked:true, seriesStyles:TIERS_STYLES, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND })
+}
+
+// ===== STAT DATA =====
+function calcPct(curr, prev) {
+  if (curr == null || !prev) return null
+  return Math.round(((curr - prev) / prev) * 100)
+}
+
+const statData = computed(() => {
+  const p = activePeriod.value
+  const b = bundle.value
+  if (p === 'yearly' || p === 'alltime') {
+    const gt = b.grandTotal || {}
+    return { new: gt.sub ?? null, recurring: gt.tip ?? null, newPct: null, recurringPct: null }
+  }
+  const arrMap = { daily: b.daily, weekly: b.weekly, monthly: b.monthly }
+  const arr = arrMap[p] || []
+  const last = arr[arr.length - 1] || {}
+  const prev = arr[arr.length - 2] || {}
+  return {
+    new: last.sub ?? null,
+    recurring: last.tip ?? null,
+    newPct: calcPct(last.sub, prev.sub),
+    recurringPct: calcPct(last.tip, prev.tip),
+  }
+})
+
+const newCount = computed(() => statData.value.new)
+const recurringCount = computed(() => statData.value.recurring)
+const newPct = computed(() => statData.value.newPct)
+const recurringPct = computed(() => statData.value.recurringPct)
+const vsLabel = computed(() => {
+  const m = { daily:'vs yesterday', weekly:'vs last week', monthly:'vs last month' }
+  return m[activePeriod.value] || ''
+})
+
+// ===== INJECT CHART DATA (Said's format: sub, tip, month) =====
+function injectChartData() {
+  if (!window.chartsHandler) return
+  const b = bundle.value
+  if (!b?.daily?.length) return
+
+  const daily = b.daily || []
+  const lastDaily = daily[daily.length - 1] || {}
+
+  // Per-period datasets
+  window.chartsHandler._configs.data['subs-weekly']  = { slot: daily.slice(-7) }  // last 7 days
+  window.chartsHandler._configs.data['subs-monthly'] = { slot: b.weekly || [] }   // weekly aggregates
+  window.chartsHandler._configs.data['subs-yearly']  = { slot: b.monthly || [] }  // monthly aggregates
+  window.chartsHandler._configs.data['subs-alltime'] = { slot: b.yearly || [] }   // yearly aggregates
+
+  // Donut — Said's field names (sub, tip)
+  window.chartsHandler._configs.data['subs-donut'] = {
+    slot: [
+      { name:'sub',  value: lastDaily.sub  || 0 },
+      { name:'tip',  value: lastDaily.tip  || 0 },
+    ]
+  }
+  window.chartsHandler._configs.data['tiers-donut'] = {
+    slot: [
+      { name:'tier1', value: lastDaily.tier1 || 0 },
+      { name:'tier2', value: lastDaily.tier2 || 0 },
+      { name:'tier3', value: lastDaily.tier3 || 0 },
+      { name:'tier4', value: lastDaily.tier4 || 0 },
+      { name:'tier5', value: lastDaily.tier5 || 0 },
+    ]
   }
 }
+
+// ===== CHART RENDERING =====
+async function ensureReady() {
+  if (!window.chartsHandler) return
+  const hasData = window.chartsHandler._configs?.data && Object.keys(window.chartsHandler._configs.data).length > 0
+  if (!hasData) await window.chartsHandler.loadChartConfigsAndData()
+  injectChartData()
+}
+
+async function renderChart(chartId) {
+  if (!window.chartsHandler) return
+  const container = document.querySelector(`[data-chart-id="${chartId}"]`)
+  if (!container) return
+
+  try { window.chartsHandler.destroyChartInstance(chartId) } catch(e) {}
+  container.removeAttribute('hidden')
+  const host = container.querySelector('[amchart]')
+  if (host) host.innerHTML = ''
+  await window.chartsHandler.renderChartInstance(container)
+}
+
+async function renderCurrentCharts() {
+  await ensureReady()
+  if (isDaily.value) {
+    await renderChart('subs-daily-donut')
+    await renderChart('tiers-daily-donut')
+  } else {
+    const p = activePeriod.value
+    await renderChart(`subs-${p}-${subsView.value}`)
+    await renderChart(`tiers-${p}-${tiersView.value}`)
+  }
+}
+
+async function setSubsView(v) {
+  subsView.value = v
+  await nextTick()
+  if (!isDaily.value) await renderChart(`subs-${activePeriod.value}-${v}`)
+}
+async function setTiersView(v) {
+  tiersView.value = v
+  await nextTick()
+  if (!isDaily.value) await renderChart(`tiers-${activePeriod.value}-${v}`)
+}
+async function onPeriodChange(val) {
+  emit('update:period', val)
+  await nextTick()
+  await renderCurrentCharts()
+}
+
+watch(() => props.modelValue, async (isOpen) => {
+  if (isOpen) { await nextTick(); await renderCurrentCharts() }
+})
+onMounted(async () => {
+  if (props.modelValue) { await nextTick(); await renderCurrentCharts() }
+})
 </script>

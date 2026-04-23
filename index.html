@@ -19,17 +19,34 @@
     <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-    <script id="charts-config" type="application/json">
+    <script data-charts="config" type="application/json">
       {
-        "datasetsSrc": "/chartsData.bundle.json",
-        "baseConfigsSrc": "/chartConfigs.bundle.json"
+        "datasetsSrc": "/chartsData.bundle.json"
       }
     </script>
   </head>
   <body>
     <div id="app"></div>
     <!-- Ye line add karo: -->
- <script src="/index2.js"></script>
+    <!-- DebugLogger shim — chartsHandler/Calculator/Utilities require it -->
+    <script>
+      window.DebugLogger = {
+        log: function() {},
+        warn: function() {},
+        error: function() {},
+        table: function() {},
+        group: function() {},
+        groupEnd: function() {},
+        groupCollapsed: function() {}
+      };
+    </script>
+    <script src="/chartsUtilities.js"></script>
+    <script src="/chartsCalculator.js"></script>
+    <script src="/chartsHandler.js"></script>
+    <script>
+      // chartsHandler global instance banao
+      window.chartsHandler = new ChartsHandler();
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
