@@ -74,10 +74,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import DashboardTrendCard from '@/components/ui/card/DashboardTrendCard.vue'
 import DashboardTrendContent from '@/components/ui/content/DashboardTrendContent.vue'
 import FlexTable from '@/components/ui/tables/FlexTable.vue'
+
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
+
+const props = defineProps({
+  period: { type: String, default: 'daily' }
+})
+const store = useDashboardAnalytics()
 
 const topMediaTabs = ['Views', 'P2V Sales']
 const selectedTopMediaTab = ref('Views')
@@ -94,21 +101,29 @@ const p2vSalesColumns = [
   { key: 'sales_usd', label: 'Sales(USD)', basis: 'basis-1/3', grow: true, align: 'right' }
 ]
 
-const topMediaRows = [
-  { id: 1, rank: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
-  { id: 2, rank: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
-  { id: 3, rank: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
-  { id: 4, rank: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' },
-  { id: 5, rank: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', clicks: '1,234', duration: '32h10m', image: '/images/profile-thumbnail.png' }
-]
+const topMediaRows = computed(() => {
+  const data = store.trendingMedia?.[props.period] || [];
+  return data.map((item, index) => ({
+    id: index,
+    rank: item.rank,
+    title: item.title,
+    clicks: item.views || 0,
+    duration: '0h0m', // Not in bundle
+    image: '/images/profile-thumbnail.png'
+  }));
+});
 
-const p2vSalesRows = [
-  { id: 1, rank: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 5123.45', image: '/images/profile-thumbnail.png' },
-  { id: 2, rank: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 4123.45', image: '/images/profile-thumbnail.png' },
-  { id: 3, rank: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 3123.45', image: '/images/profile-thumbnail.png' },
-  { id: 4, rank: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 2123.45', image: '/images/profile-thumbnail.png' },
-  { id: 5, rank: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', sales_count: '1,234', sales_usd: 'USD$ 1123.45', image: '/images/profile-thumbnail.png' }
-]
+const p2vSalesRows = computed(() => {
+  const data = store.trendingMedia?.[props.period] || [];
+  return data.map((item, index) => ({
+    id: index,
+    rank: item.rank,
+    title: item.title,
+    sales_count: item.sales_count || 0,
+    sales_usd: `USD$ ${item.sales_usd || 0}`,
+    image: '/images/profile-thumbnail.png'
+  }));
+});
 
 const topMediaTheme = {
   container: 'relative bg-transparent border-none w-full ',

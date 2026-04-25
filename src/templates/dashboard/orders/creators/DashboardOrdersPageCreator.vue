@@ -571,10 +571,10 @@
         <div class="analytics-container px-4 pt-0 pb-4 flex flex-col gap-4">
           <!-- row -->
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3">
-            <TopMediaTable />
-            <TopTagsTable />
-            <TopMerchTable />
-            <TopCountriesTable />
+            <TopMediaTable :period="selectedTrendTab.toLowerCase()" />
+            <TopTagsTable :period="selectedTrendTab.toLowerCase()" />
+            <TopMerchTable :period="selectedTrendTab.toLowerCase()" />
+            <TopCountriesTable :period="selectedTrendTab.toLowerCase()" />
           </div>
         </div>
 
@@ -632,13 +632,17 @@ const contributorsColumns = [
   { key: 'total', label: 'Total (USD)', basis: 'basis-32', align: 'right' }
 ]
 
-const contributorsRows = [
-  { id: 1, rank: 1, name: 'MAN GOES', handle: '@Mangoes4eva', avatar: '/images/mangoes.png', total: 'USD$ 9.99' },
-  { id: 2, rank: 2, name: 'MAN GOES', handle: '@Mangoes4eva', avatar: '/images/mangoes.png', total: 'USD$ 9.99' },
-  { id: 3, rank: 3, name: 'MAN GOES', handle: '@Mangoes4eva', avatar: '/images/mangoes.png', total: 'USD$ 9.99' },
-  { id: 4, rank: 4, name: 'MAN GOES', handle: '@Mangoes4eva', avatar: '/images/mangoes.png', total: 'USD$ 9.99' },
-  { id: 5, rank: 5, name: 'MAN GOES', handle: '@Mangoes4eva', avatar: '/images/mangoes.png', total: 'USD$ 1000.99' }
-]
+const contributorsRows = computed(() => {
+  if (!store.contributors || store.contributors.length === 0) return [];
+  return store.contributors.slice(0, 5).map((c, index) => ({
+    id: index + 1,
+    rank: index + 1,
+    name: c.name,
+    handle: `@${c.name.replace(/\s+/g, '').toLowerCase()}`,
+    avatar: '/images/mangoes.png',
+    total: `USD$ ${c.tokens || 0}`
+  }));
+});
 
 const contributorsTheme = {
   container: 'relative bg-transparent border-none w-full min-w-72 ',
@@ -753,8 +757,15 @@ async function handleRefresh() {
 }
 
 // when component load so data will be here
-onMounted(() => {
-  store.loadAnalytics()
+onMounted(async () => {
+  await store.loadAnalytics();
+  
+  // Initialize the native charts
+  setTimeout(() => {
+    if (window.chartsHandler) {
+      window.chartsHandler.initializeAll(true);
+    }
+  }, 500);
 })
 
 </script>

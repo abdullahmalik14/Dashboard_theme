@@ -48,23 +48,28 @@ import DashboardTrendCard from '@/components/ui/card/DashboardTrendCard.vue'
 import DashboardTrendContent from '@/components/ui/content/DashboardTrendContent.vue'
 import FlexTable from '@/components/ui/tables/FlexTable.vue'
 
+import { computed } from 'vue'
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
+
+const props = defineProps({
+  period: { type: String, default: 'daily' }
+})
+const store = useDashboardAnalytics()
+
 const topTagsColumns = [
   { key: 'tag', label: 'Tags', basis: 'basis-1/2', grow: true, align: 'left' },
   { key: 'views', label: '# of views', basis: 'basis-1/2', grow: true, align: 'right' }
 ]
 
-const topTagsRows = [
-  { id: 1, rank: 1, name: 'Big Foot', views: '2,345' },
-  { id: 2, rank: 2, name: 'Big hands', views: '2,345' },
-  { id: 3, rank: 3, name: 'Big smile', views: '2,345' },
-  { id: 4, rank: 4, name: 'Big appetite', views: '2,345' },
-  { id: 5, rank: 5, name: 'Big dreams', views: '2,345' },
-  { id: 6, rank: 6, name: 'Big dreams', views: '2,345' },
-  { id: 7, rank: 7, name: 'Big dreams', views: '2,345' },
-  { id: 8, rank: 8, name: 'Big dreams', views: '2,345' },
-  { id: 9, rank: 9, name: 'Big dreams', views: '2,345' },
-  { id: 10, rank: 10, name: 'Big dreams', views: '2,345' }
-]
+const topTagsRows = computed(() => {
+  const data = store.trendingTags?.[props.period] || [];
+  return data.map((item, index) => ({
+    id: index,
+    rank: item.rank,
+    name: item.tag,
+    views: item.views || 0
+  }));
+});
 
 const topTagsTheme = {
   container: 'relative bg-transparent border-none w-full ',

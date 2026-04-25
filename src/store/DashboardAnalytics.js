@@ -15,10 +15,10 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
 
     // Baki cards ke liye (baad mein implement honge)
     fans: {
-      daily: { newFollowers: null, profileVisit: null },
-      weekly: { newFollowers: null, profileVisit: null },
-      monthly: { newFollowers: null, profileVisit: null },
-      yearly: { newFollowers: null, profileVisit: null },
+      daily: { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null },
+      weekly: { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null },
+      monthly: { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null },
+      yearly: { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null },
     },
     earnings: {
       daily: [],
@@ -33,7 +33,16 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
       merch: null,
       profile: null,
       feed: null,
+      mediaPercentage: null,
+      merchPercentage: null,
+      profilePercentage: null,
+      feedPercentage: null,
     },
+    contributors: [],
+    trendingMedia: [],
+    trendingMerch: [],
+    trendingTags: [],
+    trendingCountries: [],
     lastUpdated: null,
     bundleLoaded: false,
   }),
@@ -97,51 +106,91 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
   actions: {
     async loadAnalytics() {
       const now = new Date()
-      if (
-        !this.lastUpdated ||
-        now.getTime() - new Date(this.lastUpdated).getTime() > 15 * 60 * 1000
-      ) {
-        console.log('📡 Bundle fetch at:', now.toLocaleTimeString())
+      console.log('📡 Bundle fetch at:', now.toLocaleTimeString())
+      try {
+        const response = await fetch('/chartsData.bundle.json')
+        const bundle = await response.json()
+
+        // Subscriptions data — Said's bundle format
+        // Load from separate subscribersBundle.json
         try {
-          const response = await fetch('/chartsData.bundle.json')
-          const bundle = await response.json()
-
-          // Subscriptions data — Said's bundle format
-          // Load from separate subscribersBundle.json
-          try {
-            const subResp = await fetch('/subscribersBundle.json')
-            const subBundle = await subResp.json()
-            this.subscriptionsBundle = {
-              daily: subBundle.daily || [],
-              weekly: subBundle.weekly || [],
-              monthly: subBundle.monthly || [],
-              yearly: subBundle.yearly || [],
-              alltime: subBundle.alltime || [],
-              grandTotal: subBundle.grandTotal || null,
-            }
-          } catch(e) {
-            console.error('Subscribers bundle load failed:', e)
+          const subResp = await fetch('/subscribersBundle.json')
+          const subBundle = await subResp.json()
+          this.subscriptionsBundle = {
+            daily: subBundle.daily || [],
+            weekly: subBundle.weekly || [],
+            monthly: subBundle.monthly || [],
+            yearly: subBundle.yearly || [],
+            alltime: subBundle.alltime || [],
+            grandTotal: subBundle.grandTotal || null,
           }
-
-          // Baki cards ke liye (baad mein implement honge)
-          if (bundle.earnings) {
-            this.earnings = {
-              daily: bundle.earnings.daily || [],
-              weekly: bundle.earnings.weekly || [],
-              monthly: bundle.earnings.monthly || [],
-              yearly: bundle.earnings.yearly || [],
-              alltime: bundle.earnings.yearly || [],  // alltime = yearly data
-              grandTotal: bundle.earnings.grandTotal || null,
-            }
-          }
-
-          this.bundleLoaded = true
-          this.lastUpdated = now.toISOString()
-        } catch (err) {
-          console.error('❌ Bundle fetch failed:', err)
+        } catch(e) {
+          console.error('Subscribers bundle load failed:', e)
         }
-      } else {
-        console.log('⏳ Using cached data:', now.toLocaleTimeString())
+
+        // Baki cards ke liye (baad mein implement honge)
+        if (bundle.earnings) {
+          this.earnings = {
+            daily: bundle.earnings.daily || [],
+            weekly: bundle.earnings.weekly || [],
+            monthly: bundle.earnings.monthly || [],
+            yearly: bundle.earnings.yearly || [],
+            alltime: bundle.earnings.yearly || [],  // alltime = yearly data
+            grandTotal: bundle.earnings.grandTotal || null,
+          }
+        }
+        
+        if (bundle.fanInsights) {
+           const getPct = (curr, prev) => (!prev || prev === 0) ? null : Math.round(((curr - prev) / prev) * 100);
+           const mapFans = (arr) => {
+              if (!arr || arr.length === 0) return { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null };
+              const latest = arr[arr.length - 1];
+              const prev = arr[arr.length - 2] || {};
+              return {
+                 newFollowers: latest.newFollowers ?? null,
+                 profileVisit: latest.profileVisits ?? null,
+                 newFollowersPercentage: getPct(latest.newFollowers, prev.newFollowers),
+                 profileVisitPercentage: getPct(latest.profileVisits, prev.profileVisits)
+              }
+           };
+           this.fans = {
+              daily: mapFans(bundle.fanInsights.daily),
+              weekly: mapFans(bundle.fanInsights.weekly),
+              monthly: mapFans(bundle.fanInsights.monthly),
+              yearly: mapFans(bundle.fanInsights.yearly)
+           }
+        }
+
+        if (bundle.likes) {
+           const getPct = (curr, prev) => (!prev || prev === 0) ? null : Math.round(((curr - prev) / prev) * 100);
+           const arr = bundle.likes.daily || [];
+           const latest = arr[arr.length - 1] || {};
+           const prev = arr[arr.length - 2] || {};
+           this.likes = {
+              media: latest.media ?? null,
+              merch: latest.merch ?? null,
+              profile: latest.profile ?? null,
+              feed: latest.feed ?? null,
+              mediaPercentage: getPct(latest.media, prev.media),
+              merchPercentage: getPct(latest.merch, prev.merch),
+              profilePercentage: getPct(latest.profile, prev.profile),
+              feedPercentage: getPct(latest.feed, prev.feed)
+           }
+        }
+
+        if (bundle.contributors && bundle.contributors.topContributors) {
+           this.contributors = bundle.contributors.topContributors;
+        }
+        
+        if (bundle.trendingsMedia) this.trendingMedia = bundle.trendingsMedia.daily || [];
+        if (bundle.trendingMerch) this.trendingMerch = bundle.trendingMerch.daily || [];
+        if (bundle.trendingTags) this.trendingTags = bundle.trendingTags.daily || [];
+        if (bundle.trendingCountries) this.trendingCountries = bundle.trendingCountries.daily || [];
+
+        this.bundleLoaded = true
+        this.lastUpdated = now.toISOString()
+      } catch (err) {
+        console.error('❌ Bundle fetch failed:', err)
       }
     },
 

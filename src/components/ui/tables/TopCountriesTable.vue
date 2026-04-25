@@ -49,23 +49,28 @@ import DashboardTrendCard from '@/components/ui/card/DashboardTrendCard.vue'
 import DashboardTrendContent from '@/components/ui/content/DashboardTrendContent.vue'
 import FlexTable from '@/components/ui/tables/FlexTable.vue'
 
+import { computed } from 'vue'
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
+
+const props = defineProps({
+  period: { type: String, default: 'daily' }
+})
+const store = useDashboardAnalytics()
+
 const topCountriesColumns = [
   { key: 'tags', label: 'Tags', basis: 'basis-1/2', grow: true, align: 'left' },
   { key: 'sales', label: 'Sales (USD)', basis: 'basis-1/2', grow: true, align: 'right' }
 ]
 
-const topCountriesRows = [
-  { id: 1, rank: 1, country: 'Hong Kong', sales: 'USD$ 512,345.99' },
-  { id: 2, rank: 2, country: 'United States of America', sales: 'USD$ 412,345.99' },
-  { id: 3, rank: 3, country: 'Singapore', sales: 'USD$ 312,345.99' },
-  { id: 4, rank: 4, country: 'Australia', sales: 'USD$ 212,345.99' },
-  { id: 5, rank: 5, country: 'Taiwan', sales: 'USD$ 112,345.99' },
-  { id: 6, rank: 6, country: 'Hong Kong', sales: 'USD$ 92,345.99' },
-  { id: 7, rank: 7, country: 'United States of America', sales: 'USD$ 72,345.99' },
-  { id: 8, rank: 8, country: 'Singapore', sales: 'USD$ 52,345.99' },
-  { id: 9, rank: 9, country: 'Australia', sales: 'USD$ 42,345.99' },
-  { id: 10, rank: 10, country: 'Taiwan', sales: 'USD$ 12,345.99' }
-]
+const topCountriesRows = computed(() => {
+  const data = store.trendingCountries?.[props.period] || [];
+  return data.map((item, index) => ({
+    id: index,
+    rank: item.rank,
+    country: item.country,
+    sales: `USD$ ${item.salesUSD || item.sales_usd || 0}`
+  }));
+});
 
 const topCountriesTheme = {
   container: 'relative bg-transparent border-none w-full ',

@@ -61,19 +61,31 @@ import DashboardTrendCard from '@/components/ui/card/DashboardTrendCard.vue'
 import DashboardTrendContent from '@/components/ui/content/DashboardTrendContent.vue'
 import FlexTable from '@/components/ui/tables/FlexTable.vue'
 
+import { computed } from 'vue'
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
+
+const props = defineProps({
+  period: { type: String, default: 'daily' }
+})
+const store = useDashboardAnalytics()
+
 const topMerchColumns = [
   { key: 'merch', label: 'Merch', basis: 'basis-1/2', grow: true, align: 'left' },
   { key: 'views', label: '# of views', basis: 'basis-1/4', grow: true, align: 'right' },
   { key: 'sales', label: 'Sales (USD)', basis: 'basis-1/4', grow: true, align: 'right' }
 ]
 
-const topMerchRows = [
-  { id: 1, rank: 1, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
-  { id: 2, rank: 2, title: 'Socks (White, Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
-  { id: 3, rank: 3, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
-  { id: 4, rank: 4, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' },
-  { id: 5, rank: 5, title: 'Socks (White, Extra Long)', views: '1,234', sales: 'USD$ 1000.99', image: '/images/profile-thumbnail.png' }
-]
+const topMerchRows = computed(() => {
+  const data = store.trendingMerch?.[props.period] || [];
+  return data.map((item, index) => ({
+    id: index,
+    rank: item.rank,
+    title: item.title,
+    views: item.views || 0,
+    sales: `USD$ ${item.sales_usd || 0}`,
+    image: '/images/profile-thumbnail.png'
+  }));
+});
 
 const topMerchTheme = {
   container: 'relative bg-transparent border-none w-full ',
