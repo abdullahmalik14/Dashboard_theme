@@ -77,12 +77,12 @@ const topMerchColumns = [
 
 const topMerchRows = computed(() => {
   const data = store.trendingMerch?.[props.period] || [];
-  return data.map((item, index) => ({
+  return data.slice(0, 10).map((item, index) => ({
     id: index,
     rank: item.rank,
-    title: item.title,
+    title: item.merch || item.title || `Merch #${index + 1}`,
     views: item.views || 0,
-    sales: `USD$ ${item.sales_usd || 0}`,
+    sales: `USD$ ${item.salesUSD || item.sales_usd || 0}`,
     image: '/images/profile-thumbnail.png'
   }));
 });

@@ -39,10 +39,10 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
       feedPercentage: null,
     },
     contributors: [],
-    trendingMedia: [],
-    trendingMerch: [],
-    trendingTags: [],
-    trendingCountries: [],
+    trendingMedia: {},
+    trendingMerch: {},
+    trendingTags: {},
+    trendingCountries: {},
     lastUpdated: null,
     bundleLoaded: false,
   }),
@@ -142,22 +142,24 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
         
         if (bundle.fanInsights) {
            const getPct = (curr, prev) => (!prev || prev === 0) ? null : Math.round(((curr - prev) / prev) * 100);
-           const mapFans = (arr) => {
-              if (!arr || arr.length === 0) return { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null };
+           const mapFans = (arr, countriesArr) => {
+              if (!arr || arr.length === 0) return { newFollowers: null, profileVisit: null, newFollowersPercentage: null, profileVisitPercentage: null, topCountries: [] };
               const latest = arr[arr.length - 1];
               const prev = arr[arr.length - 2] || {};
+              const topCountries = (countriesArr || []).slice(0, 10).map((c, i) => ({ rank: c.rank || i+1, country: c.country, visits: c.views || 0 }));
               return {
                  newFollowers: latest.newFollowers ?? null,
                  profileVisit: latest.profileVisits ?? null,
                  newFollowersPercentage: getPct(latest.newFollowers, prev.newFollowers),
-                 profileVisitPercentage: getPct(latest.profileVisits, prev.profileVisits)
+                 profileVisitPercentage: getPct(latest.profileVisits, prev.profileVisits),
+                 topCountries: topCountries
               }
            };
            this.fans = {
-              daily: mapFans(bundle.fanInsights.daily),
-              weekly: mapFans(bundle.fanInsights.weekly),
-              monthly: mapFans(bundle.fanInsights.monthly),
-              yearly: mapFans(bundle.fanInsights.yearly)
+              daily: mapFans(bundle.fanInsights.daily, bundle.fanInsights.countries?.daily),
+              weekly: mapFans(bundle.fanInsights.weekly, bundle.fanInsights.countries?.weekly),
+              monthly: mapFans(bundle.fanInsights.monthly, bundle.fanInsights.countries?.monthly),
+              yearly: mapFans(bundle.fanInsights.yearly, bundle.fanInsights.countries?.yearly)
            }
         }
 
@@ -182,10 +184,10 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
            this.contributors = bundle.contributors.topContributors;
         }
         
-        if (bundle.trendingsMedia) this.trendingMedia = bundle.trendingsMedia.daily || [];
-        if (bundle.trendingMerch) this.trendingMerch = bundle.trendingMerch.daily || [];
-        if (bundle.trendingTags) this.trendingTags = bundle.trendingTags.daily || [];
-        if (bundle.trendingCountries) this.trendingCountries = bundle.trendingCountries.daily || [];
+        if (bundle.trendingsMedia) this.trendingMedia = bundle.trendingsMedia || {};
+        if (bundle.trendingMerch) this.trendingMerch = bundle.trendingMerch || {};
+        if (bundle.trendingTags) this.trendingTags = bundle.trendingTags || {};
+        if (bundle.trendingCountries) this.trendingCountries = bundle.trendingCountries || {};
 
         this.bundleLoaded = true
         this.lastUpdated = now.toISOString()

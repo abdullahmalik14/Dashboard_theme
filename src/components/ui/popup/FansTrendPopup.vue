@@ -13,7 +13,7 @@
           <div class="flex flex-col justify-center items-center gap-4">
             <span
               class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
-              {{ insightData?.newFollowers ? insightData.newFollowers.toLocaleString() : '--' }}
+              {{ insightData?.newFollowers != null ? insightData.newFollowers.toLocaleString() : '--' }}
             </span>
             <div class="inline-flex items-center gap-2">
               <div class="w-14 flex justify-center items-center gap-1">
@@ -33,7 +33,7 @@
           <div class="flex flex-col justify-center items-center gap-4">
             <span
               class="text-gray-900 tracking-[-0.045rem] text-3xl leading-[2.375rem] font-semibold md:text-4xl md:leading-[2.75rem]">
-              {{ insightData?.profileVisit ? insightData.profileVisit.toLocaleString() : '--' }}
+              {{ insightData?.profileVisit != null ? insightData.profileVisit.toLocaleString() : '--' }}
             </span>
             <div class="inline-flex items-center gap-2">
               <div class="w-14 flex justify-center items-center gap-1">

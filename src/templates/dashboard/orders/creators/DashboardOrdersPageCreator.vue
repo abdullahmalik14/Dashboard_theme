@@ -597,8 +597,11 @@
     <FansTrendPopup v-model="isFansOpen" v-model:period="fansPeriod" :insight-data="currentFansInsightData" />
 
 
+    <!-- likes popup -->
+    <LikesTrendPopup v-model="isLikesOpen" v-model:period="likesPeriod" :insight-data="currentLikesInsightData" />
+
     <!-- contributors popup -->
-    <ContributorsTrendPopup v-model="isContributorsOpen" />
+    <ContributorsTrendPopup v-model="isContributorsOpen" v-model:period="contributorsPeriod" :insight-data="contributorsRows" />
 
   </div>
 </template>
@@ -615,6 +618,7 @@ import TrendPopup from '@/components/ui/popup/TrendPopup.vue'
 import EarningsTrendPopup from '@/components/ui/popup/EarningsTrendPopup.vue'
 import SubscribersTrendPopup from '@/components/ui/popup/SubscribersTrendPopup.vue'
 import FansTrendPopup from '@/components/ui/popup/FansTrendPopup.vue'
+import LikesTrendPopup from '@/components/ui/popup/LikesTrendPopup.vue'
 import ContributorsTrendPopup from '@/components/ui/popup/ContributorsTrendPopup.vue'
 import FlexTable from '@/components/ui/tables/FlexTable.vue'
 import OrdersReceivedTable from '@/components/ui/tables/OrdersReceivedTable.vue'
@@ -684,6 +688,8 @@ const isTrendDropdownOpen = ref(false)
 const subscribersPeriod = ref('yearly')
 const earningsPeriod = ref('yearly')
 const fansPeriod = ref('yearly')
+const likesPeriod = ref('yearly')
+const contributorsPeriod = ref('yearly')
 
 function getVsLabel(period) {
   switch (period.toLowerCase()) {
@@ -696,18 +702,26 @@ function getVsLabel(period) {
 }
 
 const currentEarningsInsightData = computed(() => {
-  const tab = earningsPeriod.value.toLowerCase()
-  return store.earnings[tab]?.[0] || null
+  let tab = earningsPeriod.value.toLowerCase()
+  if (tab === 'all-time') tab = 'yearly'
+  const arr = store.earnings[tab]
+  return arr && arr.length ? arr[arr.length - 1] : null
 })
 
 const currentSubscribersInsightData = computed(() => {
-  const p = subscribersPeriod.value.toLowerCase()
+  let p = subscribersPeriod.value.toLowerCase()
+  if (p === 'all-time') p = 'yearly'
   return store.subscribers[p] || { new: null, recurring: null }
 })
 
 const currentFansInsightData = computed(() => {
-  const p = fansPeriod.value.toLowerCase()
+  let p = fansPeriod.value.toLowerCase()
+  if (p === 'all-time') p = 'yearly'
   return store.fans[p] || { newFollowers: null, profileVisit: null }
+})
+
+const currentLikesInsightData = computed(() => {
+  return store.likes || {}
 })
 
 const trendComparisonLabel = computed(() => {
@@ -735,6 +749,11 @@ function openEarnings() {
 const isFansOpen = ref(false)
 function openFans() {
   isFansOpen.value = true
+}
+
+const isLikesOpen = ref(false)
+function openLikes() {
+  isLikesOpen.value = true
 }
 
 const isContributorsOpen = ref(false)

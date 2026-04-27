@@ -63,7 +63,7 @@ const topTagsColumns = [
 
 const topTagsRows = computed(() => {
   const data = store.trendingTags?.[props.period] || [];
-  return data.map((item, index) => ({
+  return data.slice(0, 10).map((item, index) => ({
     id: index,
     rank: item.rank,
     name: item.tag,

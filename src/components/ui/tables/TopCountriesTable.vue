@@ -64,7 +64,7 @@ const topCountriesColumns = [
 
 const topCountriesRows = computed(() => {
   const data = store.trendingCountries?.[props.period] || [];
-  return data.map((item, index) => ({
+  return data.slice(0, 10).map((item, index) => ({
     id: index,
     rank: item.rank,
     country: item.country,

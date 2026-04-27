@@ -103,11 +103,11 @@ const p2vSalesColumns = [
 
 const topMediaRows = computed(() => {
   const data = store.trendingMedia?.[props.period] || [];
-  return data.map((item, index) => ({
+  return data.slice(0, 10).map((item, index) => ({
     id: index,
     rank: item.rank,
-    title: item.title,
-    clicks: item.views || 0,
+    title: item.media || item.title || `Media #${index + 1}`,
+    clicks: item.views || item.clicks || 0,
     duration: '0h0m', // Not in bundle
     image: '/images/profile-thumbnail.png'
   }));
@@ -115,12 +115,12 @@ const topMediaRows = computed(() => {
 
 const p2vSalesRows = computed(() => {
   const data = store.trendingMedia?.[props.period] || [];
-  return data.map((item, index) => ({
+  return data.slice(0, 10).map((item, index) => ({
     id: index,
     rank: item.rank,
-    title: item.title,
-    sales_count: item.sales_count || 0,
-    sales_usd: `USD$ ${item.sales_usd || 0}`,
+    title: item.media || item.title || `Media #${index + 1}`,
+    sales_count: item.salesCount || item.sales_count || 0,
+    sales_usd: `USD$ ${item.salesUSD || item.sales_usd || 0}`,
     image: '/images/profile-thumbnail.png'
   }));
 });
