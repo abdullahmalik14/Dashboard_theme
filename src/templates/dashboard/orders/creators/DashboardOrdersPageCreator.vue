@@ -705,7 +705,16 @@ const currentEarningsInsightData = computed(() => {
   let tab = earningsPeriod.value.toLowerCase()
   if (tab === 'all-time') tab = 'yearly'
   const arr = store.earnings[tab]
-  return arr && arr.length ? arr[arr.length - 1] : null
+  const latest = arr && arr.length ? { ...arr[arr.length - 1] } : null
+  if (latest) {
+    const countries = store.countries?.[tab] || []
+    latest.topCountries = countries.slice(0, 10).map((c, i) => ({
+      rank: c.rank || i + 1,
+      country: c.country,
+      sales: c.salesUSD || 0
+    }))
+  }
+  return latest
 })
 
 const currentSubscribersInsightData = computed(() => {
