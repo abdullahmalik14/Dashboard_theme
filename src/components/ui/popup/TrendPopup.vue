@@ -41,7 +41,8 @@ const options = ref([
 ])
 
 const selected = computed({
-  get: () => props.period || 'yearly',
+  // Linden: 'on open should be default bar chart for week'
+  get: () => props.period || 'weekly',
   set: (val) => emit('update:period', val)
 })
 const isOpen = ref(false)

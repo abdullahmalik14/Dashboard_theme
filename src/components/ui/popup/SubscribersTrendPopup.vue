@@ -7,9 +7,10 @@
     title="Subscriptions Insight"
     logo="https://i.ibb.co.com/MyhfGRNH/svgviewer-png-output-12.webp"
   >
-    <div class="flex flex-col gap-6">
+    <div v-if="hasData" class="flex flex-col gap-6">
 
-      <!-- STAT CARDS -->
+      <!-- STAT CARDS (Hidden to match Figma) -->
+      <!--
       <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col gap-2 rounded bg-light-bg-container dark:bg-dark-bg-container p-4 text-center">
           <h3 class="text-sm font-semibold text-[#101828] dark:text-white">New Subscribers</h3>
@@ -26,10 +27,11 @@
           </span>
         </div>
       </div>
+      -->
 
       <!-- SUBSCRIPTIONS INSIGHT -->
-      <div class="flex flex-col gap-3 p-4 bg-light-bg-container dark:bg-dark-bg-container rounded">
-        <div class="flex justify-between items-center">
+      <div class="flex flex-col gap-3 p-4 bg-light-bg-container dark:bg-dark-bg-container rounded w-full h-[25rem] relative">
+        <div class="flex justify-between items-center z-10 relative">
           <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Subscriptions Insight</h3>
           <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
             <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="subsView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('bar')">
@@ -41,56 +43,58 @@
           </div>
         </div>
 
-        <!-- Daily Donut -->
-        <div data-chart-container data-chart-id="subs-daily-donut" :hidden="!isDaily||undefined" style="width:100%"
-          :data-chart-config='JSON.stringify({type:"donut",period:"slot",datasetKey:"subs-donut",fields:{category:"name",total:"value"},categoryKeyMap:{sub:"sub",tip:"tip"},seriesStyles:{sub:{color:"#4CC9F0",name:"New Subscriber"},tip:{color:"#4361EE",name:"Recurring Subscriber"}},legentHint:{enabled:true,class:"flex flex-wrap justify-center gap-2 mt-3",itemClass:"inline-flex items-center gap-2 rounded-xl px-3 py-1 text-sm bg-white shadow-sm ring-1 ring-gray-200",markerClass:"w-3 h-3 rounded-full",labelClass:"text-gray-700"}})'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
+        <div class="absolute top-[40px] left-0 right-0 bottom-[30px]">
+          <!-- Daily Donut -->
+          <div data-chart-container data-chart-id="subs-daily-donut" :hidden="!isDaily||undefined" class="absolute inset-0"
+            :data-chart-config='JSON.stringify({type:"donut",period:"slot",datasetKey:"subs-donut",fields:{category:"name",total:"value"},categoryKeyMap:{sub:"sub",tip:"tip"},seriesStyles:{sub:{color:"#4CC9F0",name:"New Subscriber"},tip:{color:"#4361EE",name:"Recurring Subscriber"}},legentHint:{enabled:true,class:"absolute -bottom-2 left-0 w-full flex flex-wrap justify-center gap-4",itemClass:"inline-flex items-center gap-1.5 px-2 py-1",markerClass:"w-2.5 h-2.5 rounded-full",labelClass:"text-slate-500 text-xs font-medium font-sans"}})'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
 
-        <!-- Weekly bar/line -->
-        <div data-chart-container data-chart-id="subs-weekly-bar" :hidden="isDaily||!(activePeriod==='weekly'&&subsView==='bar')||undefined" style="width:100%"
-          :data-chart-config='subsBarCfg("subs-weekly")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
-        <div data-chart-container data-chart-id="subs-weekly-line" :hidden="isDaily||!(activePeriod==='weekly'&&subsView==='line')||undefined" style="width:100%"
-          :data-chart-config='subsLineCfg("subs-weekly")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
+          <!-- Weekly bar/line -->
+          <div data-chart-container data-chart-id="subs-weekly-bar" :hidden="isDaily||!(activePeriod==='weekly'&&subsView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='subsBarCfg("subs-weekly")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
+          <div data-chart-container data-chart-id="subs-weekly-line" :hidden="isDaily||!(activePeriod==='weekly'&&subsView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='subsLineCfg("subs-weekly")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
 
-        <!-- Monthly bar/line -->
-        <div data-chart-container data-chart-id="subs-monthly-bar" :hidden="isDaily||!(activePeriod==='monthly'&&subsView==='bar')||undefined" style="width:100%"
-          :data-chart-config='subsBarCfg("subs-monthly")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
-        <div data-chart-container data-chart-id="subs-monthly-line" :hidden="isDaily||!(activePeriod==='monthly'&&subsView==='line')||undefined" style="width:100%"
-          :data-chart-config='subsLineCfg("subs-monthly")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
+          <!-- Monthly bar/line -->
+          <div data-chart-container data-chart-id="subs-monthly-bar" :hidden="isDaily||!(activePeriod==='monthly'&&subsView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='subsBarCfg("subs-monthly")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
+          <div data-chart-container data-chart-id="subs-monthly-line" :hidden="isDaily||!(activePeriod==='monthly'&&subsView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='subsLineCfg("subs-monthly")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
 
-        <!-- Yearly bar/line -->
-        <div data-chart-container data-chart-id="subs-yearly-bar" :hidden="isDaily||!(activePeriod==='yearly'&&subsView==='bar')||undefined" style="width:100%"
-          :data-chart-config='subsBarCfg("subs-yearly")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
-        <div data-chart-container data-chart-id="subs-yearly-line" :hidden="isDaily||!(activePeriod==='yearly'&&subsView==='line')||undefined" style="width:100%"
-          :data-chart-config='subsLineCfg("subs-yearly")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
+          <!-- Yearly bar/line -->
+          <div data-chart-container data-chart-id="subs-yearly-bar" :hidden="isDaily||!(activePeriod==='yearly'&&subsView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='subsBarCfg("subs-yearly")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
+          <div data-chart-container data-chart-id="subs-yearly-line" :hidden="isDaily||!(activePeriod==='yearly'&&subsView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='subsLineCfg("subs-yearly")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
 
-        <!-- Alltime bar/line -->
-        <div data-chart-container data-chart-id="subs-alltime-bar" :hidden="isDaily||!(activePeriod==='alltime'&&subsView==='bar')||undefined" style="width:100%"
-          :data-chart-config='subsBarCfg("subs-alltime")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
-        </div>
-        <div data-chart-container data-chart-id="subs-alltime-line" :hidden="isDaily||!(activePeriod==='alltime'&&subsView==='line')||undefined" style="width:100%"
-          :data-chart-config='subsLineCfg("subs-alltime")'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+          <!-- Alltime bar/line -->
+          <div data-chart-container data-chart-id="subs-alltime-bar" :hidden="isDaily||!(activePeriod==='alltime'&&subsView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='subsBarCfg("subs-alltime")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
+          <div data-chart-container data-chart-id="subs-alltime-line" :hidden="isDaily||!(activePeriod==='alltime'&&subsView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='subsLineCfg("subs-alltime")'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
         </div>
       </div>
 
       <!-- TIERS BREAKDOWN -->
-      <div class="flex flex-col gap-3 p-4 bg-light-bg-container dark:bg-dark-bg-container rounded">
-        <div class="flex justify-between items-center">
+      <div class="flex flex-col gap-3 p-4 bg-light-bg-container dark:bg-dark-bg-container rounded w-full h-[25rem] relative">
+        <div class="flex justify-between items-center z-10 relative">
           <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Tiers Breakdown</h3>
           <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
             <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tiersView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('bar')">
@@ -102,37 +106,48 @@
           </div>
         </div>
 
-        <!-- Daily Donut -->
-        <div data-chart-container data-chart-id="tiers-daily-donut" :hidden="!isDaily||undefined" style="width:100%"
-          :data-chart-config='JSON.stringify({type:"donut",period:"slot",datasetKey:"tiers-donut",fields:{category:"name",total:"value"},categoryKeyMap:{tier1:"tier1",tier2:"tier2",tier3:"tier3",tier4:"tier4",tier5:"tier5"},seriesStyles:{tier1:{color:"#4CC9F0",name:"Tier 1"},tier2:{color:"#4361EE",name:"Tier 2"},tier3:{color:"#3A0CA3",name:"Tier 3"},tier4:{color:"#7209B7",name:"Tier 4"},tier5:{color:"#F72585",name:"Tier 5"}},legentHint:{enabled:true,class:"flex flex-wrap justify-center gap-2 mt-3",itemClass:"inline-flex items-center gap-2 rounded-xl px-3 py-1 text-sm bg-white shadow-sm ring-1 ring-gray-200",markerClass:"w-3 h-3 rounded-full",labelClass:"text-gray-700"}})'>
-          <div amchart data-role="chart" style="width:100%;height:280px;"></div>
+        <div class="absolute top-[40px] left-0 right-0 bottom-[30px]">
+          <!-- Daily Donut -->
+          <div data-chart-container data-chart-id="tiers-daily-donut" :hidden="!isDaily||undefined" class="absolute inset-0"
+            :data-chart-config='JSON.stringify({type:"donut",period:"slot",datasetKey:"tiers-donut",fields:{category:"name",total:"value"},categoryKeyMap:{tier1:"tier1",tier2:"tier2",tier3:"tier3",tier4:"tier4",tier5:"tier5"},seriesStyles:{tier1:{color:"#4CC9F0",name:"Tier 1"},tier2:{color:"#4361EE",name:"Tier 2"},tier3:{color:"#3A0CA3",name:"Tier 3"},tier4:{color:"#7209B7",name:"Tier 4"},tier5:{color:"#F72585",name:"Tier 5"}},legentHint:{enabled:true,class:"absolute -bottom-2 left-0 w-full flex flex-wrap justify-center gap-4",itemClass:"inline-flex items-center gap-1.5 px-2 py-1",markerClass:"w-2.5 h-2.5 rounded-full",labelClass:"text-slate-500 text-xs font-medium font-sans"}})'>
+            <div amchart data-role="chart" style="width:100%;height:100%;"></div>
+          </div>
+
+          <!-- Weekly -->
+          <div data-chart-container data-chart-id="tiers-weekly-bar" :hidden="isDaily||!(activePeriod==='weekly'&&tiersView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersBarCfg("subs-weekly")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+          <div data-chart-container data-chart-id="tiers-weekly-line" :hidden="isDaily||!(activePeriod==='weekly'&&tiersView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersLineCfg("subs-weekly")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+
+          <!-- Monthly -->
+          <div data-chart-container data-chart-id="tiers-monthly-bar" :hidden="isDaily||!(activePeriod==='monthly'&&tiersView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersBarCfg("subs-monthly")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+          <div data-chart-container data-chart-id="tiers-monthly-line" :hidden="isDaily||!(activePeriod==='monthly'&&tiersView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersLineCfg("subs-monthly")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+
+          <!-- Yearly -->
+          <div data-chart-container data-chart-id="tiers-yearly-bar" :hidden="isDaily||!(activePeriod==='yearly'&&tiersView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersBarCfg("subs-yearly")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+          <div data-chart-container data-chart-id="tiers-yearly-line" :hidden="isDaily||!(activePeriod==='yearly'&&tiersView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersLineCfg("subs-yearly")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+
+          <!-- Alltime -->
+          <div data-chart-container data-chart-id="tiers-alltime-bar" :hidden="isDaily||!(activePeriod==='alltime'&&tiersView==='bar')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersBarCfg("subs-alltime")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
+          <div data-chart-container data-chart-id="tiers-alltime-line" :hidden="isDaily||!(activePeriod==='alltime'&&tiersView==='line')||undefined" class="absolute inset-0"
+            :data-chart-config='tiersLineCfg("subs-alltime")'><div amchart data-role="chart" style="width:100%;height:100%;"></div></div>
         </div>
-
-        <!-- Weekly -->
-        <div data-chart-container data-chart-id="tiers-weekly-bar" :hidden="isDaily||!(activePeriod==='weekly'&&tiersView==='bar')||undefined" style="width:100%"
-          :data-chart-config='tiersBarCfg("subs-weekly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-        <div data-chart-container data-chart-id="tiers-weekly-line" :hidden="isDaily||!(activePeriod==='weekly'&&tiersView==='line')||undefined" style="width:100%"
-          :data-chart-config='tiersLineCfg("subs-weekly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-
-        <!-- Monthly -->
-        <div data-chart-container data-chart-id="tiers-monthly-bar" :hidden="isDaily||!(activePeriod==='monthly'&&tiersView==='bar')||undefined" style="width:100%"
-          :data-chart-config='tiersBarCfg("subs-monthly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-        <div data-chart-container data-chart-id="tiers-monthly-line" :hidden="isDaily||!(activePeriod==='monthly'&&tiersView==='line')||undefined" style="width:100%"
-          :data-chart-config='tiersLineCfg("subs-monthly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-
-        <!-- Yearly -->
-        <div data-chart-container data-chart-id="tiers-yearly-bar" :hidden="isDaily||!(activePeriod==='yearly'&&tiersView==='bar')||undefined" style="width:100%"
-          :data-chart-config='tiersBarCfg("subs-yearly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-        <div data-chart-container data-chart-id="tiers-yearly-line" :hidden="isDaily||!(activePeriod==='yearly'&&tiersView==='line')||undefined" style="width:100%"
-          :data-chart-config='tiersLineCfg("subs-yearly")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-
-        <!-- Alltime -->
-        <div data-chart-container data-chart-id="tiers-alltime-bar" :hidden="isDaily||!(activePeriod==='alltime'&&tiersView==='bar')||undefined" style="width:100%"
-          :data-chart-config='tiersBarCfg("subs-alltime")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
-        <div data-chart-container data-chart-id="tiers-alltime-line" :hidden="isDaily||!(activePeriod==='alltime'&&tiersView==='line')||undefined" style="width:100%"
-          :data-chart-config='tiersLineCfg("subs-alltime")'><div amchart data-role="chart" style="width:100%;height:280px;"></div></div>
       </div>
 
+    </div>
+    <div v-else class="flex flex-col justify-center items-center gap-6 h-[400px] text-center w-full">
+      <div class="relative flex justify-center items-center">
+        <img src="/images/noTrendImg.png" alt="illustration" class="w-32 h-32 object-contain" />
+      </div>
+      <div class="flex flex-col gap-1">
+        <span class="text-base font-medium text-light-text-secondary dark:text-dark-text-secondary">No trend to show at the moment</span>
+        <a href="#" class="text-xs text-light-text-secondary dark:text-dark-text-secondary underline">Learn ways to earn</a>
+      </div>
     </div>
   </TrendPopup>
 </template>
@@ -145,12 +160,15 @@ import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
 const props = defineProps({ modelValue: Boolean, period: String, insightData: Object })
 const emit = defineEmits(['update:modelValue', 'update:period'])
 
+const hasData = computed(() => props.insightData && props.insightData.new != null)
+
 const store = useDashboardAnalytics()
 const bundle = computed(() => store.subscriptionsBundle || {})
 
 // Active period mapping
 const activePeriod = computed(() => {
-  const p = (props.period || 'yearly').toLowerCase().trim()
+  // Linden: 'on open should be default bar chart for week'
+  const p = (props.period || 'weekly').toLowerCase().trim()
   if (p === 'all-time' || p === 'alltime') return 'alltime'
   return p // daily | weekly | monthly | yearly
 })
@@ -161,21 +179,23 @@ const subsView = ref('bar')
 const tiersView = ref('bar')
 
 // ===== CONFIG HELPERS (Said's field names) =====
-const LEGEND = { enabled:true, class:"flex flex-wrap justify-center gap-2 mt-3", itemClass:"inline-flex items-center gap-2 rounded-xl px-3 py-1 text-sm bg-white shadow-sm ring-1 ring-gray-200", markerClass:"w-3 h-3 rounded-full", labelClass:"text-gray-700" }
+const LEGEND = { enabled:true, class:"absolute -bottom-2 left-0 w-full flex flex-wrap justify-center gap-4", itemClass:"inline-flex items-center gap-1.5 px-2 py-1", markerClass:"w-2.5 h-2.5 rounded-full", labelClass:"text-slate-500 text-xs font-medium font-sans" }
 const SUBS_STYLES = { sub:{color:"#4CC9F0",name:"New Subscriber"}, tip:{color:"#4361EE",name:"Recurring Subscriber"} }
+const SUBS_LABELS = { sub:"New", tip:"Recurring" }
 const TIERS_STYLES = { tier1:{color:"#4CC9F0",name:"Tier 1"}, tier2:{color:"#4361EE",name:"Tier 2"}, tier3:{color:"#3A0CA3",name:"Tier 3"}, tier4:{color:"#7209B7",name:"Tier 4"}, tier5:{color:"#F72585",name:"Tier 5"} }
+const TIERS_LABELS = { tier1:"Tier 1", tier2:"Tier 2", tier3:"Tier 3", tier4:"Tier 4", tier5:"Tier 5" }
 
 function subsBarCfg(dk) {
-  return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["sub","tip"], stacked:true, seriesStyles:SUBS_STYLES, bar:{widthPercent:25}, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND })
+  return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["sub","tip"], stacked:true, seriesStyles:SUBS_STYLES, seriesLabels:SUBS_LABELS, bar:{widthPercent:35}, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND })
 }
 function subsLineCfg(dk) {
-  return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["sub","tip"], stacked:true, seriesStyles:SUBS_STYLES, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND })
+  return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["sub","tip"], stacked:true, seriesStyles:SUBS_STYLES, seriesLabels:SUBS_LABELS, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND })
 }
 function tiersBarCfg(dk) {
-  return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["tier1","tier2","tier3","tier4","tier5"], stacked:true, seriesStyles:TIERS_STYLES, bar:{widthPercent:25}, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND })
+  return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["tier1","tier2","tier3","tier4","tier5"], stacked:true, seriesStyles:TIERS_STYLES, seriesLabels:TIERS_LABELS, bar:{widthPercent:35}, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND })
 }
 function tiersLineCfg(dk) {
-  return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["tier1","tier2","tier3","tier4","tier5"], stacked:true, seriesStyles:TIERS_STYLES, axisLabelColor:"#475467", axisLabelFontSize:"12px", tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND })
+  return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"month",total:"total"}, breakdownKeys:["tier1","tier2","tier3","tier4","tier5"], stacked:true, seriesStyles:TIERS_STYLES, seriesLabels:TIERS_LABELS, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND })
 }
 
 // ===== STAT DATA =====
@@ -221,11 +241,15 @@ function injectChartData() {
   const daily = b.daily || []
   const lastDaily = daily[daily.length - 1] || {}
 
-  // Per-period datasets
-  window.chartsHandler._configs.data['subs-weekly']  = { slot: daily.slice(-7) }  // last 7 days
-  window.chartsHandler._configs.data['subs-monthly'] = { slot: b.weekly || [] }   // weekly aggregates
-  window.chartsHandler._configs.data['subs-yearly']  = { slot: b.monthly || [] }  // monthly aggregates
-  window.chartsHandler._configs.data['subs-alltime'] = { slot: b.yearly || [] }   // yearly aggregates
+  // FIXED: Each period maps to its CORRECT data array
+  // weekly = b.weekly (7 entries, not daily.slice(-7))
+  // monthly = b.monthly (29 entries, not weekly)
+  // yearly = b.yearly (5 years, not monthly)
+  // alltime = b.alltime (fallback to yearly)
+  window.chartsHandler._configs.data['subs-weekly']  = { slot: b.weekly || [] }
+  window.chartsHandler._configs.data['subs-monthly'] = { slot: b.monthly || [] }
+  window.chartsHandler._configs.data['subs-yearly']  = { slot: b.yearly || [] }
+  window.chartsHandler._configs.data['subs-alltime'] = { slot: b.alltime || b.yearly || [] }
 
   // Donut — Said's field names (sub, tip)
   window.chartsHandler._configs.data['subs-donut'] = {

@@ -3201,7 +3201,9 @@ const datasetsPromise = configJson.datasets
       const xAxisInstance = chartInstance.xAxes.push(
         am5xy.CategoryAxis.new(chartRoot, {
           categoryField: fieldConfig.category,
-          renderer: am5xy.AxisRendererX.new(chartRoot, { minGridDistance: 30 }),
+          renderer: am5xy.AxisRendererX.new(chartRoot, { 
+            minGridDistance: styleConfig.xAxis?.minGridDistance || 30 
+          }),
         }),
       );
 

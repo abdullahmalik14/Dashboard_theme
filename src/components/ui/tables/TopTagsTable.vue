@@ -65,8 +65,8 @@ const topTagsRows = computed(() => {
   const data = store.trendingTags?.[props.period] || [];
   return data.slice(0, 10).map((item, index) => ({
     id: index,
-    rank: item.rank,
-    name: item.tag,
+    rank: item.rank || index + 1,
+    name: item.tag || `Tag #${index + 1}`,
     views: item.views || 0
   }));
 });

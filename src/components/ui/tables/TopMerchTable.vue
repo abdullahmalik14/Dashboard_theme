@@ -79,10 +79,10 @@ const topMerchRows = computed(() => {
   const data = store.trendingMerch?.[props.period] || [];
   return data.slice(0, 10).map((item, index) => ({
     id: index,
-    rank: item.rank,
+    rank: item.rank || index + 1,
     title: item.merch || item.title || `Merch #${index + 1}`,
     views: item.views || 0,
-    sales: `USD$ ${item.salesUSD || item.sales_usd || 0}`,
+    sales: `USD$ ${(item.salesUSD || item.sales_usd || 0).toFixed(2)}`,
     image: '/images/profile-thumbnail.png'
   }));
 });

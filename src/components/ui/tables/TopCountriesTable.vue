@@ -57,8 +57,19 @@ const props = defineProps({
 })
 const store = useDashboardAnalytics()
 
+const countryNameMap = {
+  'Country 36': 'Australia',
+  'Country 840': 'United States',
+  'Country 826': 'United Kingdom',
+  'Country 276': 'Germany',
+  'Country 392': 'Japan',
+  'Country 344': 'Hong Kong',
+  'Country 702': 'Singapore',
+  'Country 158': 'Taiwan'
+}
+
 const topCountriesColumns = [
-  { key: 'tags', label: 'Tags', basis: 'basis-1/2', grow: true, align: 'left' },
+  { key: 'tags', label: 'Countries', basis: 'basis-1/2', grow: true, align: 'left' },
   { key: 'sales', label: 'Sales (USD)', basis: 'basis-1/2', grow: true, align: 'right' }
 ]
 
@@ -66,9 +77,9 @@ const topCountriesRows = computed(() => {
   const data = store.trendingCountries?.[props.period] || [];
   return data.slice(0, 10).map((item, index) => ({
     id: index,
-    rank: item.rank,
-    country: item.country,
-    sales: `USD$ ${item.salesUSD || item.sales_usd || 0}`
+    rank: item.rank || index + 1,
+    country: countryNameMap[item.country] || item.country,
+    sales: `USD$ ${(item.salesUSD || item.earningsUSD || item.sales_usd || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
   }));
 });
 

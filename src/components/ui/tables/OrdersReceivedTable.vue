@@ -133,7 +133,7 @@
             <template #cell.total="{ row }">
               <div
                 class="pr-4 text-gray-900 text-[13px] font-bold h-full flex items-center justify-end md:justify-start w-full whitespace-nowrap">
-                <span>USD$</span> 9.99
+                {{ row.total }}
               </div>
             </template>
 
@@ -202,18 +202,18 @@ const ordersColumns = [
 
 const ordersRows = ref([
   { id: 1, tier: 'Tier 1 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 2, tier: 'Tier 2 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 3, tier: 'Tier 3 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 4, tier: 'Tier 4 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 5, tier: 'Tier 5 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' }
+  { id: 2, tier: 'Tier 2 Subscription', orderId: '#123457', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 19.99' },
+  { id: 3, tier: 'Tier 3 Subscription', orderId: '#123458', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 29.99' },
+  { id: 4, tier: 'Tier 4 Subscription', orderId: '#123459', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 49.99' },
+  { id: 5, tier: 'Tier 5 Subscription', orderId: '#123460', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 99.99' }
 ])
 
 const p2vOrdersRows = ref([
-  { id: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' }
+  { id: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123461', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 14.99' },
+  { id: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123462', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 24.50' },
+  { id: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123463', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 19.99' },
+  { id: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123464', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
+  { id: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123465', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 39.00' }
 ])
 
 const merchOrdersColumns = [
@@ -226,32 +226,39 @@ const merchOrdersColumns = [
 ]
 
 const merchOrdersRows = ref([
-  { id: 1, type: 'Merch', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black', innerBg: 'bg-green-500' },
-  { id: 2, type: 'Merch', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black', innerBg: 'bg-green-500' },
-  { id: 3, type: 'Mixed', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
-  { id: 4, type: 'Mixed', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
-  { id: 5, type: 'Mixed', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black', innerBg: 'bg-green-500' }
+  { id: 1, type: 'Merch', orderId: '#123466', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 45.00', bg: 'bg-black', innerBg: 'bg-green-500' },
+  { id: 2, type: 'Merch', orderId: '#123467', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 65.50', bg: 'bg-black', innerBg: 'bg-green-500' },
+  { id: 3, type: 'Mixed', orderId: '#123468', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 120.00', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
+  { id: 4, type: 'Mixed', orderId: '#123469', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 89.99', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
+  { id: 5, type: 'Mixed', orderId: '#123470', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 34.00', bg: 'bg-black', innerBg: 'bg-green-500' }
 ])
 
 const customRequestOrdersColumns = merchOrdersColumns
 
 const customRequestOrdersRows = ref([
-  { id: 1, type: 'Kinks', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black' },
-  { id: 2, type: 'Kinks', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black' },
-  { id: 3, type: 'Clips', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500' },
-  { id: 4, type: 'Clips', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-green-500' },
-  { id: 5, type: 'Clips', orderId: '#123456', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 9.99', bg: 'bg-black' }
+  { id: 1, type: 'Kinks', orderId: '#123471', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 150.00', bg: 'bg-black' },
+  { id: 2, type: 'Kinks', orderId: '#123472', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 200.00', bg: 'bg-black' },
+  { id: 3, type: 'Clips', orderId: '#123473', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 45.00', bg: 'bg-green-500' },
+  { id: 4, type: 'Clips', orderId: '#123474', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 60.00', bg: 'bg-green-500' },
+  { id: 5, type: 'Clips', orderId: '#123475', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 35.00', bg: 'bg-black' }
 ])
 
 const wishtenderOrdersRows = ref([
-  { id: 1, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 2, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 3, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 4, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 5, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' }
+  { id: 1, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123476', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 249.00' },
+  { id: 2, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123477', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 249.00' },
+  { id: 3, title: 'Sony Alpha a7 IV Mirrorless Camera with 28-70mm Lens', orderId: '#123478', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 2,698.00' },
+  { id: 4, title: 'Apple 2023 MacBook Pro Laptop M3 Pro chip with 11‑core CPU', orderId: '#123479', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 1,999.00' },
+  { id: 5, title: 'Elgato Stream Deck MK.2 – Studio Controller', orderId: '#123480', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 149.99' }
 ])
 
+import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
+
 const currentRows = computed(() => {
+  const store = useDashboardAnalytics()
+  const isDatabaseEmpty = !store.earnings || !store.earnings.alltime || store.earnings.alltime.length === 0
+  
+  if (isDatabaseEmpty) return []
+
   switch (selectedTab.value) {
     case 'Merch': return merchOrdersRows.value
     case 'Pay to View': return p2vOrdersRows.value

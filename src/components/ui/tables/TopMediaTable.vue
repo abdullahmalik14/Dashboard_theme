@@ -101,14 +101,21 @@ const p2vSalesColumns = [
   { key: 'sales_usd', label: 'Sales(USD)', basis: 'basis-1/3', grow: true, align: 'right' }
 ]
 
+function formatDuration(sec) {
+  if (!sec || sec <= 0) return '0h0m';
+  const h = Math.floor(sec / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  return `${h}h${m}m`;
+}
+
 const topMediaRows = computed(() => {
   const data = store.trendingMedia?.[props.period] || [];
   return data.slice(0, 10).map((item, index) => ({
     id: index,
-    rank: item.rank,
+    rank: item.rank || index + 1,
     title: item.media || item.title || `Media #${index + 1}`,
     clicks: item.views || item.clicks || 0,
-    duration: '0h0m', // Not in bundle
+    duration: formatDuration(item.watchDurationSec),
     image: '/images/profile-thumbnail.png'
   }));
 });
@@ -117,10 +124,10 @@ const p2vSalesRows = computed(() => {
   const data = store.trendingMedia?.[props.period] || [];
   return data.slice(0, 10).map((item, index) => ({
     id: index,
-    rank: item.rank,
+    rank: item.rank || index + 1,
     title: item.media || item.title || `Media #${index + 1}`,
-    sales_count: item.salesCount || item.sales_count || 0,
-    sales_usd: `USD$ ${item.salesUSD || item.sales_usd || 0}`,
+    sales_count: item.ppvSalesCount || item.salesCount || item.sales_count || 0,
+    sales_usd: `USD$ ${(item.ppvSalesUSD || item.salesUSD || item.sales_usd || 0).toFixed(2)}`,
     image: '/images/profile-thumbnail.png'
   }));
 });
