@@ -60,10 +60,10 @@
           <div class="flex justify-between items-center gap-2">
             <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold relative z-10">Sales Insights</h3>
             <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0] relative z-10">
-              <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="salesView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setSalesView('bar')">
+              <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="salesView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setSalesView('bar')">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="salesView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               </button>
-              <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="salesView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setSalesView('line')">
+              <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="salesView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setSalesView('line')">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="salesView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
               </button>
             </div>
@@ -90,10 +90,10 @@
           <div class="flex justify-between items-center gap-2">
             <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold relative z-10">Token Insights</h3>
             <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0] relative z-10">
-              <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tokensView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTokensView('bar')">
+              <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="tokensView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTokensView('bar')">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="tokensView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               </button>
-              <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tokensView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTokensView('line')">
+              <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="tokensView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTokensView('line')">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="tokensView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
               </button>
             </div>

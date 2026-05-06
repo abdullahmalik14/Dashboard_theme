@@ -51,10 +51,10 @@
         <div class="flex justify-between items-center z-10 relative">
           <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Followers & Visits Trend</h3>
           <div class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="trendView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTrendView('bar')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="trendView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTrendView('bar')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="trendView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </button>
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="trendView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTrendView('line')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="trendView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTrendView('line')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="trendView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </button>
           </div>
@@ -185,7 +185,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'update:period'])
 
-const hasData = computed(() => props.insightData && props.insightData.new != null)
+const hasData = computed(() => props.insightData && props.insightData.newFollowers != null)
 
 const store = useDashboardAnalytics()
 

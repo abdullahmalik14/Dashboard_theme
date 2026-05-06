@@ -14,10 +14,10 @@
         <div class="flex justify-between items-center z-10 relative">
           <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Likes Insight</h3>
           <div class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="likesView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setLikesView('bar')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="likesView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setLikesView('bar')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="likesView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </button>
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="likesView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setLikesView('line')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="likesView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setLikesView('line')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="likesView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </button>
           </div>
@@ -72,10 +72,13 @@ const activePeriod = computed(() => {
 
 const likesView = ref('bar')
 
+const likesDataAvailable = ref(false)
+
 const hasData = computed(() => {
-  const p = activePeriod.value
-  const dataArr = store.likes?.[p] || []
-  return dataArr.length > 0
+  // First check: store has any likes data at all
+  if (store.likes?.media != null) return true
+  // Second check: data was loaded from bundle
+  return likesDataAvailable.value
 })
 
 // ===== CONFIG HELPERS =====
@@ -146,6 +149,7 @@ async function injectChartData() {
   }
 
   window.chartsHandler._configs.data['likes-chart'] = { slot: mapForChart(dataArr) }
+  likesDataAvailable.value = dataArr.length > 0
 }
 
 // ===== CHART RENDERING =====

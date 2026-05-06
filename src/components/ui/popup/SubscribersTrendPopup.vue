@@ -34,10 +34,10 @@
         <div class="flex justify-between items-center z-10 relative">
           <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Subscriptions Insight</h3>
           <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="subsView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('bar')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="subsView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('bar')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="subsView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </button>
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="subsView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('line')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="subsView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setSubsView('line')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="subsView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </button>
           </div>
@@ -97,10 +97,10 @@
         <div class="flex justify-between items-center z-10 relative">
           <h3 class="text-base font-semibold text-[#101828] dark:text-[#dbd8d3]">Tiers Breakdown</h3>
           <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0]">
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tiersView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('bar')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="tiersView==='bar'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('bar')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="tiersView==='bar'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </button>
-            <button class="p-1.5 rounded-md cursor-pointer transition-all" :class="tiersView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('line')">
+            <button class="p-1.5 rounded-md cursor-pointer transition-all focus:outline-none hover:!bg-transparent" :class="tiersView==='line'?'bg-white shadow-sm':'bg-transparent'" @click="setTiersView('line')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" :stroke="tiersView==='line'?'#344054':'#98A2B3'" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </button>
           </div>

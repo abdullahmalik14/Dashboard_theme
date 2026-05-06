@@ -15,7 +15,8 @@
 
       <!-- table-content -->
       <div v-if="topMerchRows && topMerchRows.length > 0" class="w-full flex-1 pt-4">
-        <FlexTable :columns="topMerchColumns" :rows="topMerchRows" :theme="topMerchTheme">
+        <FlexTable :columns="topMerchColumns" :rows="topMerchRows" :theme="topMerchTheme"
+          :inner-scroll="true" max-height="60vh" :sticky-header="true">
           <!-- merch column -->
           <template #cell.merch="{ row }">
             <div class="flex items-center gap-3 h-full w-full">

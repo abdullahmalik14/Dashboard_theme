@@ -29,7 +29,8 @@
       <div v-if="(selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows).length > 0"
         class="w-full flex-1 pt-4">
         <FlexTable :columns="selectedTopMediaTab === 'Views' ? topMediaColumns : p2vSalesColumns"
-          :rows="selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows" :theme="topMediaTheme">
+          :rows="selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows" :theme="topMediaTheme"
+          :inner-scroll="true" max-height="60vh" :sticky-header="true">
           <template #cell.media="{ row }">
             <div class="flex items-center gap-3 h-full">
               <div class="relative w-[3.5rem] sm:w-[5rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">

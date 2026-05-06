@@ -50,7 +50,8 @@
       <!-- Table -->
       <div class="self-stretch w-full">
         <div v-if="currentRows && currentRows.length > 0" class="w-full">
-          <FlexTable :columns="currentColumns" :rows="currentRows" :theme="ordersTheme">
+          <FlexTable :columns="currentColumns" :rows="currentRows" :theme="ordersTheme"
+            :inner-scroll="true" max-height="60vh" :sticky-header="true">
             <!-- Order Slot -->
             <template #cell.order="{ row }">
               <!-- Desktop View (Visible on md and up) -->

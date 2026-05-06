@@ -15,7 +15,8 @@
 
       <!-- table-content -->
       <div v-if="topCountriesRows && topCountriesRows.length > 0" class="w-full flex-1 pt-4">
-        <FlexTable :columns="topCountriesColumns" :rows="topCountriesRows" :theme="topCountriesTheme">
+        <FlexTable :columns="topCountriesColumns" :rows="topCountriesRows" :theme="topCountriesTheme"
+          :inner-scroll="true" max-height="60vh" :sticky-header="true">
           <!-- tags column -->
           <template #cell.tags="{ row }">
             <div class="flex justify-start items-center gap-2.5 h-full w-full sm:px-1">
