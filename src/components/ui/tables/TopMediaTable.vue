@@ -129,7 +129,7 @@ const topMediaRows = computed(() => {
     title: item.media || item.title || `Media #${index + 1}`,
     clicks: item.views || item.clicks || 0,
     duration: formatDuration(item.watchDurationSec),
-    image: '/images/profile-thumbnail.png'
+    image: item.thumbnailUrl || '/images/profile-thumbnail.png'
   }));
 });
 
@@ -141,7 +141,7 @@ const p2vSalesRows = computed(() => {
     title: item.media || item.title || `Media #${index + 1}`,
     sales_count: item.ppvSalesCount || item.salesCount || item.sales_count || 0,
     sales_usd: `USD$ ${(item.ppvSalesUSD || item.salesUSD || item.sales_usd || 0).toFixed(2)}`,
-    image: '/images/profile-thumbnail.png'
+    image: item.thumbnailUrl || '/images/profile-thumbnail.png'
   }));
 });
 

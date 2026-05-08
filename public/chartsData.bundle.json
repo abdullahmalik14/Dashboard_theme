@@ -1126,11 +1126,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 229986,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 2,
         "media": "Media #9007",
         "views": 6,
         "salesUSD": 9.99,
@@ -1141,7 +1141,127 @@
         "rpmUSD": 1665,
         "watchDurationSec": 0,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 3,
+        "media": "Media Video #10000",
+        "views": 1708,
+        "salesUSD": 39.032336766814005,
+        "salesCount": 9,
+        "ppvSalesUSD": 70.76823880400427,
+        "ppvSalesCount": 3,
+        "clicks": 888,
+        "rpmUSD": 1.4171667296667978,
+        "watchDurationSec": 113525,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 4,
+        "media": "Media Video #10001",
+        "views": 4257,
+        "salesUSD": 56.19924323502276,
+        "salesCount": 7,
+        "ppvSalesUSD": 58.60226969291088,
+        "ppvSalesCount": 4,
+        "clicks": 57,
+        "rpmUSD": 0.16771374762947433,
+        "watchDurationSec": 20256,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 5,
+        "media": "Media Video #10002",
+        "views": 2944,
+        "salesUSD": 9.899933582305154,
+        "salesCount": 0,
+        "ppvSalesUSD": 10.263658571812861,
+        "ppvSalesCount": 2,
+        "clicks": 356,
+        "rpmUSD": 3.384602421997479,
+        "watchDurationSec": 157696,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "media": "Media Video #10003",
+        "views": 4382,
+        "salesUSD": 62.47662273340905,
+        "salesCount": 4,
+        "ppvSalesUSD": 95.19320864196803,
+        "ppvSalesCount": 4,
+        "clicks": 408,
+        "rpmUSD": 4.147703009490062,
+        "watchDurationSec": 146803,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "media": "Media Video #10004",
+        "views": 1281,
+        "salesUSD": 42.35761541598644,
+        "salesCount": 1,
+        "ppvSalesUSD": 43.5816904639787,
+        "ppvSalesCount": 4,
+        "clicks": 223,
+        "rpmUSD": 5.466140262966225,
+        "watchDurationSec": 29881,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "media": "Media Video #10005",
+        "views": 3017,
+        "salesUSD": 17.079325426476323,
+        "salesCount": 9,
+        "ppvSalesUSD": 66.9179735660445,
+        "ppvSalesCount": 4,
+        "clicks": 848,
+        "rpmUSD": 0.32649364991240715,
+        "watchDurationSec": 97087,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "media": "Media Video #10006",
+        "views": 3228,
+        "salesUSD": 63.868812659964455,
+        "salesCount": 4,
+        "ppvSalesUSD": 55.717996561581,
+        "ppvSalesCount": 8,
+        "clicks": 216,
+        "rpmUSD": 8.233959693632325,
+        "watchDurationSec": 236793,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "media": "Media Video #10007",
+        "views": 1762,
+        "salesUSD": 74.29845549168357,
+        "salesCount": 9,
+        "ppvSalesUSD": 29.834175773943173,
+        "ppvSalesCount": 8,
+        "clicks": 612,
+        "rpmUSD": 9.91547525690861,
+        "watchDurationSec": 276635,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       }
     ],
     "weekly": [
@@ -1158,11 +1278,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 403098,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 2,
         "media": "Media #9001",
         "views": 4,
         "salesUSD": 0,
@@ -1173,11 +1293,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 84790,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 3,
         "media": "Media #9006",
         "views": 1,
         "salesUSD": 9.99,
@@ -1188,11 +1308,11 @@
         "rpmUSD": 9990,
         "watchDurationSec": 205150,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 4,
         "media": "Media #9008",
         "views": 4,
         "salesUSD": 0,
@@ -1203,11 +1323,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 189977,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 5,
         "media": "Media #9004",
         "views": 3,
         "salesUSD": 2.99,
@@ -1218,11 +1338,11 @@
         "rpmUSD": 996.67,
         "watchDurationSec": 424642,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 6,
         "media": "Media #9005",
         "views": 4,
         "salesUSD": 0,
@@ -1233,11 +1353,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 229986,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 7,
         "media": "Media #9007",
         "views": 6,
         "salesUSD": 9.99,
@@ -1248,7 +1368,52 @@
         "rpmUSD": 1665,
         "watchDurationSec": 0,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "media": "Media Video #10000",
+        "views": 705,
+        "salesUSD": 20.80985587755991,
+        "salesCount": 1,
+        "ppvSalesUSD": 70.58290951715027,
+        "ppvSalesCount": 8,
+        "clicks": 841,
+        "rpmUSD": 7.690040801601439,
+        "watchDurationSec": 118554,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "media": "Media Video #10001",
+        "views": 2784,
+        "salesUSD": 65.33005593868198,
+        "salesCount": 1,
+        "ppvSalesUSD": 49.3240475193359,
+        "ppvSalesCount": 2,
+        "clicks": 382,
+        "rpmUSD": 5.99178400548765,
+        "watchDurationSec": 31707,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "media": "Media Video #10002",
+        "views": 206,
+        "salesUSD": 14.908578605093547,
+        "salesCount": 1,
+        "ppvSalesUSD": 78.96672415804223,
+        "ppvSalesCount": 8,
+        "clicks": 62,
+        "rpmUSD": 8.433038163291135,
+        "watchDurationSec": 254421,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       }
     ],
     "monthly": [
@@ -1265,11 +1430,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 348337,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 2,
         "media": "Media #9002",
         "views": 7,
         "salesUSD": 0,
@@ -1280,11 +1445,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 216550,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 3,
         "media": "Media #9003",
         "views": 5,
         "salesUSD": 9.99,
@@ -1295,11 +1460,11 @@
         "rpmUSD": 1998,
         "watchDurationSec": 80050,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 4,
         "media": "Media #9004",
         "views": 4,
         "salesUSD": 0,
@@ -1310,11 +1475,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 234599,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 5,
         "media": "Media #9001",
         "views": 2,
         "salesUSD": 8.97,
@@ -1325,11 +1490,11 @@
         "rpmUSD": 4485,
         "watchDurationSec": 304382,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 6,
         "media": "Media #9006",
         "views": 4,
         "salesUSD": 0,
@@ -1340,11 +1505,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 326402,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 7,
         "media": "Media #9007",
         "views": 3,
         "salesUSD": 0,
@@ -1355,11 +1520,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 290019,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 8,
         "media": "Media #9006",
         "views": 3,
         "salesUSD": 2.99,
@@ -1370,11 +1535,11 @@
         "rpmUSD": 996.67,
         "watchDurationSec": 65816,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 9,
         "media": "Media #9001",
         "views": 4,
         "salesUSD": 4.99,
@@ -1385,11 +1550,11 @@
         "rpmUSD": 1247.5,
         "watchDurationSec": 0,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 10,
         "media": "Media #9004",
         "views": 3,
         "salesUSD": 0,
@@ -1400,11 +1565,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 412198,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 11,
         "media": "Media #9008",
         "views": 3,
         "salesUSD": 2.99,
@@ -1415,11 +1580,11 @@
         "rpmUSD": 996.67,
         "watchDurationSec": 542666,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 12,
         "media": "Media #9005",
         "views": 4,
         "salesUSD": 0,
@@ -1430,11 +1595,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 0,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 13,
         "media": "Media #9002",
         "views": 1,
         "salesUSD": 0,
@@ -1445,11 +1610,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 147228,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 14,
         "media": "Media #9003",
         "views": 3,
         "salesUSD": 5.98,
@@ -1460,11 +1625,11 @@
         "rpmUSD": 1993.33,
         "watchDurationSec": 335001,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 15,
         "media": "Media #9006",
         "views": 2,
         "salesUSD": 0,
@@ -1475,11 +1640,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 356036,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 16,
         "media": "Media #9002",
         "views": 4,
         "salesUSD": 0,
@@ -1490,11 +1655,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 0,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 17,
         "media": "Media #9003",
         "views": 5,
         "salesUSD": 19.97,
@@ -1505,11 +1670,11 @@
         "rpmUSD": 3994,
         "watchDurationSec": 519524,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 18,
         "media": "Media #9004",
         "views": 4,
         "salesUSD": 0,
@@ -1520,11 +1685,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 146407,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 19,
         "media": "Media #9008",
         "views": 6,
         "salesUSD": 4.99,
@@ -1535,11 +1700,11 @@
         "rpmUSD": 831.67,
         "watchDurationSec": 282051,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 20,
         "media": "Media #9005",
         "views": 5,
         "salesUSD": 0,
@@ -1550,11 +1715,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 223427,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 21,
         "media": "Media #9001",
         "views": 4,
         "salesUSD": 0,
@@ -1565,11 +1730,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 186605,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 22,
         "media": "Media #9007",
         "views": 2,
         "salesUSD": 0,
@@ -1580,11 +1745,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 289326,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 23,
         "media": "Media #9003",
         "views": 9,
         "salesUSD": 4.99,
@@ -1595,11 +1760,11 @@
         "rpmUSD": 554.44,
         "watchDurationSec": 322372,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 24,
         "media": "Media #9002",
         "views": 2,
         "salesUSD": 0,
@@ -1610,11 +1775,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 403098,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 25,
         "media": "Media #9001",
         "views": 4,
         "salesUSD": 0,
@@ -1625,11 +1790,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 84790,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 26,
         "media": "Media #9006",
         "views": 1,
         "salesUSD": 9.99,
@@ -1640,11 +1805,11 @@
         "rpmUSD": 9990,
         "watchDurationSec": 205150,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 27,
         "media": "Media #9008",
         "views": 4,
         "salesUSD": 0,
@@ -1655,11 +1820,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 189977,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 28,
         "media": "Media #9004",
         "views": 3,
         "salesUSD": 2.99,
@@ -1670,11 +1835,11 @@
         "rpmUSD": 996.67,
         "watchDurationSec": 424642,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 29,
         "media": "Media #9005",
         "views": 4,
         "salesUSD": 0,
@@ -1685,11 +1850,11 @@
         "rpmUSD": 0,
         "watchDurationSec": 229986,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 30,
         "media": "Media #9007",
         "views": 6,
         "salesUSD": 9.99,
@@ -1700,7 +1865,7 @@
         "rpmUSD": 1665,
         "watchDurationSec": 0,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       }
     ],
     "yearly": [
@@ -1717,11 +1882,11 @@
         "rpmUSD": 24,
         "watchDurationSec": 309684,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "Feb",
-        "rank": 1,
+        "rank": 2,
         "media": "Media #9006",
         "views": 4,
         "salesUSD": 3,
@@ -1732,11 +1897,11 @@
         "rpmUSD": 31,
         "watchDurationSec": 395972,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "period": "Mar",
-        "rank": 1,
+        "rank": 3,
         "media": "Media #9006",
         "views": 4,
         "salesUSD": 3,
@@ -1747,11 +1912,11 @@
         "rpmUSD": 27,
         "watchDurationSec": 342582,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       },
       {
         "period": "Apr",
-        "rank": 1,
+        "rank": 4,
         "media": "Media #9006",
         "views": 5,
         "salesUSD": 4,
@@ -1762,11 +1927,11 @@
         "rpmUSD": 38,
         "watchDurationSec": 488003,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "period": "May",
-        "rank": 1,
+        "rank": 5,
         "media": "Media #9006",
         "views": 6,
         "salesUSD": 4,
@@ -1777,11 +1942,11 @@
         "rpmUSD": 40,
         "watchDurationSec": 512060,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "period": "Jun",
-        "rank": 1,
+        "rank": 6,
         "media": "Media #9006",
         "views": 5,
         "salesUSD": 4,
@@ -1792,11 +1957,11 @@
         "rpmUSD": 37,
         "watchDurationSec": 470779,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "period": "Jul",
-        "rank": 1,
+        "rank": 7,
         "media": "Media #9006",
         "views": 7,
         "salesUSD": 5,
@@ -1807,11 +1972,11 @@
         "rpmUSD": 53,
         "watchDurationSec": 671690,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "period": "Aug",
-        "rank": 1,
+        "rank": 8,
         "media": "Media #9006",
         "views": 7,
         "salesUSD": 5,
@@ -1822,11 +1987,11 @@
         "rpmUSD": 47,
         "watchDurationSec": 598468,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "period": "Sep",
-        "rank": 1,
+        "rank": 9,
         "media": "Media #9006",
         "views": 7,
         "salesUSD": 5,
@@ -1837,11 +2002,11 @@
         "rpmUSD": 50,
         "watchDurationSec": 636894,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "period": "Oct",
-        "rank": 1,
+        "rank": 10,
         "media": "Media #9006",
         "views": 9,
         "salesUSD": 7,
@@ -1852,11 +2017,11 @@
         "rpmUSD": 65,
         "watchDurationSec": 832680,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       },
       {
         "period": "Nov",
-        "rank": 1,
+        "rank": 11,
         "media": "Media #9006",
         "views": 7,
         "salesUSD": 5,
@@ -1867,11 +2032,11 @@
         "rpmUSD": 53,
         "watchDurationSec": 675937,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "Dec",
-        "rank": 1,
+        "rank": 12,
         "media": "Media #9006",
         "views": 9,
         "salesUSD": 7,
@@ -1882,7 +2047,7 @@
         "rpmUSD": 66,
         "watchDurationSec": 841156,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       }
     ],
     "alltime": [
@@ -1899,11 +2064,11 @@
         "rpmUSD": 298,
         "watchDurationSec": 3805395,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "period": "2023",
-        "rank": 1,
+        "rank": 2,
         "media": "Media #9006",
         "views": 53,
         "salesUSD": 38,
@@ -1914,11 +2079,11 @@
         "rpmUSD": 372,
         "watchDurationSec": 4756744,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "period": "2024",
-        "rank": 1,
+        "rank": 3,
         "media": "Media #9006",
         "views": 66,
         "salesUSD": 48,
@@ -1929,11 +2094,11 @@
         "rpmUSD": 465,
         "watchDurationSec": 5945930,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       },
       {
         "period": "2025",
-        "rank": 1,
+        "rank": 4,
         "media": "Media #9006",
         "views": 82,
         "salesUSD": 60,
@@ -1944,11 +2109,11 @@
         "rpmUSD": 582,
         "watchDurationSec": 7432412,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "period": "2026",
-        "rank": 1,
+        "rank": 5,
         "media": "Media #9006",
         "views": 103,
         "salesUSD": 75,
@@ -1959,7 +2124,82 @@
         "rpmUSD": 727,
         "watchDurationSec": 9290515,
         "tags": [],
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "media": "Media Video #10000",
+        "views": 3338,
+        "salesUSD": 11.803715572392893,
+        "salesCount": 9,
+        "ppvSalesUSD": 87.75682502767353,
+        "ppvSalesCount": 1,
+        "clicks": 627,
+        "rpmUSD": 7.960756351862633,
+        "watchDurationSec": 277957,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "media": "Media Video #10001",
+        "views": 43,
+        "salesUSD": 15.470418732892677,
+        "salesCount": 3,
+        "ppvSalesUSD": 73.61647882160631,
+        "ppvSalesCount": 5,
+        "clicks": 683,
+        "rpmUSD": 4.327835179247325,
+        "watchDurationSec": 173335,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "media": "Media Video #10002",
+        "views": 1986,
+        "salesUSD": 28.01682585499191,
+        "salesCount": 1,
+        "ppvSalesUSD": 29.029276866140876,
+        "ppvSalesCount": 4,
+        "clicks": 155,
+        "rpmUSD": 9.114001585078261,
+        "watchDurationSec": 121384,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "media": "Media Video #10003",
+        "views": 3524,
+        "salesUSD": 18.250024196010628,
+        "salesCount": 6,
+        "ppvSalesUSD": 22.89073153177964,
+        "ppvSalesCount": 7,
+        "clicks": 284,
+        "rpmUSD": 9.90659956752892,
+        "watchDurationSec": 132494,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "media": "Media Video #10004",
+        "views": 4518,
+        "salesUSD": 94.74280350112743,
+        "salesCount": 1,
+        "ppvSalesUSD": 81.3660385657713,
+        "ppvSalesCount": 8,
+        "clicks": 890,
+        "rpmUSD": 1.2191952834182607,
+        "watchDurationSec": 166288,
+        "tags": [],
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       }
     ]
   },
@@ -1973,7 +2213,7 @@
         "salesUSD": 47.6,
         "sales_usd": 47.6,
         "salesCount": 4,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "rank": 2,
@@ -1983,7 +2223,7 @@
         "salesUSD": 37.4,
         "sales_usd": 37.4,
         "salesCount": 3,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "rank": 3,
@@ -1993,7 +2233,7 @@
         "salesUSD": 30.6,
         "sales_usd": 30.6,
         "salesCount": 3,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "rank": 4,
@@ -2003,7 +2243,7 @@
         "salesUSD": 25.5,
         "sales_usd": 25.5,
         "salesCount": 2,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "rank": 5,
@@ -2013,7 +2253,57 @@
         "salesUSD": 17,
         "sales_usd": 17,
         "salesCount": 2,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "merch": "Merch Product #10000",
+        "salesCount": 17,
+        "salesUSD": 284.68523110721094,
+        "views": 925,
+        "clicks": 425,
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "merch": "Merch Product #10001",
+        "salesCount": 19,
+        "salesUSD": 121.89565075714175,
+        "views": 1497,
+        "clicks": 222,
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "merch": "Merch Product #10002",
+        "salesCount": 28,
+        "salesUSD": 217.8799355288336,
+        "views": 1129,
+        "clicks": 194,
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "merch": "Merch Product #10003",
+        "salesCount": 33,
+        "salesUSD": 181.82603926616108,
+        "views": 751,
+        "clicks": 149,
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "merch": "Merch Product #10004",
+        "salesCount": 12,
+        "salesUSD": 146.86562772486693,
+        "views": 1670,
+        "clicks": 339,
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       }
     ],
     "weekly": [
@@ -2025,7 +2315,7 @@
         "salesUSD": 158.2,
         "sales_usd": 158.2,
         "salesCount": 11,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "rank": 2,
@@ -2035,7 +2325,7 @@
         "salesUSD": 124.3,
         "sales_usd": 124.3,
         "salesCount": 9,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "rank": 3,
@@ -2045,7 +2335,7 @@
         "salesUSD": 101.7,
         "sales_usd": 101.7,
         "salesCount": 7,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "rank": 4,
@@ -2055,7 +2345,7 @@
         "salesUSD": 84.75,
         "sales_usd": 84.75,
         "salesCount": 6,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "rank": 5,
@@ -2065,7 +2355,7 @@
         "salesUSD": 56.5,
         "sales_usd": 56.5,
         "salesCount": 4,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "rank": 6,
@@ -2075,7 +2365,7 @@
         "salesUSD": 22.6,
         "sales_usd": 22.6,
         "salesCount": 2,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "rank": 7,
@@ -2085,7 +2375,37 @@
         "salesUSD": 11.3,
         "sales_usd": 11.3,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "merch": "Merch Product #10000",
+        "salesCount": 12,
+        "salesUSD": 106.0020214487119,
+        "views": 465,
+        "clicks": 113,
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "merch": "Merch Product #10001",
+        "salesCount": 44,
+        "salesUSD": 258.4568146505949,
+        "views": 1203,
+        "clicks": 370,
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "merch": "Merch Product #10002",
+        "salesCount": 17,
+        "salesUSD": 264.7704226684964,
+        "views": 1987,
+        "clicks": 275,
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       }
     ],
     "monthly": [
@@ -2097,7 +2417,7 @@
         "salesUSD": 518,
         "sales_usd": 518,
         "salesCount": 35,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "rank": 2,
@@ -2107,7 +2427,7 @@
         "salesUSD": 407,
         "sales_usd": 407,
         "salesCount": 28,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "rank": 3,
@@ -2117,7 +2437,7 @@
         "salesUSD": 333,
         "sales_usd": 333,
         "salesCount": 23,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "rank": 4,
@@ -2127,7 +2447,7 @@
         "salesUSD": 277.5,
         "sales_usd": 277.5,
         "salesCount": 19,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "rank": 5,
@@ -2137,7 +2457,7 @@
         "salesUSD": 185,
         "sales_usd": 185,
         "salesCount": 13,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "rank": 6,
@@ -2147,7 +2467,7 @@
         "salesUSD": 74,
         "sales_usd": 74,
         "salesCount": 5,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "rank": 7,
@@ -2157,7 +2477,7 @@
         "salesUSD": 37,
         "sales_usd": 37,
         "salesCount": 3,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       },
       {
         "rank": 8,
@@ -2167,7 +2487,7 @@
         "salesUSD": 9.25,
         "sales_usd": 9.25,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "rank": 9,
@@ -2177,7 +2497,7 @@
         "salesUSD": 5.55,
         "sales_usd": 5.55,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "rank": 10,
@@ -2187,7 +2507,7 @@
         "salesUSD": 3.7,
         "sales_usd": 3.7,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       }
     ],
     "yearly": [
@@ -2199,7 +2519,7 @@
         "salesUSD": 232.8,
         "sales_usd": 232.8,
         "salesCount": 16,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "rank": 2,
@@ -2209,7 +2529,7 @@
         "salesUSD": 182.92,
         "sales_usd": 182.92,
         "salesCount": 13,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "rank": 3,
@@ -2219,7 +2539,7 @@
         "salesUSD": 149.66,
         "sales_usd": 149.66,
         "salesCount": 10,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "rank": 4,
@@ -2229,7 +2549,7 @@
         "salesUSD": 124.72,
         "sales_usd": 124.72,
         "salesCount": 9,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "rank": 5,
@@ -2239,7 +2559,7 @@
         "salesUSD": 83.14,
         "sales_usd": 83.14,
         "salesCount": 6,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "rank": 6,
@@ -2249,7 +2569,7 @@
         "salesUSD": 33.26,
         "sales_usd": 33.26,
         "salesCount": 3,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "rank": 7,
@@ -2259,7 +2579,7 @@
         "salesUSD": 16.63,
         "sales_usd": 16.63,
         "salesCount": 2,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       },
       {
         "rank": 8,
@@ -2269,7 +2589,7 @@
         "salesUSD": 4.16,
         "sales_usd": 4.16,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "rank": 9,
@@ -2279,7 +2599,7 @@
         "salesUSD": 2.49,
         "sales_usd": 2.49,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "rank": 10,
@@ -2289,7 +2609,7 @@
         "salesUSD": 1.66,
         "sales_usd": 1.66,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       }
     ],
     "alltime": [
@@ -2301,7 +2621,7 @@
         "salesUSD": 1741.31,
         "sales_usd": 1741.31,
         "salesCount": 117,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/9n9VvG2/photo-1493246507139-91e8fad9978e.webp"
       },
       {
         "rank": 2,
@@ -2311,7 +2631,7 @@
         "salesUSD": 1368.17,
         "sales_usd": 1368.17,
         "salesCount": 92,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/5v4p8rF/photo-1506744626753-14010f50220c.webp"
       },
       {
         "rank": 3,
@@ -2321,7 +2641,7 @@
         "salesUSD": 1119.41,
         "sales_usd": 1119.41,
         "salesCount": 75,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/ZMBGZ5x/photo-1472214103451-9374bd1c798e.webp"
       },
       {
         "rank": 4,
@@ -2331,7 +2651,7 @@
         "salesUSD": 932.84,
         "sales_usd": 932.84,
         "salesCount": 63,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/1nJ0qQZ/photo-1469474968028-56623f02e42e.webp"
       },
       {
         "rank": 5,
@@ -2341,7 +2661,7 @@
         "salesUSD": 621.9,
         "sales_usd": 621.9,
         "salesCount": 42,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/Fw8zXn2/photo-1449844908441-8829872d2607.webp"
       },
       {
         "rank": 6,
@@ -2351,7 +2671,7 @@
         "salesUSD": 248.76,
         "sales_usd": 248.76,
         "salesCount": 17,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/SXBZ3J2/photo-1470225620780-dba8ba36b745.webp"
       },
       {
         "rank": 7,
@@ -2361,7 +2681,7 @@
         "salesUSD": 124.38,
         "sales_usd": 124.38,
         "salesCount": 9,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/M8PZgKq/photo-1475924156734-496f6cac6ec1.webp"
       },
       {
         "rank": 8,
@@ -2371,7 +2691,7 @@
         "salesUSD": 31.09,
         "sales_usd": 31.09,
         "salesCount": 3,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/mXyG1hS/mangoes.png"
       },
       {
         "rank": 9,
@@ -2381,7 +2701,7 @@
         "salesUSD": 18.66,
         "sales_usd": 18.66,
         "salesCount": 2,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp"
       },
       {
         "rank": 10,
@@ -2391,7 +2711,7 @@
         "salesUSD": 12.44,
         "sales_usd": 12.44,
         "salesCount": 1,
-        "thumbnailUrl": ""
+        "thumbnailUrl": "https://i.ibb.co.com/dKxJc6M/photo-1542204165-65bf26472b9b.webp"
       }
     ]
   },
@@ -2407,11 +2727,75 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 2,
         "country": "Country 392",
         "earningsUSD": 9.99,
         "salesUSD": 9.99,
         "views": 0
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 3,
+        "country": "Country 10000",
+        "views": 6127,
+        "earningsUSD": 4746.824016276147,
+        "users": 251
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 4,
+        "country": "Country 10001",
+        "views": 556,
+        "earningsUSD": 203.16274135436797,
+        "users": 479
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 5,
+        "country": "Country 10002",
+        "views": 4793,
+        "earningsUSD": 4052.5276967386462,
+        "users": 79
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "country": "Country 10003",
+        "views": 1595,
+        "earningsUSD": 2477.40775021059,
+        "users": 427
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "country": "Country 10004",
+        "views": 305,
+        "earningsUSD": 4727.165809370557,
+        "users": 241
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "country": "Country 10005",
+        "views": 1768,
+        "earningsUSD": 1676.3450369091781,
+        "users": 468
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "country": "Country 10006",
+        "views": 8775,
+        "earningsUSD": 4881.519057995966,
+        "users": 474
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "country": "Country 10007",
+        "views": 453,
+        "earningsUSD": 838.7195003218362,
+        "users": 137
       }
     ],
     "weekly": [
@@ -2425,7 +2809,7 @@
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 2,
         "country": "Country 392",
         "earningsUSD": 4.99,
         "salesUSD": 4.99,
@@ -2433,7 +2817,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 3,
         "country": "Country 840",
         "earningsUSD": 167.98,
         "salesUSD": 167.98,
@@ -2441,7 +2825,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 4,
         "country": "Country 826",
         "earningsUSD": 84.96,
         "salesUSD": 84.96,
@@ -2449,7 +2833,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 5,
         "country": "Country 36",
         "earningsUSD": 69.96,
         "salesUSD": 69.96,
@@ -2457,7 +2841,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 6,
         "country": "Country 276",
         "earningsUSD": 19.98,
         "salesUSD": 19.98,
@@ -2465,11 +2849,35 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 7,
         "country": "Country 392",
         "earningsUSD": 9.99,
         "salesUSD": 9.99,
         "views": 0
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "country": "Country 10000",
+        "views": 3708,
+        "earningsUSD": 1016.158565263674,
+        "users": 291
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "country": "Country 10001",
+        "views": 2134,
+        "earningsUSD": 3388.2832874728674,
+        "users": 150
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "country": "Country 10002",
+        "views": 2965,
+        "earningsUSD": 532.8530769115331,
+        "users": 353
       }
     ],
     "monthly": [
@@ -2483,7 +2891,7 @@
       },
       {
         "period": "2026-04-04",
-        "rank": 1,
+        "rank": 2,
         "country": "Country 840",
         "earningsUSD": 192.96,
         "salesUSD": 192.96,
@@ -2491,7 +2899,7 @@
       },
       {
         "period": "2026-04-04",
-        "rank": 1,
+        "rank": 3,
         "country": "Country 276",
         "earningsUSD": 134.99,
         "salesUSD": 134.99,
@@ -2499,7 +2907,7 @@
       },
       {
         "period": "2026-04-04",
-        "rank": 1,
+        "rank": 4,
         "country": "Country 826",
         "earningsUSD": 44.98,
         "salesUSD": 44.98,
@@ -2507,7 +2915,7 @@
       },
       {
         "period": "2026-04-04",
-        "rank": 1,
+        "rank": 5,
         "country": "Country 392",
         "earningsUSD": 5,
         "salesUSD": 5,
@@ -2515,7 +2923,7 @@
       },
       {
         "period": "2026-04-05",
-        "rank": 1,
+        "rank": 6,
         "country": "Country 840",
         "earningsUSD": 179.95,
         "salesUSD": 179.95,
@@ -2523,7 +2931,7 @@
       },
       {
         "period": "2026-04-05",
-        "rank": 1,
+        "rank": 7,
         "country": "Country 276",
         "earningsUSD": 164.98,
         "salesUSD": 164.98,
@@ -2531,7 +2939,7 @@
       },
       {
         "period": "2026-04-05",
-        "rank": 1,
+        "rank": 8,
         "country": "Country 36",
         "earningsUSD": 119.99,
         "salesUSD": 119.99,
@@ -2539,7 +2947,7 @@
       },
       {
         "period": "2026-04-05",
-        "rank": 1,
+        "rank": 9,
         "country": "Country 392",
         "earningsUSD": 44.99,
         "salesUSD": 44.99,
@@ -2547,7 +2955,7 @@
       },
       {
         "period": "2026-04-05",
-        "rank": 1,
+        "rank": 10,
         "country": "Country 826",
         "earningsUSD": 2.99,
         "salesUSD": 2.99,
@@ -2555,7 +2963,7 @@
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 11,
         "country": "Country 36",
         "earningsUSD": 229.93,
         "salesUSD": 229.93,
@@ -2563,7 +2971,7 @@
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 12,
         "country": "Country 840",
         "earningsUSD": 109.99,
         "salesUSD": 109.99,
@@ -2571,7 +2979,7 @@
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 13,
         "country": "Country 826",
         "earningsUSD": 59.99,
         "salesUSD": 59.99,
@@ -2579,7 +2987,7 @@
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 14,
         "country": "Country 392",
         "earningsUSD": 50,
         "salesUSD": 50,
@@ -2587,7 +2995,7 @@
       },
       {
         "period": "2026-04-06",
-        "rank": 1,
+        "rank": 15,
         "country": "Country 276",
         "earningsUSD": 48.95,
         "salesUSD": 48.95,
@@ -2595,7 +3003,7 @@
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 16,
         "country": "Country 840",
         "earningsUSD": 322.96,
         "salesUSD": 322.96,
@@ -2603,7 +3011,7 @@
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 17,
         "country": "Country 392",
         "earningsUSD": 102.99,
         "salesUSD": 102.99,
@@ -2611,7 +3019,7 @@
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 18,
         "country": "Country 36",
         "earningsUSD": 55.96,
         "salesUSD": 55.96,
@@ -2619,7 +3027,7 @@
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 19,
         "country": "Country 826",
         "earningsUSD": 44.96,
         "salesUSD": 44.96,
@@ -2627,7 +3035,7 @@
       },
       {
         "period": "2026-04-07",
-        "rank": 1,
+        "rank": 20,
         "country": "Country 276",
         "earningsUSD": 14.99,
         "salesUSD": 14.99,
@@ -2635,7 +3043,7 @@
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 21,
         "country": "Country 840",
         "earningsUSD": 114.93,
         "salesUSD": 114.93,
@@ -2643,7 +3051,7 @@
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 22,
         "country": "Country 276",
         "earningsUSD": 100,
         "salesUSD": 100,
@@ -2651,7 +3059,7 @@
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 23,
         "country": "Country 36",
         "earningsUSD": 99.97,
         "salesUSD": 99.97,
@@ -2659,7 +3067,7 @@
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 24,
         "country": "Country 826",
         "earningsUSD": 79.96,
         "salesUSD": 79.96,
@@ -2667,7 +3075,7 @@
       },
       {
         "period": "2026-04-08",
-        "rank": 1,
+        "rank": 25,
         "country": "Country 392",
         "earningsUSD": 4.99,
         "salesUSD": 4.99,
@@ -2675,7 +3083,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 26,
         "country": "Country 840",
         "earningsUSD": 167.98,
         "salesUSD": 167.98,
@@ -2683,7 +3091,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 27,
         "country": "Country 826",
         "earningsUSD": 84.96,
         "salesUSD": 84.96,
@@ -2691,7 +3099,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 28,
         "country": "Country 36",
         "earningsUSD": 69.96,
         "salesUSD": 69.96,
@@ -2699,7 +3107,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 29,
         "country": "Country 276",
         "earningsUSD": 19.98,
         "salesUSD": 19.98,
@@ -2707,7 +3115,7 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 30,
         "country": "Country 392",
         "earningsUSD": 9.99,
         "salesUSD": 9.99,
@@ -2725,7 +3133,7 @@
       },
       {
         "period": "Feb",
-        "rank": 1,
+        "rank": 2,
         "country": "Country 36",
         "earningsUSD": 246,
         "salesUSD": 246,
@@ -2733,7 +3141,7 @@
       },
       {
         "period": "Mar",
-        "rank": 1,
+        "rank": 3,
         "country": "Country 36",
         "earningsUSD": 213,
         "salesUSD": 213,
@@ -2741,7 +3149,7 @@
       },
       {
         "period": "Apr",
-        "rank": 1,
+        "rank": 4,
         "country": "Country 36",
         "earningsUSD": 303,
         "salesUSD": 303,
@@ -2749,7 +3157,7 @@
       },
       {
         "period": "May",
-        "rank": 1,
+        "rank": 5,
         "country": "Country 36",
         "earningsUSD": 318,
         "salesUSD": 318,
@@ -2757,7 +3165,7 @@
       },
       {
         "period": "Jun",
-        "rank": 1,
+        "rank": 6,
         "country": "Country 36",
         "earningsUSD": 292,
         "salesUSD": 292,
@@ -2765,7 +3173,7 @@
       },
       {
         "period": "Jul",
-        "rank": 1,
+        "rank": 7,
         "country": "Country 36",
         "earningsUSD": 417,
         "salesUSD": 417,
@@ -2773,7 +3181,7 @@
       },
       {
         "period": "Aug",
-        "rank": 1,
+        "rank": 8,
         "country": "Country 36",
         "earningsUSD": 372,
         "salesUSD": 372,
@@ -2781,7 +3189,7 @@
       },
       {
         "period": "Sep",
-        "rank": 1,
+        "rank": 9,
         "country": "Country 36",
         "earningsUSD": 395,
         "salesUSD": 395,
@@ -2789,7 +3197,7 @@
       },
       {
         "period": "Oct",
-        "rank": 1,
+        "rank": 10,
         "country": "Country 36",
         "earningsUSD": 517,
         "salesUSD": 517,
@@ -2797,7 +3205,7 @@
       },
       {
         "period": "Nov",
-        "rank": 1,
+        "rank": 11,
         "country": "Country 36",
         "earningsUSD": 420,
         "salesUSD": 420,
@@ -2805,7 +3213,7 @@
       },
       {
         "period": "Dec",
-        "rank": 1,
+        "rank": 12,
         "country": "Country 36",
         "earningsUSD": 522,
         "salesUSD": 522,
@@ -2823,7 +3231,7 @@
       },
       {
         "period": "2023",
-        "rank": 1,
+        "rank": 2,
         "country": "Country 36",
         "earningsUSD": 2953,
         "salesUSD": 2953,
@@ -2831,7 +3239,7 @@
       },
       {
         "period": "2024",
-        "rank": 1,
+        "rank": 3,
         "country": "Country 36",
         "earningsUSD": 3691,
         "salesUSD": 3691,
@@ -2839,7 +3247,7 @@
       },
       {
         "period": "2025",
-        "rank": 1,
+        "rank": 4,
         "country": "Country 36",
         "earningsUSD": 4614,
         "salesUSD": 4614,
@@ -2847,11 +3255,51 @@
       },
       {
         "period": "2026",
-        "rank": 1,
+        "rank": 5,
         "country": "Country 36",
         "earningsUSD": 5768,
         "salesUSD": 5768,
         "views": 0
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "country": "Country 10000",
+        "views": 9091,
+        "earningsUSD": 2932.3511059812186,
+        "users": 101
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "country": "Country 10001",
+        "views": 193,
+        "earningsUSD": 1941.1339320623367,
+        "users": 74
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "country": "Country 10002",
+        "views": 4078,
+        "earningsUSD": 3413.4160803487307,
+        "users": 61
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "country": "Country 10003",
+        "views": 8794,
+        "earningsUSD": 2957.3162874596414,
+        "users": 379
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "country": "Country 10004",
+        "views": 5794,
+        "earningsUSD": 2259.4691202848944,
+        "users": 127
       }
     ]
   },
@@ -4444,13 +4892,63 @@
         "period": "2026-04-09",
         "tag": "Tag 746138737",
         "views": 2,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 1
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 12896008",
         "views": 1,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 2
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 3,
+        "tag": "Tag10000",
+        "count": 511
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 4,
+        "tag": "Tag10001",
+        "count": 644
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 5,
+        "tag": "Tag10002",
+        "count": 147
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "tag": "Tag10003",
+        "count": 227
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "tag": "Tag10004",
+        "count": 692
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "tag": "Tag10005",
+        "count": 469
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "tag": "Tag10006",
+        "count": 385
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "tag": "Tag10007",
+        "count": 474
       }
     ],
     "weekly": [
@@ -4458,43 +4956,68 @@
         "period": "2026-04-08",
         "tag": "Tag 1395481247",
         "views": 3,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 1
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 2090088440",
         "views": 7,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 2
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 1395481247",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 3
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 2090835549",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 4
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 741212512",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 5
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 746138737",
         "views": 2,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 6
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 12896008",
         "views": 1,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 7
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "tag": "Tag10000",
+        "count": 925
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "tag": "Tag10001",
+        "count": 823
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "tag": "Tag10002",
+        "count": 403
       }
     ],
     "monthly": [
@@ -4502,181 +5025,211 @@
         "period": "2026-04-04",
         "tag": "Tag 741212512",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 1
       },
       {
         "period": "2026-04-04",
         "tag": "Tag 12896008",
         "views": 3,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 2
       },
       {
         "period": "2026-04-04",
         "tag": "Tag 1395481247",
         "views": 1,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 3
       },
       {
         "period": "2026-04-05",
         "tag": "Tag 1395481247",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 4
       },
       {
         "period": "2026-04-05",
         "tag": "Tag 12896008",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 5
       },
       {
         "period": "2026-04-05",
         "tag": "Tag 2090088440",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 6
       },
       {
         "period": "2026-04-05",
         "tag": "Tag 2090835549",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 7
       },
       {
         "period": "2026-04-05",
         "tag": "Tag 746138737",
         "views": 3,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 8
       },
       {
         "period": "2026-04-05",
         "tag": "Tag 741212512",
         "views": 1,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 9
       },
       {
         "period": "2026-04-06",
         "tag": "Tag 1395481247",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 10
       },
       {
         "period": "2026-04-06",
         "tag": "Tag 2090835549",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 11
       },
       {
         "period": "2026-04-06",
         "tag": "Tag 746138737",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 12
       },
       {
         "period": "2026-04-06",
         "tag": "Tag 2090088440",
         "views": 2,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 13
       },
       {
         "period": "2026-04-06",
         "tag": "Tag 741212512",
         "views": 1,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 14
       },
       {
         "period": "2026-04-07",
         "tag": "Tag 746138737",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 15
       },
       {
         "period": "2026-04-07",
         "tag": "Tag 1395481247",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 16
       },
       {
         "period": "2026-04-07",
         "tag": "Tag 2090835549",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 17
       },
       {
         "period": "2026-04-07",
         "tag": "Tag 741212512",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 18
       },
       {
         "period": "2026-04-07",
         "tag": "Tag 2090088440",
         "views": 3,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 19
       },
       {
         "period": "2026-04-07",
         "tag": "Tag 12896008",
         "views": 3,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 20
       },
       {
         "period": "2026-04-08",
         "tag": "Tag 741212512",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 21
       },
       {
         "period": "2026-04-08",
         "tag": "Tag 2090835549",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 22
       },
       {
         "period": "2026-04-08",
         "tag": "Tag 12896008",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 23
       },
       {
         "period": "2026-04-08",
         "tag": "Tag 1395481247",
         "views": 3,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 24
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 2090088440",
         "views": 7,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 25
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 1395481247",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 26
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 2090835549",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 27
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 741212512",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 28
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 746138737",
         "views": 2,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 29
       },
       {
         "period": "2026-04-09",
         "tag": "Tag 12896008",
         "views": 1,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 30
       }
     ],
     "yearly": [
@@ -4684,73 +5237,85 @@
         "period": "Jan",
         "tag": "Tag 741212512",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 1
       },
       {
         "period": "Feb",
         "tag": "Tag 741212512",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 2
       },
       {
         "period": "Mar",
         "tag": "Tag 741212512",
         "views": 4,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 3
       },
       {
         "period": "Apr",
         "tag": "Tag 741212512",
         "views": 6,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 4
       },
       {
         "period": "May",
         "tag": "Tag 741212512",
         "views": 6,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 5
       },
       {
         "period": "Jun",
         "tag": "Tag 741212512",
         "views": 5,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 6
       },
       {
         "period": "Jul",
         "tag": "Tag 741212512",
         "views": 8,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 7
       },
       {
         "period": "Aug",
         "tag": "Tag 741212512",
         "views": 7,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 8
       },
       {
         "period": "Sep",
         "tag": "Tag 741212512",
         "views": 7,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 9
       },
       {
         "period": "Oct",
         "tag": "Tag 741212512",
         "views": 10,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 10
       },
       {
         "period": "Nov",
         "tag": "Tag 741212512",
         "views": 8,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 11
       },
       {
         "period": "Dec",
         "tag": "Tag 741212512",
         "views": 10,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 12
       }
     ],
     "alltime": [
@@ -4758,31 +5323,66 @@
         "period": "2022",
         "tag": "Tag 741212512",
         "views": 44,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 1
       },
       {
         "period": "2023",
         "tag": "Tag 741212512",
         "views": 55,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 2
       },
       {
         "period": "2024",
         "tag": "Tag 741212512",
         "views": 68,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 3
       },
       {
         "period": "2025",
         "tag": "Tag 741212512",
         "views": 86,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 4
       },
       {
         "period": "2026",
         "tag": "Tag 741212512",
         "views": 107,
-        "salesUSD": 0
+        "salesUSD": 0,
+        "rank": 5
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 6,
+        "tag": "Tag10000",
+        "count": 27
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 7,
+        "tag": "Tag10001",
+        "count": 577
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 8,
+        "tag": "Tag10002",
+        "count": 319
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 9,
+        "tag": "Tag10003",
+        "count": 523
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 10,
+        "tag": "Tag10004",
+        "count": 254
       }
     ]
   },
@@ -5210,7 +5810,8 @@
           "usdSpent": 0.8,
           "totalSpent": 0.8,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1085",
@@ -5223,7 +5824,8 @@
           "usdSpent": 0.8,
           "totalSpent": 0.8,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1113",
@@ -5236,7 +5838,8 @@
           "usdSpent": 0.79,
           "totalSpent": 0.79,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1034",
@@ -5249,7 +5852,8 @@
           "usdSpent": 0.77,
           "totalSpent": 0.77,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1003",
@@ -5262,7 +5866,58 @@
           "usdSpent": 0.69,
           "totalSpent": 0.69,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 967.5647939252053,
+          "purchases": 18,
+          "views": 417
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 890.3547302305359,
+          "purchases": 6,
+          "views": 287
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 861.5486752097122,
+          "purchases": 19,
+          "views": 62
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 163.62487845503182,
+          "purchases": 8,
+          "views": 161
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 500.55250231259595,
+          "purchases": 5,
+          "views": 316
         }
       ],
       "weekly": [
@@ -5277,7 +5932,8 @@
           "usdSpent": 6.77,
           "totalSpent": 6.77,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1034",
@@ -5290,7 +5946,8 @@
           "usdSpent": 5.12,
           "totalSpent": 5.12,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1085",
@@ -5303,7 +5960,8 @@
           "usdSpent": 5.09,
           "totalSpent": 5.09,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1047",
@@ -5316,7 +5974,8 @@
           "usdSpent": 4.75,
           "totalSpent": 4.75,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1003",
@@ -5329,7 +5988,58 @@
           "usdSpent": 4.59,
           "totalSpent": 4.59,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 958.8126019901854,
+          "purchases": 18,
+          "views": 68
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 217.4757708008026,
+          "purchases": 12,
+          "views": 473
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 776.7599321367239,
+          "purchases": 8,
+          "views": 181
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 417.35915776754797,
+          "purchases": 1,
+          "views": 41
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 591.9203220054106,
+          "purchases": 17,
+          "views": 368
         }
       ],
       "monthly": [
@@ -5344,7 +6054,8 @@
           "usdSpent": 24.09,
           "totalSpent": 24.09,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1085",
@@ -5357,7 +6068,8 @@
           "usdSpent": 23.82,
           "totalSpent": 23.82,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1113",
@@ -5370,7 +6082,8 @@
           "usdSpent": 23.44,
           "totalSpent": 23.44,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1003",
@@ -5383,7 +6096,8 @@
           "usdSpent": 21.85,
           "totalSpent": 21.85,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1047",
@@ -5396,7 +6110,58 @@
           "usdSpent": 20.35,
           "totalSpent": 20.35,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 565.6220846086211,
+          "purchases": 13,
+          "views": 149
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 872.6878288118808,
+          "purchases": 2,
+          "views": 4
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 713.6849980392204,
+          "purchases": 13,
+          "views": 354
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 172.11129676635005,
+          "purchases": 11,
+          "views": 366
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 467.51992343972404,
+          "purchases": 19,
+          "views": 170
         }
       ],
       "yearly": [
@@ -5411,7 +6176,8 @@
           "usdSpent": 314.98,
           "totalSpent": 314.98,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1047",
@@ -5424,7 +6190,8 @@
           "usdSpent": 289.99,
           "totalSpent": 289.99,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1003",
@@ -5437,7 +6204,8 @@
           "usdSpent": 272.95,
           "totalSpent": 272.95,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1085",
@@ -5450,7 +6218,8 @@
           "usdSpent": 265,
           "totalSpent": 265,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1034",
@@ -5463,7 +6232,58 @@
           "usdSpent": 249.97,
           "totalSpent": 249.97,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 135.80483803959854,
+          "purchases": 7,
+          "views": 169
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 247.17452699379317,
+          "purchases": 17,
+          "views": 425
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 793.8496994946079,
+          "purchases": 14,
+          "views": 426
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 761.8193202858413,
+          "purchases": 18,
+          "views": 255
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 617.8009489483267,
+          "purchases": 16,
+          "views": 153
         }
       ],
       "alltime": [
@@ -5478,7 +6298,8 @@
           "usdSpent": 1550.15,
           "totalSpent": 1550.15,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1085",
@@ -5491,7 +6312,8 @@
           "usdSpent": 1352.1,
           "totalSpent": 1352.1,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1113",
@@ -5504,7 +6326,8 @@
           "usdSpent": 1341.28,
           "totalSpent": 1341.28,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1034",
@@ -5517,7 +6340,8 @@
           "usdSpent": 1297.28,
           "totalSpent": 1297.28,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1047",
@@ -5530,16 +6354,572 @@
           "usdSpent": 1281.88,
           "totalSpent": 1281.88,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 662.6253321214484,
+          "purchases": 3,
+          "views": 158
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 1.6524052741180295,
+          "purchases": 9,
+          "views": 218
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 98.04607413845545,
+          "purchases": 19,
+          "views": 197
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 5.822010951497814,
+          "purchases": 12,
+          "views": 219
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 150.6069845521184,
+          "purchases": 16,
+          "views": 156
         }
       ]
     },
     "topFirms": {
-      "daily": [],
-      "weekly": [],
-      "monthly": [],
-      "yearly": [],
-      "alltime": []
+      "daily": [
+        {
+          "period": "2026-04-09",
+          "rank": 1,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "totalUSD": 167.01551732402044,
+          "purchases": 14,
+          "views": 369
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 2,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "totalUSD": 312.48692104465226,
+          "purchases": 19,
+          "views": 296
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 3,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "totalUSD": 89.84750232448846,
+          "purchases": 2,
+          "views": 308
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 4,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "totalUSD": 159.23567585178967,
+          "purchases": 5,
+          "views": 9
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 5,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "https://i.pravatar.cc/150?u=5",
+          "totalUSD": 531.8965683925201,
+          "purchases": 14,
+          "views": 320
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10005",
+          "username": "@user10005",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 330.645954942308,
+          "purchases": 0,
+          "views": 201
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10006",
+          "username": "@user10006",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 247.6624632415362,
+          "purchases": 4,
+          "views": 89
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10007",
+          "username": "@user10007",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 274.6986832835456,
+          "purchases": 16,
+          "views": 404
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10008",
+          "username": "@user10008",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 340.75644656818514,
+          "purchases": 15,
+          "views": 6
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10009",
+          "username": "@user10009",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 393.39490377992837,
+          "purchases": 7,
+          "views": 80
+        }
+      ],
+      "weekly": [
+        {
+          "period": "2026-04-09",
+          "rank": 1,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "totalUSD": 791.4759779159532,
+          "purchases": 11,
+          "views": 185
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 2,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "totalUSD": 119.47033870762502,
+          "purchases": 7,
+          "views": 259
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 3,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "totalUSD": 385.1763626134922,
+          "purchases": 2,
+          "views": 219
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 4,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "totalUSD": 923.282830645718,
+          "purchases": 9,
+          "views": 310
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 5,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "https://i.pravatar.cc/150?u=5",
+          "totalUSD": 264.5614919970113,
+          "purchases": 15,
+          "views": 170
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10005",
+          "username": "@user10005",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 532.760276317172,
+          "purchases": 18,
+          "views": 341
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10006",
+          "username": "@user10006",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 177.0129728529054,
+          "purchases": 18,
+          "views": 371
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10007",
+          "username": "@user10007",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 377.2845473689306,
+          "purchases": 18,
+          "views": 302
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10008",
+          "username": "@user10008",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 190.1262120497551,
+          "purchases": 8,
+          "views": 251
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10009",
+          "username": "@user10009",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 266.0498214325582,
+          "purchases": 6,
+          "views": 58
+        }
+      ],
+      "monthly": [
+        {
+          "period": "2026-04-09",
+          "rank": 1,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "totalUSD": 531.6103457071998,
+          "purchases": 19,
+          "views": 135
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 2,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "totalUSD": 738.5926253847467,
+          "purchases": 17,
+          "views": 332
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 3,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "totalUSD": 849.7261599537645,
+          "purchases": 13,
+          "views": 338
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 4,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "totalUSD": 689.4389003062364,
+          "purchases": 18,
+          "views": 67
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 5,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "https://i.pravatar.cc/150?u=5",
+          "totalUSD": 276.2095433160833,
+          "purchases": 7,
+          "views": 397
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10005",
+          "username": "@user10005",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 314.89476568556705,
+          "purchases": 7,
+          "views": 30
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10006",
+          "username": "@user10006",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 80.78101483365697,
+          "purchases": 17,
+          "views": 312
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10007",
+          "username": "@user10007",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 766.5384680079713,
+          "purchases": 5,
+          "views": 49
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10008",
+          "username": "@user10008",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 535.9681665112455,
+          "purchases": 17,
+          "views": 324
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10009",
+          "username": "@user10009",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 166.4008292087712,
+          "purchases": 2,
+          "views": 432
+        }
+      ],
+      "yearly": [
+        {
+          "period": "2026-04-09",
+          "rank": 1,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "totalUSD": 335.076042732114,
+          "purchases": 18,
+          "views": 309
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 2,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "totalUSD": 536.165226102441,
+          "purchases": 13,
+          "views": 185
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 3,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "totalUSD": 14.403214764751816,
+          "purchases": 1,
+          "views": 321
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 4,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "totalUSD": 559.2457230231154,
+          "purchases": 18,
+          "views": 128
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 5,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "https://i.pravatar.cc/150?u=5",
+          "totalUSD": 690.6315192006693,
+          "purchases": 17,
+          "views": 68
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10005",
+          "username": "@user10005",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 462.2852276792132,
+          "purchases": 2,
+          "views": 406
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10006",
+          "username": "@user10006",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 812.237025320394,
+          "purchases": 10,
+          "views": 120
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10007",
+          "username": "@user10007",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 394.73305014359784,
+          "purchases": 0,
+          "views": 131
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10008",
+          "username": "@user10008",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 275.2482925705694,
+          "purchases": 11,
+          "views": 321
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10009",
+          "username": "@user10009",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 334.78634429359056,
+          "purchases": 10,
+          "views": 64
+        }
+      ],
+      "alltime": [
+        {
+          "period": "2026-04-09",
+          "rank": 1,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "totalUSD": 270.83574393168317,
+          "purchases": 16,
+          "views": 166
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 2,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "totalUSD": 948.1542655811364,
+          "purchases": 9,
+          "views": 375
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 3,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "totalUSD": 321.4175599006017,
+          "purchases": 12,
+          "views": 110
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 4,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "totalUSD": 28.139306698036105,
+          "purchases": 13,
+          "views": 423
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 5,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "https://i.pravatar.cc/150?u=5",
+          "totalUSD": 178.31961653793226,
+          "purchases": 10,
+          "views": 453
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10005",
+          "username": "@user10005",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 540.0355936325657,
+          "purchases": 12,
+          "views": 371
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10006",
+          "username": "@user10006",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 636.6068722423877,
+          "purchases": 15,
+          "views": 232
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10007",
+          "username": "@user10007",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 415.84466153990985,
+          "purchases": 9,
+          "views": 206
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10008",
+          "username": "@user10008",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 434.6582269243703,
+          "purchases": 8,
+          "views": 357
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10009",
+          "username": "@user10009",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 767.9988150897353,
+          "purchases": 1,
+          "views": 4
+        }
+      ]
     },
     "topOrderSpenders": {
       "daily": [
@@ -5556,7 +6936,8 @@
           "tokens": 0.94,
           "totalSpent": 0.94,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1047",
@@ -5571,7 +6952,8 @@
           "tokens": 0.79,
           "totalSpent": 0.79,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1034",
@@ -5586,7 +6968,8 @@
           "tokens": 0.79,
           "totalSpent": 0.79,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1085",
@@ -5601,7 +6984,8 @@
           "tokens": 0.69,
           "totalSpent": 0.69,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1003",
@@ -5616,7 +7000,58 @@
           "tokens": 0.68,
           "totalSpent": 0.68,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 22.300744124994832,
+          "purchases": 18,
+          "views": 421
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 108.21498988409384,
+          "purchases": 13,
+          "views": 174
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 226.6574862070685,
+          "purchases": 13,
+          "views": 273
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 111.05170775774542,
+          "purchases": 10,
+          "views": 417
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 102.53659513427971,
+          "purchases": 3,
+          "views": 349
         }
       ],
       "weekly": [
@@ -5633,7 +7068,8 @@
           "tokens": 5.67,
           "totalSpent": 5.67,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1085",
@@ -5648,7 +7084,8 @@
           "tokens": 5.6,
           "totalSpent": 5.6,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1003",
@@ -5663,7 +7100,8 @@
           "tokens": 5.25,
           "totalSpent": 5.25,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1113",
@@ -5678,7 +7116,8 @@
           "tokens": 5.24,
           "totalSpent": 5.24,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1047",
@@ -5693,7 +7132,58 @@
           "tokens": 4.76,
           "totalSpent": 4.76,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 689.5910720086498,
+          "purchases": 5,
+          "views": 403
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 263.9908515727779,
+          "purchases": 14,
+          "views": 481
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 955.2992256335494,
+          "purchases": 1,
+          "views": 248
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 694.4722962532828,
+          "purchases": 11,
+          "views": 137
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 12.866119390316456,
+          "purchases": 9,
+          "views": 224
         }
       ],
       "monthly": [
@@ -5710,7 +7200,8 @@
           "tokens": 24.18,
           "totalSpent": 24.18,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1085",
@@ -5725,7 +7216,8 @@
           "tokens": 23.96,
           "totalSpent": 23.96,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1047",
@@ -5740,7 +7232,8 @@
           "tokens": 23.04,
           "totalSpent": 23.04,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1003",
@@ -5755,7 +7248,8 @@
           "tokens": 22.29,
           "totalSpent": 22.29,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1034",
@@ -5770,7 +7264,58 @@
           "tokens": 17.17,
           "totalSpent": 17.17,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 859.0379795789797,
+          "purchases": 15,
+          "views": 323
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 646.7998950076873,
+          "purchases": 12,
+          "views": 188
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 808.6778174524964,
+          "purchases": 18,
+          "views": 252
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 915.4991536145247,
+          "purchases": 10,
+          "views": 259
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 181.22961172715137,
+          "purchases": 17,
+          "views": 250
         }
       ],
       "yearly": [
@@ -5787,7 +7332,8 @@
           "tokens": 314.98,
           "totalSpent": 314.98,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1047",
@@ -5802,7 +7348,8 @@
           "tokens": 289.99,
           "totalSpent": 289.99,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1003",
@@ -5817,7 +7364,8 @@
           "tokens": 272.95,
           "totalSpent": 272.95,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1085",
@@ -5832,7 +7380,8 @@
           "tokens": 265,
           "totalSpent": 265,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1034",
@@ -5847,7 +7396,58 @@
           "tokens": 249.97,
           "totalSpent": 249.97,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 187.70627059886513,
+          "purchases": 19,
+          "views": 404
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 125.03959069396386,
+          "purchases": 13,
+          "views": 241
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 64.1407730850322,
+          "purchases": 19,
+          "views": 453
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 626.7151522816547,
+          "purchases": 16,
+          "views": 311
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 962.0489659158678,
+          "purchases": 0,
+          "views": 361
         }
       ],
       "alltime": [
@@ -5864,7 +7464,8 @@
           "tokens": 1865.66,
           "totalSpent": 1865.66,
           "handle": "@fan1113",
-          "avatar": ""
+          "avatar": "/images/profile-thumbnail.png",
+          "rank": 1
         },
         {
           "name": "Fan 1047",
@@ -5879,7 +7480,8 @@
           "tokens": 1607.34,
           "totalSpent": 1607.34,
           "handle": "@fan1047",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=1",
+          "rank": 2
         },
         {
           "name": "Fan 1003",
@@ -5894,7 +7496,8 @@
           "tokens": 1319.81,
           "totalSpent": 1319.81,
           "handle": "@fan1003",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=2",
+          "rank": 3
         },
         {
           "name": "Fan 1085",
@@ -5909,7 +7512,8 @@
           "tokens": 1169.2,
           "totalSpent": 1169.2,
           "handle": "@fan1085",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=3",
+          "rank": 4
         },
         {
           "name": "Fan 1034",
@@ -5924,7 +7528,58 @@
           "tokens": 1081.29,
           "totalSpent": 1081.29,
           "handle": "@fan1034",
-          "avatar": ""
+          "avatar": "https://i.pravatar.cc/150?u=4",
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 756.3739400534381,
+          "purchases": 10,
+          "views": 438
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 660.1690280561589,
+          "purchases": 4,
+          "views": 75
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 618.4243595372393,
+          "purchases": 7,
+          "views": 113
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 956.5814334050915,
+          "purchases": 4,
+          "views": 84
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 998.9566705509508,
+          "purchases": 19,
+          "views": 256
         }
       ]
     },
@@ -5933,7 +7588,7 @@
         {
           "name": "Fan 1847",
           "handle": "@fan1847",
-          "avatar": "",
+          "avatar": "/images/profile-thumbnail.png",
           "subscription": 0.21,
           "paytoview": 0.05,
           "merch": 0.15,
@@ -5941,12 +7596,13 @@
           "customrequest": 0.28,
           "tokens": 0.71,
           "usdSpent": 0.71,
-          "totalSpent": 0.71
+          "totalSpent": 0.71,
+          "rank": 1
         },
         {
           "name": "Fan 1113",
           "handle": "@fan1113",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=1",
           "subscription": 0.19,
           "paytoview": 0.04,
           "merch": 0.13,
@@ -5954,12 +7610,13 @@
           "customrequest": 0.25,
           "tokens": 0.64,
           "usdSpent": 0.64,
-          "totalSpent": 0.64
+          "totalSpent": 0.64,
+          "rank": 2
         },
         {
           "name": "Fan 1503",
           "handle": "@fan1503",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=2",
           "subscription": 0.19,
           "paytoview": 0.04,
           "merch": 0.13,
@@ -5967,12 +7624,13 @@
           "customrequest": 0.25,
           "tokens": 0.64,
           "usdSpent": 0.64,
-          "totalSpent": 0.64
+          "totalSpent": 0.64,
+          "rank": 3
         },
         {
           "name": "Fan 1024",
           "handle": "@fan1024",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=3",
           "subscription": 0.18,
           "paytoview": 0.04,
           "merch": 0.13,
@@ -5980,12 +7638,13 @@
           "customrequest": 0.24,
           "tokens": 0.61,
           "usdSpent": 0.61,
-          "totalSpent": 0.61
+          "totalSpent": 0.61,
+          "rank": 4
         },
         {
           "name": "Fan 1636",
           "handle": "@fan1636",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=4",
           "subscription": 0.17,
           "paytoview": 0.04,
           "merch": 0.12,
@@ -5993,14 +7652,65 @@
           "customrequest": 0.22,
           "tokens": 0.57,
           "usdSpent": 0.57,
-          "totalSpent": 0.57
+          "totalSpent": 0.57,
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 519.7678791430645,
+          "purchases": 11,
+          "views": 125
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 195.93334012406748,
+          "purchases": 9,
+          "views": 272
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 723.9919061739103,
+          "purchases": 19,
+          "views": 486
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 741.192070857987,
+          "purchases": 5,
+          "views": 256
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 576.0524701569226,
+          "purchases": 4,
+          "views": 321
         }
       ],
       "weekly": [
         {
           "name": "Fan 1847",
           "handle": "@fan1847",
-          "avatar": "",
+          "avatar": "/images/profile-thumbnail.png",
           "subscription": 1.85,
           "paytoview": 0.4,
           "merch": 1.29,
@@ -6008,12 +7718,13 @@
           "customrequest": 2.43,
           "tokens": 6.22,
           "usdSpent": 6.22,
-          "totalSpent": 6.22
+          "totalSpent": 6.22,
+          "rank": 1
         },
         {
           "name": "Fan 1503",
           "handle": "@fan1503",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=1",
           "subscription": 1.63,
           "paytoview": 0.35,
           "merch": 1.14,
@@ -6021,12 +7732,13 @@
           "customrequest": 2.13,
           "tokens": 5.47,
           "usdSpent": 5.47,
-          "totalSpent": 5.47
+          "totalSpent": 5.47,
+          "rank": 2
         },
         {
           "name": "Fan 1024",
           "handle": "@fan1024",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=2",
           "subscription": 1.34,
           "paytoview": 0.29,
           "merch": 0.93,
@@ -6034,12 +7746,13 @@
           "customrequest": 1.75,
           "tokens": 4.49,
           "usdSpent": 4.49,
-          "totalSpent": 4.49
+          "totalSpent": 4.49,
+          "rank": 3
         },
         {
           "name": "Fan 1113",
           "handle": "@fan1113",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=3",
           "subscription": 1.28,
           "paytoview": 0.27,
           "merch": 0.89,
@@ -6047,12 +7760,13 @@
           "customrequest": 1.67,
           "tokens": 4.29,
           "usdSpent": 4.29,
-          "totalSpent": 4.29
+          "totalSpent": 4.29,
+          "rank": 4
         },
         {
           "name": "Fan 1636",
           "handle": "@fan1636",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=4",
           "subscription": 1.09,
           "paytoview": 0.23,
           "merch": 0.76,
@@ -6060,14 +7774,65 @@
           "customrequest": 1.42,
           "tokens": 3.65,
           "usdSpent": 3.65,
-          "totalSpent": 3.65
+          "totalSpent": 3.65,
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 604.663137224057,
+          "purchases": 8,
+          "views": 461
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 423.27462487186926,
+          "purchases": 5,
+          "views": 267
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 248.03900597432082,
+          "purchases": 6,
+          "views": 160
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 782.4054766142987,
+          "purchases": 10,
+          "views": 475
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 432.8100812079907,
+          "purchases": 14,
+          "views": 451
         }
       ],
       "monthly": [
         {
           "name": "Fan 1847",
           "handle": "@fan1847",
-          "avatar": "",
+          "avatar": "/images/profile-thumbnail.png",
           "subscription": 8.02,
           "paytoview": 1.71,
           "merch": 5.59,
@@ -6075,12 +7840,13 @@
           "customrequest": 10.5,
           "tokens": 26.93,
           "usdSpent": 26.93,
-          "totalSpent": 26.93
+          "totalSpent": 26.93,
+          "rank": 1
         },
         {
           "name": "Fan 1024",
           "handle": "@fan1024",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=1",
           "subscription": 6.96,
           "paytoview": 1.49,
           "merch": 4.85,
@@ -6088,12 +7854,13 @@
           "customrequest": 9.12,
           "tokens": 23.37,
           "usdSpent": 23.37,
-          "totalSpent": 23.37
+          "totalSpent": 23.37,
+          "rank": 2
         },
         {
           "name": "Fan 1636",
           "handle": "@fan1636",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=2",
           "subscription": 6.54,
           "paytoview": 1.4,
           "merch": 4.56,
@@ -6101,12 +7868,13 @@
           "customrequest": 8.57,
           "tokens": 21.98,
           "usdSpent": 21.98,
-          "totalSpent": 21.98
+          "totalSpent": 21.98,
+          "rank": 3
         },
         {
           "name": "Fan 1503",
           "handle": "@fan1503",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=3",
           "subscription": 6.28,
           "paytoview": 1.34,
           "merch": 4.38,
@@ -6114,12 +7882,13 @@
           "customrequest": 8.22,
           "tokens": 21.08,
           "usdSpent": 21.08,
-          "totalSpent": 21.08
+          "totalSpent": 21.08,
+          "rank": 4
         },
         {
           "name": "Fan 1113",
           "handle": "@fan1113",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=4",
           "subscription": 5.54,
           "paytoview": 1.18,
           "merch": 3.86,
@@ -6127,14 +7896,65 @@
           "customrequest": 7.26,
           "tokens": 18.6,
           "usdSpent": 18.6,
-          "totalSpent": 18.6
+          "totalSpent": 18.6,
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 508.57851729913074,
+          "purchases": 2,
+          "views": 377
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 843.9229760111707,
+          "purchases": 19,
+          "views": 320
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 43.902197779233546,
+          "purchases": 10,
+          "views": 207
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 587.5517709862809,
+          "purchases": 5,
+          "views": 217
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 980.5928248042652,
+          "purchases": 18,
+          "views": 39
         }
       ],
       "yearly": [
         {
           "name": "Fan 1847",
           "handle": "@fan1847",
-          "avatar": "",
+          "avatar": "/images/profile-thumbnail.png",
           "subscription": 86.34,
           "paytoview": 18.45,
           "merch": 60.21,
@@ -6142,12 +7962,13 @@
           "customrequest": 113.1,
           "tokens": 289.99,
           "usdSpent": 289.99,
-          "totalSpent": 289.99
+          "totalSpent": 289.99,
+          "rank": 1
         },
         {
           "name": "Fan 1113",
           "handle": "@fan1113",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=1",
           "subscription": 80.79,
           "paytoview": 17.27,
           "merch": 56.34,
@@ -6155,12 +7976,13 @@
           "customrequest": 105.83,
           "tokens": 271.35,
           "usdSpent": 271.35,
-          "totalSpent": 271.35
+          "totalSpent": 271.35,
+          "rank": 2
         },
         {
           "name": "Fan 1503",
           "handle": "@fan1503",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=2",
           "subscription": 78.9,
           "paytoview": 16.86,
           "merch": 55.03,
@@ -6168,12 +7990,13 @@
           "customrequest": 103.36,
           "tokens": 265,
           "usdSpent": 265,
-          "totalSpent": 265
+          "totalSpent": 265,
+          "rank": 3
         },
         {
           "name": "Fan 1024",
           "handle": "@fan1024",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=3",
           "subscription": 74.42,
           "paytoview": 15.91,
           "merch": 51.9,
@@ -6181,12 +8004,13 @@
           "customrequest": 97.5,
           "tokens": 249.97,
           "usdSpent": 249.97,
-          "totalSpent": 249.97
+          "totalSpent": 249.97,
+          "rank": 4
         },
         {
           "name": "Fan 1636",
           "handle": "@fan1636",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=4",
           "subscription": 69.93,
           "paytoview": 14.95,
           "merch": 48.77,
@@ -6194,14 +8018,65 @@
           "customrequest": 91.61,
           "tokens": 234.88,
           "usdSpent": 234.88,
-          "totalSpent": 234.88
+          "totalSpent": 234.88,
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 559.3172834421949,
+          "purchases": 13,
+          "views": 444
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 196.93034459373428,
+          "purchases": 15,
+          "views": 478
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 206.4329409568797,
+          "purchases": 11,
+          "views": 53
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 453.7713507081067,
+          "purchases": 18,
+          "views": 238
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 15.544483153858145,
+          "purchases": 17,
+          "views": 341
         }
       ],
       "alltime": [
         {
           "name": "Fan 1503",
           "handle": "@fan1503",
-          "avatar": "",
+          "avatar": "/images/profile-thumbnail.png",
           "subscription": 456.2,
           "paytoview": 97.48,
           "merch": 318.18,
@@ -6209,12 +8084,13 @@
           "customrequest": 597.63,
           "tokens": 1532.23,
           "usdSpent": 1532.23,
-          "totalSpent": 1532.23
+          "totalSpent": 1532.23,
+          "rank": 1
         },
         {
           "name": "Fan 1847",
           "handle": "@fan1847",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=1",
           "subscription": 410.04,
           "paytoview": 87.62,
           "merch": 285.94,
@@ -6222,12 +8098,13 @@
           "customrequest": 537.13,
           "tokens": 1377.2,
           "usdSpent": 1377.2,
-          "totalSpent": 1377.2
+          "totalSpent": 1377.2,
+          "rank": 2
         },
         {
           "name": "Fan 1024",
           "handle": "@fan1024",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=2",
           "subscription": 407.51,
           "paytoview": 87.12,
           "merch": 284.19,
@@ -6235,12 +8112,13 @@
           "customrequest": 533.89,
           "tokens": 1368.78,
           "usdSpent": 1368.78,
-          "totalSpent": 1368.78
+          "totalSpent": 1368.78,
+          "rank": 3
         },
         {
           "name": "Fan 1113",
           "handle": "@fan1113",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=3",
           "subscription": 325.82,
           "paytoview": 69.65,
           "merch": 227.22,
@@ -6248,12 +8126,13 @@
           "customrequest": 426.81,
           "tokens": 1094.34,
           "usdSpent": 1094.34,
-          "totalSpent": 1094.34
+          "totalSpent": 1094.34,
+          "rank": 4
         },
         {
           "name": "Fan 1636",
           "handle": "@fan1636",
-          "avatar": "",
+          "avatar": "https://i.pravatar.cc/150?u=4",
           "subscription": 317.51,
           "paytoview": 67.88,
           "merch": 221.43,
@@ -6261,7 +8140,58 @@
           "customrequest": 415.94,
           "tokens": 1066.44,
           "usdSpent": 1066.44,
-          "totalSpent": 1066.44
+          "totalSpent": 1066.44,
+          "rank": 5
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 6,
+          "name": "User 10000",
+          "username": "@user10000",
+          "avatar": "https://i.pravatar.cc/150?u=6",
+          "totalUSD": 915.3519396213516,
+          "purchases": 5,
+          "views": 118
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 7,
+          "name": "User 10001",
+          "username": "@user10001",
+          "avatar": "https://i.pravatar.cc/150?u=7",
+          "totalUSD": 126.3301766296786,
+          "purchases": 3,
+          "views": 38
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 8,
+          "name": "User 10002",
+          "username": "@user10002",
+          "avatar": "https://i.pravatar.cc/150?u=8",
+          "totalUSD": 887.0463185405868,
+          "purchases": 11,
+          "views": 81
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 9,
+          "name": "User 10003",
+          "username": "@user10003",
+          "avatar": "https://i.pravatar.cc/150?u=9",
+          "totalUSD": 762.9681115379486,
+          "purchases": 13,
+          "views": 64
+        },
+        {
+          "period": "2026-04-09",
+          "rank": 10,
+          "name": "User 10004",
+          "username": "@user10004",
+          "avatar": "/images/profile-thumbnail.png",
+          "totalUSD": 593.9301353974206,
+          "purchases": 19,
+          "views": 74
         }
       ]
     }

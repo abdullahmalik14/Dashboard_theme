@@ -89,7 +89,7 @@ const topMerchRows = computed(() => {
     title: item.merch || item.title || `Merch #${index + 1}`,
     views: item.views || 0,
     sales: `USD$ ${(item.salesUSD || item.sales_usd || 0).toFixed(2)}`,
-    image: '/images/profile-thumbnail.png'
+    image: item.thumbnailUrl || '/images/profile-thumbnail.png'
   }));
 });
 
