@@ -5,7 +5,7 @@
     <div v-if="hasData" class="flex flex-col gap-4">
 
       <!-- row: stats -->
-      <div class="flex w-full items-center py-6 bg-white dark:bg-dark-bg-container">
+      <div class="flex w-full items-center py-6 ">
         <div class="flex-1 flex flex-col justify-center items-center gap-4 border-r border-gray-200 dark:border-gray-700">
           <h3 class="text-light-text-darkgray dark:text-white text-sm md:text-base font-semibold">
             Total Earnings
@@ -54,9 +54,9 @@
       </div>
 
       <!-- row: charts -->
-      <div class="flex flex-col gap-8 w-full mt-2">
+      <div :class="isDaily ? 'flex flex-row gap-6' : 'flex flex-col gap-8'" class="w-full mt-2">
         <!-- Sales Insight -->
-        <div class="flex flex-col gap-4 w-full h-[25rem] relative">
+        <div :class="isDaily ? 'flex-1' : 'w-full'" class="flex flex-col gap-4 h-[25rem] relative">
           <div class="flex justify-between items-center gap-2">
             <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold relative z-10">Sales Insights</h3>
             <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0] relative z-10">
@@ -86,7 +86,7 @@
         </div>
 
         <!-- Tokens Trend -->
-        <div class="flex flex-col gap-4 w-full h-[25rem] relative">
+        <div :class="isDaily ? 'flex-1' : 'w-full'" class="flex flex-col gap-4 h-[25rem] relative">
           <div class="flex justify-between items-center gap-2">
             <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold relative z-10">Token Insights</h3>
             <div v-if="!isDaily" class="flex gap-1 bg-[#F9FAFB] p-1 rounded-lg border border-[#EAECF0] relative z-10">
@@ -118,13 +118,13 @@
 
       <!-- row: Top Countries -->
       <div
-        class="flex flex-col gap-4 p-4 rounded-sm bg-light-bg-container backdrop-blur-[25px] dark:bg-dark-bg-container">
+        class="flex flex-col gap-4 p-4 rounded-sm ">
         <h3 class="text-light-text-darkgray dark:text-white text-lg font-semibold">Top Countries</h3>
 
         <div v-if="insightData?.topCountries?.length > 0" class="flex flex-col md:flex-row gap-8 w-full mt-2">
           <!-- Left: Table -->
           <div class="flex-1 min-w-0">
-            <FlexTable :columns="earningsTopCountriesColumns" :rows="insightData.topCountries"
+            <FlexTable :columns="earningsTopCountriesColumns" :rows="topCountriesWithRank"
               :theme="earningsTopCountriesTheme">
               <template #cell.media="{ row }">
                 <div class="flex items-center gap-3 w-full px-3">
@@ -150,9 +150,9 @@
             </div>
             
             <!-- Custom Heatmap Legend -->
-            <div class="absolute bottom-0 left-0 w-full flex items-center justify-center gap-3">
+            <div class="absolute bottom-0 left-0 w-full flex items-center  gap-3">
               <span class="text-[10px] text-gray-500 font-medium tracking-wide">0</span>
-              <div class="w-40 h-2.5 rounded-full" style="background: linear-gradient(to right, #00f2fe, #F72585, #3A0CA3);"></div>
+              <div class="w-40 h-2.5 " style="background: linear-gradient(to right, #00f2fe, #F72585, #3A0CA3);"></div>
               <span class="text-[10px] text-gray-500 font-medium tracking-wide">{{ insightData?.topCountries?.[0]?.sales || '0.00' }} USD</span>
             </div>
           </div>
@@ -213,6 +213,9 @@ const isDaily = computed(() => activePeriod.value === 'daily')
 
 const salesView = ref('bar')
 const tokensView = ref('bar')
+const topCountriesWithRank = computed(() => {
+  return (props.insightData?.topCountries || []).map((c, i) => ({ ...c, rank: i + 1 }))
+})
 
 const LEGEND = { enabled:true, class:"absolute -bottom-2 left-0 w-full flex flex-wrap justify-center gap-4", itemClass:"inline-flex items-center gap-1.5 px-2 py-1", markerClass:"w-2.5 h-2.5 rounded-full", labelClass:"text-slate-500 text-xs font-medium font-sans" }
 const SALES_STYLES = { subscription:{color:"#4CC9F0",name:"Subscription"}, paytoview:{color:"#4361EE",name:"Pay to view"}, merch:{color:"#7209B7",name:"Merch"}, wishtender:{color:"#F72585",name:"Wishtender"}, customrequest:{color:"#94A3B8",name:"Custom request"} }
@@ -220,11 +223,11 @@ const SALES_LABELS = { subscription:"Subscription", paytoview:"Pay to view", mer
 const TOKENS_STYLES = { tipTokens:{color:"#4CC9F0",name:"Tip"}, callTokens:{color:"#4361EE",name:"Call"}, chatTokens:{color:"#7209B7",name:"Chat"}, liveStreamTokens:{color:"#F72585",name:"Live streaming"} }
 const TOKENS_LABELS = { tipTokens:"Tip", callTokens:"Call", chatTokens:"Chat", liveStreamTokens:"Live streaming" }
 
-function salesBarCfg(dk) { return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"period",total:"total"}, breakdownKeys:["subscription","paytoview","merch","wishtender","customrequest"], stacked:true, seriesStyles:SALES_STYLES, seriesLabels:SALES_LABELS, bar:{widthPercent:35}, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"$",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND }) }
-function salesLineCfg(dk) { return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"period",total:"total"}, breakdownKeys:["subscription","paytoview","merch","wishtender","customrequest"], stacked:true, seriesStyles:SALES_STYLES, seriesLabels:SALES_LABELS, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"$",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND }) }
+function salesBarCfg(dk) { return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"period",total:"total"}, breakdownKeys:["subscription","paytoview","merch","wishtender","customrequest"], stacked:true, seriesStyles:SALES_STYLES, seriesLabels:SALES_LABELS, bar:{widthPercent:35}, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:30}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"$",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND }) }
+function salesLineCfg(dk) { return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"period",total:"total"}, breakdownKeys:["subscription","paytoview","merch","wishtender","customrequest"], stacked:true, seriesStyles:SALES_STYLES, seriesLabels:SALES_LABELS, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:30}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"$",valueSuffix:""}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND }) }
 
-function tokensBarCfg(dk) { return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"period",total:"totalTokens"}, breakdownKeys:["tipTokens","callTokens","chatTokens","liveStreamTokens"], stacked:true, seriesStyles:TOKENS_STYLES, seriesLabels:TOKENS_LABELS, bar:{widthPercent:35}, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:" tokens"}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND }) }
-function tokensLineCfg(dk) { return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"period",total:"totalTokens"}, breakdownKeys:["tipTokens","callTokens","chatTokens","liveStreamTokens"], stacked:true, seriesStyles:TOKENS_STYLES, seriesLabels:TOKENS_LABELS, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:80}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:" tokens"}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND }) }
+function tokensBarCfg(dk) { return JSON.stringify({ type:"bar", period:"slot", datasetKey:dk, fields:{category:"period",total:"totalTokens"}, breakdownKeys:["tipTokens","callTokens","chatTokens","liveStreamTokens"], stacked:true, seriesStyles:TOKENS_STYLES, seriesLabels:TOKENS_LABELS, bar:{widthPercent:35}, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:30}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:" tokens"}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, legentHint:LEGEND }) }
+function tokensLineCfg(dk) { return JSON.stringify({ type:"line", period:"slot", datasetKey:dk, fields:{category:"period",total:"totalTokens"}, breakdownKeys:["tipTokens","callTokens","chatTokens","liveStreamTokens"], stacked:true, seriesStyles:TOKENS_STYLES, seriesLabels:TOKENS_LABELS, axisLabelColor:"#475467", axisLabelFontSize:"10px", xAxis:{minGridDistance:30}, tooltip:{aggregated:{enabled:true,mode:"codepen",valuePrefix:"",valueSuffix:" tokens"}}, yAxis:{autoMax:true,autoMaxBuffer:0.12,strict:true}, line:{strokeWidth:4}, legentHint:LEGEND }) }
 
 function countriesMapCfg(dk) { return JSON.stringify({ type:"map", period:"slot", datasetKey:dk, groupColors: { "base": "#e8e8e8", "g1": "#3A0CA3", "g2": "#7209B7", "g3": "#F72585", "g4": "#4CC9F0", "g5": "#00f2fe" }, tooltip: { color: "#344054", valuePrefix: "USD$ " } }) }
 
@@ -263,7 +266,7 @@ function injectChartData() {
     ]
   }
 
-  const tc = props.insightData?.topCountries || []
+  const tc = topCountriesWithRank.value
   const mapData = tc.map(c => ({ id: c.iso || c.country, sales: c.salesRaw || c.salesUSD || (typeof c.sales === 'number' ? c.sales : 0) || c.earningsUSD || 0 }));
   
   const ALL_ISO_CODES = ["AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BQ","BA","BW","BV","BR","IO","BN","BG","BF","BI","CV","KH","CM","CA","KY","CF","TD","CL","CN","CX","CC","CO","KM","CD","CG","CK","CR","HR","CU","CW","CY","CZ","CI","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GG","GN","GW","GY","HT","HM","VA","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM","NA","NR","NP","NL","NC","NZ","NI","NE","NG","NU","NF","MP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","MK","RO","RU","RW","RE","BL","SH","KN","LC","MF","PM","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SX","SK","SI","SB","SO","ZA","GS","SS","ES","LK","SD","SR","SJ","SE","CH","SY","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","UM","US","UY","UZ","VU","VE","VN","VG","VI","WF","EH","YE","ZM","ZW"];

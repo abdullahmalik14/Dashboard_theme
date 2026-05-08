@@ -1,5 +1,5 @@
 <template>
-  <svg :width="width" :height="height" class="sparkline" :viewBox="`0 0 ${width} ${height}`">
+  <svg width="100%" :height="height" class="sparkline" :viewBox="`0 0 ${width} ${height}`" preserveAspectRatio="none">
     <defs>
       <linearGradient :id="gradientId" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" :stop-color="color" stop-opacity="0.3" />

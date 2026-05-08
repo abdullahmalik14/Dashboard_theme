@@ -8,13 +8,17 @@
           <div class="w-6 h-6 flex items-center justify-center">
             <img src="/images/cartIcon.png" alt="Cart" class="w-5 h-5 opacity-70" />
           </div>
-          <div class="text-gray-500 text-xl font-medium font-['Poppins'] leading-8">Order Received</div>
+          <div 
+            data-label="Order Received"
+            class="text-gray-500 text-xl font-medium font-['Poppins'] leading-8">Order Received</div>
         </div>
 
         <!-- Tabs (Desktop) -->
         <div
           class="hidden md:flex w-full lg:w-auto bg-white/30 rounded-lg justify-start items-start overflow-hidden border border-gray-200">
-          <div v-for="tab in orderTabs" :key="tab" @click="selectedTab = tab" :class="[
+          <div v-for="tab in orderTabs" :key="tab" @click="selectedTab = tab" 
+            :data-value="tab"
+            :class="[
             'flex-1 lg:flex-initial whitespace-nowrap cursor-pointer h-full px-4 py-2 flex justify-center items-center gap-2 transition-all font-[\'Poppins\'] text-sm outline-none border-r border-gray-200 last:border-r-0',
             selectedTab === tab ? 'bg-white text-gray-800 font-bold' : 'bg-transparent text-gray-500 font-medium hover:bg-gray-50'
           ]">
@@ -37,7 +41,9 @@
           </button>
           <div v-if="isDropdownOpen"
             class="absolute right-0 z-20 w-full sm:w-[200px] mt-1.5 bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden animate-in fade-in zoom-in duration-200">
-            <div v-for="tab in orderTabs" :key="tab" @click="selectedTab = tab; isDropdownOpen = false" :class="[
+            <div v-for="tab in orderTabs" :key="tab" @click="selectedTab = tab; isDropdownOpen = false" 
+              :data-value="tab"
+              :class="[
               'px-4 py-3 text-sm transition-colors cursor-pointer text-center',
               selectedTab === tab ? 'bg-blue-50/80 text-blue-700 font-bold' : 'text-gray-600 hover:bg-gray-50/80'
             ]">
@@ -74,7 +80,9 @@
                   <div v-else-if="row.type"
                     class="self-stretch justify-start text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">
                     {{ row.type }}</div>
-                  <div class="self-stretch text-slate-500 text-xs font-normal leading-4 line-clamp-1">{{ row.orderId
+                  <div 
+                    :data-value="row.orderId"
+                    class="self-stretch text-slate-500 text-xs font-normal leading-4 line-clamp-1">{{ row.orderId
                   }}</div>
                 </div>
               </div>
@@ -108,7 +116,9 @@
                 <div class="w-6 h-6 rounded-full overflow-hidden shrink-0 border border-black/5">
                   <img src="/images/mangoes.png" class="w-full h-full object-cover" />
                 </div>
-                <span class="truncate text-slate-700 text-[13px] font-normal">{{ row.handle }}</span>
+                <span 
+                  :data-value="row.handle"
+                  class="truncate text-slate-700 text-[13px] font-normal">{{ row.handle }}</span>
               </div>
             </template>
 
@@ -119,7 +129,9 @@
                   <img src="/images/mangoes.png" class="w-4 h-4 object-cover" />
                 </div>
                 <div class="h-6 px-1.5 py-[3px] bg-black backdrop-blur-[10px] flex justify-center items-center gap-2">
-                  <div class="justify-start text-yellow-400 text-xs font-medium font-['Poppins'] leading-4">{{
+                  <div 
+                    :data-value="row.status"
+                    class="justify-start text-yellow-400 text-xs font-medium font-['Poppins'] leading-4">{{
                     row.status }}</div>
                 </div>
               </div>
@@ -127,12 +139,15 @@
 
             <!-- Date Slot -->
             <template #cell.date="{ row }">
-              <div class="px-4 text-slate-600 text-[13px] font-normal h-full flex items-center">{{ row.date }}</div>
+              <div 
+                :data-value="row.date"
+                class="px-4 text-slate-600 text-[13px] font-normal h-full flex items-center">{{ row.date }}</div>
             </template>
 
             <!-- Total Slot -->
             <template #cell.total="{ row }">
               <div
+                :data-value="row.total"
                 class="pr-4 text-gray-900 text-[13px] font-bold h-full flex items-center justify-end md:justify-start w-full whitespace-nowrap">
                 {{ row.total }}
               </div>

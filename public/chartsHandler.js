@@ -4775,7 +4775,9 @@ const datasetsPromise = configJson.datasets
         const sep = `\n[font color='#D0D5DD']───────────────────────[/font]\n`;
 
         // Build tail line with total value
-        const tail = `[fontWeight:normal width:130px][font color='#667085']Total Earnings:[/font][/] [bold width:0px] ${
+        const tail = `[fontWeight:normal width:130px][font color='#667085']${
+          aggregatedTooltipConfig.totalLabel || "Total Earnings:"
+        }[/font][/] [bold width:0px] ${
           aggregatedTooltipConfig.valuePrefix || ""
         }${total}${aggregatedTooltipConfig.valueSuffix || ""}[/]`;
 

@@ -8,7 +8,9 @@
         class="w-full px-4 flex justify-between flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-4">
         <!-- title -->
         <div class="flex items-center gap-2">
-          <h3 class="text-slate-700 m-0 leading-6 text-base font-medium font-['Poppins']">
+          <h3 
+            data-label="Top Media"
+            class="text-slate-700 m-0 leading-6 text-base font-medium font-['Poppins']">
             Top Media
           </h3>
         </div>
@@ -16,7 +18,9 @@
         <!-- tabs-button-group -->
         <div
           class="flex w-full sm:w-auto bg-white/30 rounded-lg justify-start items-start overflow-hidden border border-gray-200 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
-          <div v-for="tab in topMediaTabs" :key="tab" @click="selectedTopMediaTab = tab" :class="[
+          <div v-for="tab in topMediaTabs" :key="tab" @click="selectedTopMediaTab = tab" 
+            :data-value="tab"
+            :class="[
             'flex-1 sm:flex-initial whitespace-nowrap cursor-pointer h-full px-4 py-2 flex justify-center items-center gap-2 transition-all font-[\'Poppins\'] text-sm outline-none border-r border-gray-200 last:border-r-0',
             selectedTopMediaTab === tab ? 'bg-white text-gray-800 font-bold' : 'bg-transparent text-gray-500 font-medium hover:bg-gray-50'
           ]">
@@ -39,29 +43,37 @@
                   <span class="text-white text-xs font-bold font-['Poppins'] leading-5">{{ row.rank }}</span>
                 </div>
               </div>
-              <div class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3">
+              <div 
+                :data-value="row.title"
+                class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3">
                 {{ row.title }}
               </div>
             </div>
           </template>
           <template #cell.clicks="{ row }">
-            <div class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4">
+            <div 
+              :data-value="row.clicks"
+              class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4">
               {{ row.clicks }}
             </div>
           </template>
           <template #cell.duration="{ row }">
-            <div class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4">
+            <div 
+              :data-value="row.duration"
+              class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4">
               {{ row.duration }}
             </div>
           </template>
           <template #cell.sales_count="{ row }">
             <div
+              :data-value="row.sales_count"
               class="text-center w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
               {{ row.sales_count }}
             </div>
           </template>
           <template #cell.sales_usd="{ row }">
             <div
+              :data-value="row.sales_usd"
               class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
               {{ row.sales_usd }}
             </div>

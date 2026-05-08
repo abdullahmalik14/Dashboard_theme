@@ -7,7 +7,9 @@
       <div>
         <!-- title -->
         <div class="flex items-center justify-between gap-2 px-[16px]">
-          <h3 class="text-light-text-secondary dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
+          <h3 
+            data-label="Top Countries"
+            class="text-light-text-secondary dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
             Top Countries
           </h3>
         </div>
@@ -23,7 +25,9 @@
               <div class="w-5 h-5 bg-black flex justify-center items-center shrink-0">
                 <span class="text-white text-sm font-bold font-['Poppins']">{{ row.rank }}</span>
               </div>
-              <div class="flex-1 text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">
+              <div 
+                :data-value="row.country"
+                class="flex-1 text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2">
                 {{ row.country }}
               </div>
             </div>
@@ -32,6 +36,7 @@
           <!-- sales column -->
           <template #cell.sales="{ row }">
             <div
+              :data-value="row.sales"
               class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
               {{ row.sales }}
             </div>

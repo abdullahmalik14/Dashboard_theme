@@ -7,7 +7,9 @@
       <div>
         <!-- title -->
         <div class="flex items-center justify-between gap-2 px-[16px]">
-          <h3 class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
+          <h3 
+            data-label="Top Tags"
+            class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
             Top Tags
           </h3>
         </div>
@@ -24,14 +26,18 @@
                 <span class="text-white text-sm font-bold font-['Poppins']">{{ row.rank }}</span>
               </div>
               <div class="px-1.5 py-0.5 bg-gray-200 rounded-md border border-gray-200 flex justify-start items-center">
-                <span class="text-slate-700 text-xs font-medium font-['Poppins']">{{ row.name }}</span>
+                <span 
+                  :data-value="row.name"
+                  class="text-slate-700 text-xs font-medium font-['Poppins']">{{ row.name }}</span>
               </div>
             </div>
           </template>
 
           <!-- views column -->
           <template #cell.views="{ row }">
-            <div class="text-gray-900 text-xs font-semibold font-['Poppins'] text-right w-full sm:px-1">
+            <div 
+              :data-value="row.views"
+              class="text-gray-900 text-xs font-semibold font-['Poppins'] text-right w-full sm:px-1">
               {{ row.views }}
             </div>
           </template>

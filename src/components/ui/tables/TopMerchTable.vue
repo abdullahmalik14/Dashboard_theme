@@ -7,7 +7,9 @@
       <div>
         <!-- title -->
         <div class="flex items-center justify-between gap-2 px-[16px]">
-          <h3 class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
+          <h3 
+            data-label="Top Merch"
+            class="text-light-text-secondary font-sans dark:text-dark-text-secondary m-0 leading-6 text-base font-medium">
             Top Merch
           </h3>
         </div>
@@ -27,6 +29,7 @@
                 </div>
               </div>
               <div
+                :data-value="row.title"
                 class="text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 line-clamp-2 md:line-clamp-3 w-[200px] text-wrap text-left whitespace-normal break-words sm:px-1">
                 {{ row.title }}
               </div>
@@ -36,6 +39,7 @@
           <!-- views column -->
           <template #cell.views="{ row }">
             <div
+              :data-value="row.views"
               class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
               {{ row.views }}
             </div>
@@ -44,6 +48,7 @@
           <!-- sales column -->
           <template #cell.sales="{ row }">
             <div
+              :data-value="row.sales"
               class="text-right w-full text-gray-900 text-xs font-semibold font-['Poppins'] leading-4 truncate sm:px-1">
               {{ row.sales }}
             </div>

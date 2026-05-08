@@ -122,10 +122,11 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
         // Subscriptions data — use REAL data from Linden's chartsData.bundle.json
         if (bundle.subscriptions) {
           const mapSub = (arr) => (arr || []).map(item => ({
-            month: item.period,
+            period: item.period,
             total: item.totalSubscribers || 0,
             sub: item.newSubscriber || 0,
             tip: item.recurringSubscriber || 0,
+            free: item.free || 0,
             tier1: item.tier1 || 0,
             tier2: item.tier2 || 0,
             tier3: item.tier3 || 0,
