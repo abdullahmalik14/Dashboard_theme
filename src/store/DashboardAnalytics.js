@@ -298,11 +298,11 @@ export const useDashboardAnalytics = defineStore('DashboardAnalytics', {
         if (!bundle.contributors) { warn('Contributors', 'Entire contributors section MISSING!') }
         else {
           ['topContributors','topFirms','topOrderSpenders'].forEach(key => {
-            if (!bundle.contributors[key]?.length) warn('Contributors', `${key} is EMPTY`);
-            else ok(`Contributors.${key} (${bundle.contributors[key].length} entries)`);
+            const arr = bundle.contributors[key]?.daily || bundle.contributors[key];
+            if (!arr?.length) warn('Contributors', `${key} is EMPTY`);
+            else ok(`Contributors.${key} (${arr.length} entries)`);
           });
-          // Critical: If we have earnings but no top spenders
-          if (this.earnings?.daily?.length > 0 && !bundle.contributors.topOrderSpenders?.length) {
+          if (this.earnings?.daily?.length > 0 && !(bundle.contributors.topOrderSpenders?.daily?.length || bundle.contributors.topOrderSpenders?.length)) {
             warn('CRITICAL', 'We have earnings/orders but "topOrderSpenders" is EMPTY — child events broken!');
           }
         }
