@@ -18,7 +18,7 @@
       <!-- table-content -->
       <div v-if="topCountriesRows && topCountriesRows.length > 0" class="w-full flex-1 pt-4">
         <FlexTable :columns="topCountriesColumns" :rows="topCountriesRows" :theme="topCountriesTheme"
-          :inner-scroll="true" max-height="60vh" :sticky-header="true">
+          :inner-scroll="true" max-height="73vh" :sticky-header="true">
           <!-- tags column -->
           <template #cell.tags="{ row }">
             <div class="flex justify-start items-center gap-2.5 h-full w-full sm:px-1">
@@ -71,7 +71,28 @@ const countryNameMap = {
   'Country 392': 'Japan',
   'Country 344': 'Hong Kong',
   'Country 702': 'Singapore',
-  'Country 158': 'Taiwan'
+  'Country 158': 'Taiwan',
+  'Country 124': 'Canada',
+  'Country 250': 'France',
+  'Country 380': 'Italy',
+  'Country 724': 'Spain',
+  'Country 528': 'Netherlands',
+  'Country 752': 'Sweden',
+  'Country 756': 'Switzerland',
+  'Country 56': 'Belgium',
+  'Country 40': 'Austria',
+  'Country 578': 'Norway',
+  'Country 208': 'Denmark',
+  'Country 372': 'Ireland',
+  'Country 76': 'Brazil',
+  'Country 484': 'Mexico',
+  'Country 356': 'India',
+  'Country 156': 'China',
+  'Country 410': 'South Korea',
+  'Country 360': 'Indonesia',
+  'Country 608': 'Philippines',
+  'Country 458': 'Malaysia',
+  'Country 704': 'Vietnam'
 }
 
 const topCountriesColumns = [
@@ -91,7 +112,7 @@ const topCountriesRows = computed(() => {
 
 const topCountriesTheme = {
   container: 'relative bg-transparent border-none w-full ',
-  header: 'bg-transparent text-gray-500',
+  header: 'bg-transparent text-gray-500  sticky top-0 z-30 backdrop-blur-md',
   headerRow: 'flex items-center border-b border-gray-500 w-full',
   headerCell: 'px-3 py-2.5 text-sm font-normal',
   row: 'flex items-center min-h-[3rem] odd:bg-transparent even:bg-gray-100/50 hover:bg-gray-50 transition-colors w-full',

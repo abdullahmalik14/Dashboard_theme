@@ -11,8 +11,7 @@
               <img src="https://i.ibb.co.com/1G8tw4x3/svgviewer-png-output.webp" alt="overview/insight"
                 class="w-6 h-6" />
             </span>
-            <h2
-              data-label="Overview/Insight"
+            <h2 data-label="Overview/Insight"
               class="m-0 font-medium text-xl font-sans leading-[1.875rem] text-light-text-quaternary dark:text-dark-text-quaternary">
               Overview/Insight
             </h2>
@@ -21,12 +20,10 @@
           <div class="flex items-center gap-4 w-full justify-between sm:justify-end sm:w-auto">
             <span class="text-sm font-sans leading-5 text-light-text-quaternary dark:text-dark-text-quaternary">Last
               updated at
-              <span 
-                :data-value="lastUpdated"
+              <span :data-value="lastUpdated"
                 class="text-sm font-sans leading-5 text-light-text-quaternary dark:text-dark-text-quaternary">{{
-                formatTime(lastUpdated) }}</span></span>
-            <button @click="handleRefresh"
-              data-label="Refresh"
+                  formatTime(lastUpdated) }}</span></span>
+            <button @click="handleRefresh" data-label="Refresh"
               class="group flex items-center justify-center gap-1 pl-[0.9375rem] pr-2 py-1 bg-light-bg-button dark:bg-dark-bg-button [clip-path:polygon(0_0,100%_0,105%_105%,16%_105%)] rounded-none hover:bg-light-primary dark:hover:bg-dark-primaryHover [outline:none] border-0">
               <span>
                 <img src="https://i.ibb.co.com/tPv74nnJ/svgviewer-png-output-1.webp" alt="refresh"
@@ -61,8 +58,7 @@
 
                 <!-- title -->
                 <div class="flex items-center gap-2">
-                  <h3
-                    data-label="Subscribers"
+                  <h3 data-label="Subscribers"
                     class="m-0 font-sans font-medium text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">
                     Subscribers
                   </h3>
@@ -80,8 +76,7 @@
 
                       <div class="flex justify-between items-end">
                         <span>
-                          <span
-                            :data-value="store.subscribers?.daily?.new"
+                          <span :data-value="store.subscribers?.daily?.new"
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary">{{
                               store.subscribers?.daily?.new ?? '--' }}</span>
                         </span>
@@ -90,30 +85,29 @@
                         <div v-if="
                           store.subscribers?.daily?.newPercentage !== undefined &&
                           store.subscribers?.daily?.newPercentage !== null
-                        " >
-                        <div class="flex flex-col items-end gap-1">
-                          <span class="flex gap-1 items-center">
-                            <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
-                            class="h-5 w-5" />
+                        ">
+                          <div class="flex flex-col items-end gap-1">
+                            <span class="flex gap-1 items-center">
+                              <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                                class="h-5 w-5" />
+                              <span
+                                class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
+                                  store.subscribers?.daily?.newPercentage }}%</span>
+                            </span>
                             <span
-                            class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
-                              store.subscribers?.daily?.newPercentage }}%</span>
-                          </span>
-                          <span
-                          class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
-                          yesterday</span>
+                              class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
+                              yesterday</span>
+
+                          </div>
 
                         </div>
-
                       </div>
-                    </div>
-                    <div class="w-full" 
-                          v-if="
-                          store.subscribers?.daily?.newPercentage !== undefined &&
-                          store.subscribers?.daily?.newPercentage !== null
-                        " >
-                      <SparkLine :data="[3,4,3,5,4,6,5,7,6,8]" color="#22c55e" :height="28" />
-                    </div>
+                      <div class="w-full" v-if="
+                        store.subscribers?.daily?.newPercentage !== undefined &&
+                        store.subscribers?.daily?.newPercentage !== null
+                      ">
+                        <SparkLine :data="[3, 4, 3, 5, 4, 6, 5, 7, 6, 8]" color="#22c55e" :height="28" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -129,8 +123,7 @@
 
                       <div class="flex justify-between items-end">
                         <span>
-                          <span
-                            :data-value="store.subscribers?.daily?.recurring"
+                          <span :data-value="store.subscribers?.daily?.recurring"
                             class="text-[2.25rem] font-sans font-semibold leading-[2.75rem] tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary">{{
                               store.subscribers?.daily?.recurring ?? '--' }}</span>
                         </span>
@@ -138,9 +131,9 @@
                         <div v-if="
                           store.subscribers?.daily?.recurringPercentage !== undefined &&
                           store.subscribers?.daily?.recurringPercentage !== null
-                        " >
-                       
-                        
+                        ">
+
+
                           <div class="flex flex-col items-end gap-1">
 
                             <span class="flex gap-1 items-center">
@@ -156,10 +149,12 @@
                           </div>
                         </div>
                       </div>
-                       <div>
-
-                          <SparkLine :data="[5,6,5,4,5,6,7,6,5,6]" color="#22c55e" :width="70" :height="28" />
-                        </div>
+                      <div v-if="
+                        store.subscribers?.daily?.recurringPercentage !== undefined &&
+                        store.subscribers?.daily?.recurringPercentage !== null
+                      " class="w-full">
+                        <SparkLine :data="[5, 6, 5, 4, 5, 6, 7, 6, 5, 6]" color="#22c55e" :width="70" :height="28" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -185,8 +180,7 @@
 
                 <!-- title -->
                 <div class="flex items-center gap-2">
-                  <h3
-                    data-label="Fans"
+                  <h3 data-label="Fans"
                     class="m-0 font-medium font-sans text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">
                     Fans
                   </h3>
@@ -202,26 +196,35 @@
                         FOLLOWERS</span>
 
                       <div class="flex items-end justify-between w-full gap-1">
-                        <span
-                          :data-value="store.fans?.daily?.newFollowers"
+                        <span :data-value="store.fans?.daily?.newFollowers"
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">
                           {{ store.fans?.daily?.newFollowers ?? '--' }}</span>
                         <div v-if="
                           store.fans?.daily?.newFollowersPercentage !== undefined &&
                           store.fans?.daily?.newFollowersPercentage !== null
-                        " class="flex flex-col items-end gap-1">
-                          <SparkLine :data="[8,7,6,7,5,6,4,5,4,3]" color="#ef4444" :width="60" :height="24" />
-                          <span class="flex gap-1 items-center">
-                            <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
-                              class="h-5 w-5" />
+                        ">
+
+
+                          <div class="flex flex-col items-end gap-1">
+                            <span class="flex gap-1 items-center">
+                              <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
+                                class="h-5 w-5" />
+                              <span
+                                class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
+                                  Math.abs(store.fans?.daily?.newFollowersPercentage) }}%</span>
+                            </span>
                             <span
-                              class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
-                                Math.abs(store.fans?.daily?.newFollowersPercentage) }}%</span>
-                          </span>
-                          <span
-                            class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
-                            yesterday</span>
+                              class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
+                              yesterday</span>
+                          </div>
+
                         </div>
+                      </div>
+                      <div v-if="
+                        store.fans?.daily?.newFollowersPercentage !== undefined &&
+                        store.fans?.daily?.newFollowersPercentage !== null
+                      " class="w-full">
+                        <SparkLine :data="[8, 7, 6, 7, 5, 6, 4, 5, 4, 3]" color="#ef4444" :width="60" :height="24" />
                       </div>
                     </div>
 
@@ -231,26 +234,37 @@
                         VISIT</span>
 
                       <div class="flex items-end justify-between w-full gap-1">
-                        <span
-                          :data-value="store.fans?.daily?.profileVisit"
+                        <span :data-value="store.fans?.daily?.profileVisit"
                           class="text-[1.875rem] font-semibold font-sans leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">
                           {{ store.fans?.daily?.profileVisit ?? '--' }}</span>
                         <div v-if="
                           store.fans?.daily?.profileVisitPercentage !== undefined &&
                           store.fans?.daily?.profileVisitPercentage !== null
                         " class="flex flex-col items-end gap-1">
-                          <SparkLine :data="[20,22,21,24,23,26,25,28,27,31]" color="#ef4444" :width="60" :height="24" />
-                          <span class="flex gap-1 items-center">
-                            <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
-                              class="h-5 w-5" />
+
+
+
+                          <div>
+                            <span class="flex gap-1 items-center">
+                              <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
+                                class="h-5 w-5" />
+                              <span
+                                class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
+                                  Math.abs(store.fans?.daily?.profileVisitPercentage) }}%</span>
+                            </span>
                             <span
-                              class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
-                                Math.abs(store.fans?.daily?.profileVisitPercentage) }}%</span>
-                          </span>
-                          <span
-                            class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
-                            yesterday</span>
+                              class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
+                              yesterday</span>
+                          </div>
+
                         </div>
+                      </div>
+                      <div v-if="
+                        store.fans?.daily?.profileVisitPercentage !== undefined &&
+                        store.fans?.daily?.profileVisitPercentage !== null
+                      " class="w-full">
+                        <SparkLine :data="[20, 22, 21, 24, 23, 26, 25, 28, 27, 31]" color="#ef4444" :width="60"
+                          :height="24" />
                       </div>
                     </div>
                   </div>
@@ -280,8 +294,7 @@
 
                 <!-- title -->
                 <div class="flex items-center gap-2">
-                  <h3
-                    data-label="Earnings"
+                  <h3 data-label="Earnings"
                     class="m-0 font-medium text-base leading-6 font-sans text-light-text-secondary dark:text-dark-text-secondary">
                     Earnings
                   </h3>
@@ -292,26 +305,31 @@
                     <span
                       :data-value="(store.earnings?.daily && store.earnings.daily.length > 0) ? store.earnings.daily[store.earnings.daily.length - 1].total : ''"
                       class="text-[2.25rem] font-semibold leading-[2.75rem] font-sans tracking-[-0.045rem] text-light-text-primary dark:text-dark-text-primary">{{
-                        (store.earnings?.daily && store.earnings.daily.length > 0) ? Number(store.earnings.daily[store.earnings.daily.length - 1].total).toLocaleString('en-US') : '--' }}</span>
-                    <span class="text-base font-medium leading-6 font-sans text-light-text-secondary dark:text-dark-text-secondary ml-1">USD</span>
-                  </span>
-                  <div v-if="
-                    (store.earnings?.daily && store.earnings.daily.length > 0) &&
-                    store.earnings.daily[store.earnings.daily.length - 1].earningsPercentage !== undefined &&
-                    store.earnings.daily[store.earnings.daily.length - 1].earningsPercentage !== null
-                  " class="flex flex-col items-end gap-1">
-                    <SparkLine :data="[150,180,200,220,250,240,260,280,290,305]" color="#22c55e" :width="70" :height="28" />
-                    <span class="flex gap-1 items-center">
-                      <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
-                        class="h-5 w-5" />
-                      <span
-                        class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
-                          store.earnings.daily[store.earnings.daily.length - 1].earningsPercentage }}%</span>
-                    </span>
+                        (store.earnings?.daily && store.earnings.daily.length > 0) ?
+                          Number(store.earnings.daily[store.earnings.daily.length - 1].total).toLocaleString('en-US') : '--'
+                      }}</span>
                     <span
-                      class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
-                      yesterday</span>
+                      class="text-base font-medium leading-6 font-sans text-light-text-secondary dark:text-dark-text-secondary ml-1">USD</span>
+                  </span>
+                  <div v-if="store.earningsInsights?.daily?.percentage !== null" class="flex flex-col items-end gap-1">
+
+                    <div>
+                      <span class="flex gap-1 items-center">
+                        <img
+                          :src="store.earningsInsights.daily.percentage >= 0 ? 'https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp' : 'https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp'"
+                          :alt="store.earningsInsights.daily.percentage >= 0 ? 'trend-up' : 'trend-down'"
+                          class="h-5 w-5" />
+                        <span
+                          :class="store.earningsInsights.daily.percentage >= 0 ? 'text-light-text-trendGreen' : 'text-light-text-trendRed'"
+                          class="leading-5 text-sm font-medium">{{ Math.abs(store.earningsInsights.daily.percentage)
+                          }}%</span>
+                      </span>
+                    </div>
+
                   </div>
+                </div>
+                <div v-if="store.earningsInsights?.daily?.percentage !== null" class="w-full mt-auto">
+                  <SparkLine :data="store.earningsInsights.daily.sparklineData" color="#22c55e" :height="28" />
                 </div>
               </div>
             </DashboardOrderCard>
@@ -335,8 +353,7 @@
                 </div>
                 <!-- title -->
                 <div class="flex items-center gap-2">
-                  <h3
-                    data-label="Likes"
+                  <h3 data-label="Likes"
                     class="m-0 font-medium font-sans text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">
                     Likes
                   </h3>
@@ -351,27 +368,40 @@
                         class="text-xs font-medium font-sans leading-[1.125rem] whitespace-nowrap text-light-text-tertiary dark:text-dark-text-tertiary">MEDIA</span>
 
                       <div class="flex items-end justify-between w-full gap-1">
-                        <span
-                          :data-value="store.likes?.media"
+                        <span :data-value="store.likes?.media"
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">
-                          {{ store.likes?.media != null ? Number(store.likes.media).toLocaleString('en-US') : '--' }}</span>
+                          {{ store.likes?.media != null ? Number(store.likes.media).toLocaleString('en-US') : '--'
+                          }}</span>
                         <div v-if="
                           store.likes?.mediaPercentage !== undefined &&
                           store.likes?.mediaPercentage !== null
                         " class="flex flex-col items-end gap-1">
-                          <SparkLine :data="[95,90,88,85,82,80,78,76]" color="#ef4444" :width="55" :height="22" />
-                          <span class="flex gap-1 items-center">
-                            <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
-                              class="h-5 w-5" />
-                            <span
-                              class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
-                                Math.abs(store.likes?.mediaPercentage) }}%</span>
-                          </span>
-                          <span
-                            class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
-                            yesterday</span>
+
+                       <div>
+                         <span class="flex gap-1 items-center">
+                           <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
+                             class="h-5 w-5" />
+                           <span
+                             class="text-light-text-trendRed dark:text-light-text-trendRed leading-5 text-sm font-medium">{{
+                               Math.abs(store.likes?.mediaPercentage) }}%</span>
+                         </span>
+                         <span
+                           class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
+                           yesterday</span>
+
+                       </div>
                         </div>
+                        
                       </div>
+                       <div
+                       v-if="
+                          store.likes?.mediaPercentage !== undefined &&
+                          store.likes?.mediaPercentage !== null
+                        " 
+                       class="w-full">
+                          <SparkLine :data="[95, 90, 88, 85, 82, 80, 78, 76]" color="#ef4444" :width="55"
+                          :height="22" />
+                        </div>
                     </div>
 
                     <div class="flex flex-col gap-2 w-full flex-shrink items-start">
@@ -379,15 +409,17 @@
                         class="text-xs font-medium font-sans leading-[1.125rem] whitespace-nowrap text-light-text-tertiary dark:text-dark-text-tertiary">MERCH</span>
 
                       <div class="flex items-end justify-between w-full gap-1">
-                        <span
-                          :data-value="store.likes?.merch"
+                        <span :data-value="store.likes?.merch"
                           class="text-[1.875rem] font-sans font-semibold leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">{{
                             store.likes?.merch ?? '--' }}</span>
                         <div v-if="
                           store.likes?.merchPercentage !== undefined &&
                           store.likes?.merchPercentage !== null
                         " class="flex flex-col items-end gap-1">
-                          <SparkLine :data="[5,4,4,3,3,3,2,2]" color="#ef4444" :width="55" :height="22" />
+
+                        
+
+                        <div>
                           <span class="flex gap-1 items-center">
                             <img src="https://i.ibb.co.com/sdvYZGVp/svgviewer-png-output-5.webp" alt="trend-down"
                               class="h-5 w-5" />
@@ -399,6 +431,10 @@
                             class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
                             yesterday</span>
                         </div>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <SparkLine :data="[5, 4, 4, 3, 3, 3, 2, 2]" color="#ef4444" :width="55" :height="22" />
                       </div>
                     </div>
                   </div>
@@ -408,20 +444,22 @@
                 <div
                   class="flex flex-col flex-grow flex-shrink [flex-basis: auto] justify-center items-start gap-4 min-w-0 min-h-0">
                   <div class="flex items-center gap-6 w-full flex-grow flex-shrink [flex-basis: auto] min-w-0 min-h-0">
+                   
                     <div class="flex flex-col gap-2 w-full flex-shrink items-start">
                       <span
                         class="text-xs font-medium font-sans leading-[1.125rem] whitespace-nowrap text-light-text-tertiary dark:text-dark-text-tertiary">PROFILE</span>
 
                       <div class="flex items-end justify-between w-full gap-1">
-                        <span
-                          :data-value="store.likes?.profile"
+                        <span :data-value="store.likes?.profile"
                           class="text-[1.875rem] font-semibold font-sans leading-[2.375rem] text-light-text-primary dark:text-dark-text-primary">{{
-                            store.likes?.profile != null ? Number(store.likes.profile).toLocaleString('en-US') : '--' }}</span>
+                            store.likes?.profile != null ? Number(store.likes.profile).toLocaleString('en-US') : '--'
+                          }}</span>
                         <div v-if="
                           store.likes?.profilePercentage !== undefined &&
                           store.likes?.profilePercentage !== null
                         " class="flex flex-col items-end gap-1">
-                          <SparkLine :data="[8000,8500,9000,9500,10000,10500,11000,12000]" color="#22c55e" :width="55" :height="22" />
+
+                        <div>
                           <span class="flex gap-1 items-center">
                             <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
                               class="h-5 w-5" />
@@ -433,7 +471,18 @@
                             class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
                             yesterday</span>
                         </div>
+
+                        </div>
                       </div>
+                      <div
+                       v-if="
+                          store.likes?.profilePercentage !== undefined &&
+                          store.likes?.profilePercentage !== null
+                        " 
+                      class="w-full">
+                          <SparkLine :data="[8000, 8500, 9000, 9500, 10000, 10500, 11000, 12000]" color="#22c55e"
+                            :width="55" :height="22" />
+                        </div>
                     </div>
 
                     <div class="flex flex-col gap-2 w-full flex-shrink items-start">
@@ -441,28 +490,40 @@
                         class="text-xs font-medium leading-[1.125rem] font-sans whitespace-nowrap text-light-text-tertiary dark:text-dark-text-tertiary">FEED</span>
 
                       <div class="flex items-end justify-between w-full gap-1">
-                        <span
-                          :data-value="store.likes?.feed"
+                        <span :data-value="store.likes?.feed"
                           class="text-[1.875rem] font-semibold leading-[2.375rem] font-sans text-light-text-primary dark:text-dark-text-primary">{{
                             store.likes?.feed != null ? Number(store.likes.feed).toLocaleString('en-US') : '--' }}</span>
                         <div v-if="
                           store.likes?.feedPercentage !== undefined &&
                           store.likes?.feedPercentage !== null
                         " class="flex flex-col items-end gap-1">
-                          <SparkLine :data="[2800,3000,3200,3500,3700,3900,4200,4500]" color="#22c55e" :width="55" :height="22" />
-                          <span class="flex gap-1 items-center">
-                            <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
-                              class="h-5 w-5" />
-                            <span
-                              class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
-                                Math.abs(store.likes?.feedPercentage) }}%</span>
-                          </span>
-                          <span
-                            class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
-                            yesterday</span>
+
+                       <div>
+                         <span class="flex gap-1 items-center">
+                           <img src="https://i.ibb.co.com/93tZHrmQ/svgviewer-png-output-4.webp" alt="trend-up"
+                             class="h-5 w-5" />
+                           <span
+                             class="text-light-text-trendGreen dark:text-light-text-trendGreen leading-5 text-sm font-medium">{{
+                               Math.abs(store.likes?.feedPercentage) }}%</span>
+                         </span>
+                         <span
+                           class="text-light-text-secondary dark:text-dark-text-secondary leading-[1.125rem] text-xs">vs
+                           yesterday</span>
+                       </div>
                         </div>
                       </div>
+                      <div 
+                      v-if="
+                          store.likes?.feedPercentage !== undefined &&
+                          store.likes?.feedPercentage !== null
+                        " 
+                      class="w-full">
+                        <SparkLine :data="[2800, 3000, 3200, 3500, 3700, 3900, 4200, 4500]" color="#22c55e"
+                          :width="55" :height="22" />
+                      </div>
                     </div>
+
+                    
                   </div>
                 </div>
               </div>
@@ -472,78 +533,77 @@
           <!-- right-column -->
           <div class="flex flex-col gap-4 col-span-full xl:col-auto">
             <!-- top contributors -->
-            <DashboardOrderCard>
-              <div class="flex flex-col gap-4 min-w-0">
-                <!-- hover-overlay -->
-                <div
-                  class="absolute hidden group-hover/container:flex items-start justify-end w-full h-full top-0 left-0 z-[10000]">
-                  <button @click="openContributors"
-                    class="group/button flex items-center justify-center gap-1 pl-[0.9375rem] pr-2 py-1 bg-light-bg-button dark:bg-dark-bg-button [clip-path:polygon(0_0,100%_0,105%_105%,16%_105%)] rounded-none border-none outline-none hover/container:bg-light-primary dark:hover/container:bg-dark-primaryHover">
-                    <span
-                      class="text-xs font-sans font-medium leading-[1.125rem] text-light-primary dark:text-dark-primary group-hover/button:text-white dark:group-hover/button:text-[#e8e6e3]">Trend</span>
-                    <span>
-                      <img src="https://i.ibb.co.com/7dh1cRfK/svgviewer-png-output-2.webp" alt="expand"
-                        class="w-[.875rem] h-[.875rem] group-hover/button:[filter:brightness(0)_invert(1)]" />
-                    </span>
-                  </button>
+            <DashboardOrderCard class="gap-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-4 min-w-0">
+                  <!-- hover-overlay -->
+                  <div
+                    class="absolute hidden group-hover/container:flex items-start justify-end w-full h-full top-0 left-0 z-[10000]">
+                    <button @click="openContributors"
+                      class="group/button flex items-center justify-center gap-1 pl-[0.9375rem] pr-2 py-1 bg-light-bg-button dark:bg-dark-bg-button [clip-path:polygon(0_0,100%_0,105%_105%,16%_105%)] rounded-none border-none outline-none hover/container:bg-light-primary dark:hover/container:bg-dark-primaryHover">
+                      <span
+                        class="text-xs font-sans font-medium leading-[1.125rem] text-light-primary dark:text-dark-primary group-hover/button:text-white dark:group-hover/button:text-[#e8e6e3]">Trend</span>
+                      <span>
+                        <img src="https://i.ibb.co.com/7dh1cRfK/svgviewer-png-output-2.webp" alt="expand"
+                          class="w-[.875rem] h-[.875rem] group-hover/button:[filter:brightness(0)_invert(1)]" />
+                      </span>
+                    </button>
+                  </div>
+  
+                  <!-- title -->
+                  <div class="flex items-center gap-2">
+                    <h3 data-label="Top Contributors"
+                      class="m-0 font-medium font-sans text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">
+                      Top Contributors
+                    </h3>
+                  </div>
                 </div>
-
-                <!-- title -->
-                <div class="flex items-center gap-2">
-                  <h3
-                    data-label="Top Contributors"
-                    class="m-0 font-medium font-sans text-base leading-6 text-light-text-secondary dark:text-dark-text-secondary">
-                    Top Contributors
-                  </h3>
-                </div>
-              </div>
-
-              <!-- data-table -->
-              <div class="flex-grow flex-shrink [flex-basis:auto] min-w-0 min-h-0 -mx-4 -mb-4">
-                <FlexTable :columns="contributorsColumns" :rows="currentContributorsInsightData.topContributors" :theme="contributorsTheme">
-                  <!-- Custom Fan Cell (Rank + Avatar + Info) -->
-                  <template #cell.fan="{ row }">
-                    <div class="flex items-center gap-2.5 px-3 w-full">
-                      <!-- Rank -->
-                      <div class="w-5 h-5 bg-black flex items-center justify-center shrink-0">
-                        <span class="text-white text-sm font-bold leading-5">{{ row.rank }}</span>
-                      </div>
-                      <!-- User Info -->
-                      <div class="flex flex-col justify-center items-start gap-0.5 overflow-hidden">
-                        <div 
-                          :data-value="row.name"
-                          class="truncate text-gray-900 text-xs font-semibold leading-4">{{ row.name }}</div>
-                        <div class="flex items-center gap-1">
-                          <div class="w-5 h-5 relative rounded-full overflow-hidden shrink-0 border border-black/10">
-                            <img :src="row.avatar" class="w-full h-full object-cover" />
+  
+                <!-- data-table -->
+                <div class="flex-grow flex-shrink [flex-basis:auto] min-w-0 min-h-0 -mx-4 -mb-4">
+                  <FlexTable :columns="contributorsColumns" :rows="currentContributorsInsightData.topContributors"
+                    :theme="contributorsTheme">
+                    <!-- Custom Fan Cell (Rank + Avatar + Info) -->
+                    <template #cell.fan="{ row }">
+                      <div class="flex items-center gap-2.5 px-3 w-full">
+                        <!-- Rank -->
+                        <div class="w-5 h-5 bg-black flex items-center justify-center shrink-0">
+                          <span class="text-white text-sm font-bold leading-5">{{ row.rank }}</span>
+                        </div>
+                        <!-- User Info -->
+                        <div class="flex flex-col justify-center items-start gap-0.5 overflow-hidden">
+                          <div :data-value="row.name" class="truncate text-gray-900 text-xs font-semibold leading-4">{{
+                            row.name }}</div>
+                          <div class="flex items-center gap-1">
+                            <div class="w-5 h-5 relative rounded-full overflow-hidden shrink-0 border border-black/10">
+                              <img :src="row.avatar" class="w-full h-full object-cover" />
+                            </div>
+                            <span :data-value="row.handle"
+                              class="truncate text-slate-700 text-xs font-normal leading-4">{{ row.handle }}</span>
                           </div>
-                          <span 
-                            :data-value="row.handle"
-                            class="truncate text-slate-700 text-xs font-normal leading-4">{{ row.handle }}</span>
                         </div>
                       </div>
-                    </div>
-                  </template>
-
-                  <!-- Custom Total Cell -->
-                  <template #cell.total="{ row }">
-                    <div class="px-4 w-full text-right">
-                      <span 
-                        :data-value="row.total"
-                        class="text-gray-900 text-xs font-semibold leading-4 whitespace-nowrap">{{ row.total
-                        }}</span>
-                    </div>
-                  </template>
-                  <template #empty>
-                    <div class="flex flex-col items-center justify-center w-full gap-4 py-8">
-                      <img src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="No contributors"
-                        class="w-24 h-24" />
-                      <span class="text-base font-medium text-light-text-secondary dark:text-dark-text-secondary">No top
-                        contributors yet</span>
-                      <a href="#" class="text-sm text-primary-600 underline">Learn how to earn</a>
-                    </div>
-                  </template>
-                </FlexTable>
+                    </template>
+  
+                    <!-- Custom Total Cell -->
+                    <template #cell.total="{ row }">
+                      <div class="px-4 w-full text-right">
+                        <span :data-value="row.total"
+                          class="text-gray-900 text-xs font-semibold leading-4 whitespace-nowrap">{{ row.total
+                          }}</span>
+                      </div>
+                    </template>
+                    <template #empty>
+                      <div class="flex flex-col items-center justify-center w-full gap-4 py-8">
+                        <img src="https://i.ibb.co.com/vx2RDHM3/svgviewer-png-output-3.webp" alt="No contributors"
+                          class="w-24 h-24" />
+                        <span class="text-base font-medium text-light-text-secondary dark:text-dark-text-secondary">No top
+                          contributors yet</span>
+                        <a href="#" class="text-sm text-primary-600 underline">Learn how to earn</a>
+                      </div>
+                    </template>
+                  </FlexTable>
+                </div>
               </div>
             </DashboardOrderCard>
           </div>
@@ -564,8 +624,7 @@
             <span>
               <img src="https://i.ibb.co.com/wrrYKHLv/svgviewer-png-output-6.webp" alt="trends" class="w-6 h-6" />
             </span>
-            <h2
-              data-label="Trends"
+            <h2 data-label="Trends"
               class="m-0 text-light-text-quaternary font-sans dark:text-dark-text-quaternary text-xl leading-[1.875rem] font-medium">
               Trends
             </h2>
@@ -593,9 +652,7 @@
             <!-- tabs -->
             <div
               class="trends-tabs-wrapper hidden md:flex w-full lg:w-auto bg-white/30 rounded-lg justify-start items-start overflow-hidden border border-gray-200">
-              <div v-for="tab in trendsTabs" :key="tab" @click="selectedTrendTab = tab" 
-                :data-value="tab"
-                :class="[
+              <div v-for="tab in trendsTabs" :key="tab" @click="selectedTrendTab = tab" :data-value="tab" :class="[
                 'flex-1 lg:flex-initial whitespace-nowrap trends-tabs-wrapper-button cursor-pointer h-full px-4 py-2 flex justify-center items-center gap-2 transition-all font-[\'Poppins\'] text-sm outline-none border-r border-gray-200 last:border-r-0',
                 selectedTrendTab === tab ? 'bg-gray-50 text-gray-800 font-bold' : 'bg-transparent text-gray-500 font-medium hover:bg-gray-50'
               ]">
@@ -605,8 +662,7 @@
 
             <!-- select-dropdown -->
             <div class="md:hidden relative w-full sm:w-auto">
-              <button @click="isTrendDropdownOpen = !isTrendDropdownOpen"
-                data-label="Trend Dropdown"
+              <button @click="isTrendDropdownOpen = !isTrendDropdownOpen" data-label="Trend Dropdown"
                 class="w-full sm:w-[200px] px-4 py-2 bg-white/70 backdrop-blur-md border border-gray-200 rounded-lg flex justify-center gap-2 items-center outline-none hover:bg-white/90 transition-colors">
                 <span class="text-gray-900 font-semibold text-sm">{{ selectedTrendTab }}</span>
                 <div class="w-4 h-4 flex items-center justify-center transition-transform"
@@ -665,7 +721,8 @@
     <LikesTrendPopup v-model="isLikesOpen" v-model:period="likesPeriod" :insight-data="currentLikesInsightData" />
 
     <!-- contributors popup -->
-    <ContributorsTrendPopup v-model="isContributorsOpen" v-model:period="contributorsPeriod" :insight-data="currentContributorsInsightData" />
+    <ContributorsTrendPopup v-model="isContributorsOpen" v-model:period="contributorsPeriod"
+      :insight-data="currentContributorsInsightData" />
 
   </div>
 </template>
@@ -705,7 +762,7 @@ const currentContributorsInsightData = computed(() => {
   const cData = store.contributors || {};
   let p = contributorsPeriod.value.toLowerCase()
   if (p === 'all-time') p = 'alltime'
-  
+
   const getPeriodArr = (source) => {
     if (!source) return []
     if (Array.isArray(source)) return source // fallback for old format
@@ -718,8 +775,8 @@ const currentContributorsInsightData = computed(() => {
       if (!c) return null;
       return {
         ...c,
-        id: index + 1, 
-        rank: index + 1, 
+        id: index + 1,
+        rank: index + 1,
         name: c.name || 'Unknown',
         handle: c.handle || `@${(c.name || '').replace(/\s+/g, '').toLowerCase()}`,
         avatar: c.avatar || 'https://i.ibb.co.com/mXyG1hS/mangoes.png',
@@ -863,18 +920,18 @@ const currentFansInsightData = computed(() => {
   if (!fansData || fansData.newFollowers == null) {
     return { newFollowers: null, profileVisit: null, topCountries: [], sources: [] }
   }
-  
+
   // Get traffic sources from bundle (fans_traffic or fanInsights.sources)
   const bundleSources = store.fanInsights?.sources || {}
   const periodSources = bundleSources[p] || []
-  
+
   // Map country names for display
   const mappedCountries = (fansData.topCountries || []).map(c => ({
     ...c,
     country: countryNameMap[c.country] || c.country,
     visits: (c.visits || 0).toLocaleString('en-US')
   }))
-  
+
   return {
     newFollowers: fansData.newFollowers,
     profileVisit: fansData.profileVisit,

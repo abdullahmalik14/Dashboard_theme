@@ -1,15 +1,20 @@
 <template>
-  <svg width="100%" :height="height" class="sparkline" :viewBox="`0 0 ${width} ${height}`" preserveAspectRatio="none">
+  <svg width="100%" :height="height" class="sparkline" :viewBox="`0 0 ${width} ${height}`" preserveAspectRatio="none" style="overflow: visible;">
     <defs>
       <linearGradient :id="gradientId" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" :stop-color="color" stop-opacity="0.3" />
         <stop offset="100%" :stop-color="color" stop-opacity="0.02" />
       </linearGradient>
+      <clipPath :id="clipId">
+        <rect :x="points[0]?.x || 0" y="0" :width="(points[points.length-1]?.x - points[0]?.x) || width" :height="height" />
+      </clipPath>
     </defs>
-    <!-- Area fill -->
-    <path :d="areaPath" :fill="`url(#${gradientId})`" />
-    <!-- Line -->
-    <path :d="linePath" fill="none" :stroke="color" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <g :clip-path="`url(#${clipId})`">
+      <!-- Area fill -->
+      <path :d="areaPath" :fill="`url(#${gradientId})`" />
+      <!-- Line -->
+      <path :d="linePath" fill="none" :stroke="color" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
   </svg>
 </template>
 
@@ -24,6 +29,7 @@ const props = defineProps({
 })
 
 const gradientId = computed(() => `sparkline-grad-${Math.random().toString(36).slice(2, 8)}`)
+const clipId = computed(() => `sparkline-clip-${Math.random().toString(36).slice(2, 8)}`)
 
 const points = computed(() => {
   const d = props.data
@@ -31,12 +37,13 @@ const points = computed(() => {
   const min = Math.min(...d)
   const max = Math.max(...d)
   const range = max - min || 1
-  const padding = 2
-  const w = props.width - padding * 2
-  const h = props.height - padding * 2
+  const paddingX = 0
+  const paddingY = 2
+  const w = props.width - paddingX * 2
+  const h = props.height - paddingY * 2
   return d.map((v, i) => ({
-    x: padding + (i / (d.length - 1)) * w,
-    y: padding + h - ((v - min) / range) * h
+    x: paddingX + (i / (d.length - 1)) * w,
+    y: paddingY + h - ((v - min) / range) * h
   }))
 })
 

@@ -18,7 +18,7 @@
       <!-- table-content -->
       <div v-if="topMerchRows && topMerchRows.length > 0" class="w-full flex-1 pt-4">
         <FlexTable :columns="topMerchColumns" :rows="topMerchRows" :theme="topMerchTheme"
-          :inner-scroll="true" max-height="60vh" :sticky-header="true">
+          :inner-scroll="true" max-height="73vh" :sticky-header="true">
           <!-- merch column -->
           <template #cell.merch="{ row }">
             <div class="flex items-center gap-3 h-full w-full">
@@ -95,7 +95,7 @@ const topMerchRows = computed(() => {
 
 const topMerchTheme = {
   container: 'relative bg-transparent border-none w-full ',
-  header: 'bg-transparent text-gray-500',
+  header: 'bg-transparent text-gray-500  sticky top-0 z-30 backdrop-blur-md',
   headerRow: 'flex items-center border-b border-gray-500 w-full',
   headerCell: 'px-2.5 py-2.5 text-sm font-normal',
   row: 'flex items-center min-h-[6rem] odd:bg-transparent even:bg-gray-100/50 hover:bg-gray-50 transition-colors w-full',

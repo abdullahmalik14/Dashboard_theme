@@ -18,7 +18,7 @@
       <!-- table-content -->
       <div v-if="topTagsRows && topTagsRows.length > 0" class="w-full h-full pt-4">
         <FlexTable :columns="topTagsColumns" :rows="topTagsRows" :theme="topTagsTheme"
-          :inner-scroll="true" max-height="60vh" :sticky-header="true">
+          :inner-scroll="true" max-height="73vh" :sticky-header="true">
           <!-- tag column -->
           <template #cell.tag="{ row }">
             <div class="flex justify-start items-center gap-2.5 h-full w-full sm:px-1">
@@ -80,7 +80,7 @@ const topTagsRows = computed(() => {
 
 const topTagsTheme = {
   container: 'relative bg-transparent border-none w-full ',
-  header: 'bg-transparent text-gray-500',
+  header: 'bg-transparent text-gray-500  sticky top-0 z-30 backdrop-blur-md',
   headerRow: 'flex items-center border-b border-gray-500',
   headerCell: 'px-2.5 py-2.5 text-sm font-normal',
   row: 'flex items-center min-h-[3rem] odd:bg-transparent even:bg-gray-100/50  hover:bg-gray-50 transition-colors',

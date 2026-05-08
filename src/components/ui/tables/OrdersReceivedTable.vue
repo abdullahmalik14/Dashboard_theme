@@ -1,6 +1,6 @@
 <template>
   <DashboardOrdersPageContentCreator>
-    <div class="flex flex-col justify-start items-start gap-6">
+    <div class="flex flex-col justify-start items-start gap-6 ">
       <!-- Header & Tabs -->
       <div
         class="w-full px-4 pt-4 flex justify-between flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-4">
@@ -148,7 +148,7 @@
             <template #cell.total="{ row }">
               <div
                 :data-value="row.total"
-                class="pr-4 text-gray-900 text-[13px] font-bold h-full flex items-center justify-end md:justify-start w-full whitespace-nowrap">
+                class="pr-4 text-gray-900 text-[13px] font-bold h-full flex items-center justify-end w-full whitespace-nowrap">
                 {{ row.total }}
               </div>
             </template>
@@ -186,7 +186,7 @@
         <button
           class="inline-flex items-center gap-2.5 pr-2 pl-6 py-1 bg-white border border-gray-200 rounded-none [clip-path:polygon(0_100%,100%_100%,100%_0,16%_0)] shadow-sm hover:bg-gray-50 transition-colors">
           <span class="text-blue-700 text-base font-medium">All Orders</span>
-          <span class="text-blue-700 text-[10px] font-bold -translate-y-2 -ml-1">5</span>
+          <span class="text-blue-700 text-[10px] font-bold -translate-y-2 -ml-1">{{ totalOrdersCount }}</span>
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 5H13M13 5L9 1M13 5L9 9" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -212,76 +212,47 @@ const ordersColumns = [
   { key: 'order', label: 'Order#', basis: { default: 'grow md:grow-0 md:basis-[300px]' }, align: 'left' },
   { key: 'from', label: 'From', basis: 'basis-[220px]', align: 'left', hiddenAt: ['xs', 'sm'] },
   { key: 'date', label: 'Date', basis: 'basis-[180px]', align: 'left', hiddenAt: ['xs', 'sm'] },
-  { key: 'total', label: 'Total', basis: { default: 'ml-auto basis-[80px]' }, align: 'right' },
+  { key: 'total', label: 'Total', basis: { default: 'ml-auto basis-[110px]' }, align: 'right' },
   { key: 'details', label: '', basis: { default: 'shrink-0 basis-[80px]' }, align: 'right', hiddenAt: ['xs', 'sm'] }
 ]
-
-const ordersRows = ref([
-  { id: 1, tier: 'Tier 1 Subscription', orderId: '#123456', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 2, tier: 'Tier 2 Subscription', orderId: '#123457', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 19.99' },
-  { id: 3, tier: 'Tier 3 Subscription', orderId: '#123458', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 29.99' },
-  { id: 4, tier: 'Tier 4 Subscription', orderId: '#123459', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 49.99' },
-  { id: 5, tier: 'Tier 5 Subscription', orderId: '#123460', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 99.99' }
-])
-
-const p2vOrdersRows = ref([
-  { id: 1, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123461', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 14.99' },
-  { id: 2, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123462', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 24.50' },
-  { id: 3, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123463', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 19.99' },
-  { id: 4, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123464', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 9.99' },
-  { id: 5, title: 'Record breaking fried chicken eating ! See my attempt to break world\u2019s record! Watch now!', orderId: '#123465', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 39.00' }
-])
 
 const merchOrdersColumns = [
   { key: 'order', label: 'Order#', basis: { default: 'grow md:grow-0 md:basis-[280px]' }, align: 'left' },
   { key: 'from', label: 'From', basis: 'basis-[180px]', align: 'left', hiddenAt: ['xs', 'sm'] },
   { key: 'status', label: 'Status', basis: 'basis-[160px]', align: 'left', hiddenAt: ['xs', 'sm'] },
   { key: 'date', label: 'Date', basis: 'basis-[150px]', align: 'left', hiddenAt: ['xs', 'sm'] },
-  { key: 'total', label: 'Total', basis: { default: 'ml-auto basis-[80px]' }, align: 'right' },
+  { key: 'total', label: 'Total', basis: { default: 'ml-auto basis-[110px]' }, align: 'right' },
   { key: 'details', label: '', basis: { default: 'shrink-0 basis-[80px]' }, align: 'right', hiddenAt: ['xs', 'sm'] }
 ]
 
-const merchOrdersRows = ref([
-  { id: 1, type: 'Merch', orderId: '#123466', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 45.00', bg: 'bg-black', innerBg: 'bg-green-500' },
-  { id: 2, type: 'Merch', orderId: '#123467', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 65.50', bg: 'bg-black', innerBg: 'bg-green-500' },
-  { id: 3, type: 'Mixed', orderId: '#123468', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 120.00', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
-  { id: 4, type: 'Mixed', orderId: '#123469', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 89.99', bg: 'bg-green-500', innerBg: 'outline-black outline-2' },
-  { id: 5, type: 'Mixed', orderId: '#123470', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 34.00', bg: 'bg-black', innerBg: 'bg-green-500' }
-])
-
 const customRequestOrdersColumns = merchOrdersColumns
 
-const customRequestOrdersRows = ref([
-  { id: 1, type: 'Kinks', orderId: '#123471', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 150.00', bg: 'bg-black' },
-  { id: 2, type: 'Kinks', orderId: '#123472', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 200.00', bg: 'bg-black' },
-  { id: 3, type: 'Clips', orderId: '#123473', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 45.00', bg: 'bg-green-500' },
-  { id: 4, type: 'Clips', orderId: '#123474', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 60.00', bg: 'bg-green-500' },
-  { id: 5, type: 'Clips', orderId: '#123475', handle: '@Mangoes4eva', status: 'New', date: '22 Jan 2022', total: 'USD$ 35.00', bg: 'bg-black' }
-])
-
-const wishtenderOrdersRows = ref([
-  { id: 1, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123476', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 249.00' },
-  { id: 2, title: 'Shure MV7 USB Microphone with Tripod, for Podcasting, Recording, Streaming & Gaming, Built-in Headphone Output, All Metal USB/XLR Dynamic Mic, Voice-Isolating Technology, TeamSpeak Certified - Black', orderId: '#123477', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 249.00' },
-  { id: 3, title: 'Sony Alpha a7 IV Mirrorless Camera with 28-70mm Lens', orderId: '#123478', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 2,698.00' },
-  { id: 4, title: 'Apple 2023 MacBook Pro Laptop M3 Pro chip with 11‑core CPU', orderId: '#123479', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 1,999.00' },
-  { id: 5, title: 'Elgato Stream Deck MK.2 – Studio Controller', orderId: '#123480', handle: '@Mangoes4eva', date: '22 Jan 2022', total: 'USD$ 149.99' }
-])
 
 import { useDashboardAnalytics } from '@/store/DashboardAnalytics'
 
 const currentRows = computed(() => {
   const store = useDashboardAnalytics()
-  const isDatabaseEmpty = !store.earnings || !store.earnings.alltime || store.earnings.alltime.length === 0
+  const recent = store.recentOrders || {}
   
-  if (isDatabaseEmpty) return []
+  if (!store.bundleLoaded) return []
 
   switch (selectedTab.value) {
-    case 'Merch': return merchOrdersRows.value
-    case 'Pay to View': return p2vOrdersRows.value
-    case 'Custom Request': return customRequestOrdersRows.value
-    case 'Wishtender': return wishtenderOrdersRows.value
-    default: return ordersRows.value
+    case 'Merch': return recent.merch || []
+    case 'Pay to View': return recent.p2v || []
+    case 'Custom Request': return recent.customRequest || []
+    case 'Wishtender': return recent.wishtender || []
+    default: return recent.subscriptions || []
   }
+})
+
+const totalOrdersCount = computed(() => {
+  const store = useDashboardAnalytics()
+  const recent = store.recentOrders || {}
+  return (recent.subscriptions?.length || 0) +
+         (recent.p2v?.length || 0) +
+         (recent.merch?.length || 0) +
+         (recent.customRequest?.length || 0) +
+         (recent.wishtender?.length || 0)
 })
 
 const currentColumns = computed(() => {
@@ -293,7 +264,7 @@ const currentColumns = computed(() => {
 
 const ordersTheme = {
   container: 'relative bg-transparent border-none w-full overflow-x-auto ',
-  header: 'text-[#667085]',
+  header: 'text-[#667085] sticky top-0 z-30 backdrop-blur-xs bg-transparent',
   headerRow: 'flex items-center h-12',
   headerCell: 'px-4 text-[13px] font-normal tracking-tight',
   row: 'relative group/row flex items-center h-20 odd:bg-transparent even:bg-[#F2F4F780] transition-all',

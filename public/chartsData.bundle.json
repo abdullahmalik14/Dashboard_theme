@@ -1,6 +1,195 @@
 {
+  "recentOrders": {
+    "subscriptions": [
+      { "id": 1, "tier": "Tier 1 Subscription", "orderId": "#123456", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 9.99" },
+      { "id": 2, "tier": "Tier 2 Subscription", "orderId": "#123457", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 19.99" },
+      { "id": 3, "tier": "Tier 3 Subscription", "orderId": "#123458", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 29.99" },
+      { "id": 4, "tier": "Tier 4 Subscription", "orderId": "#123459", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 49.99" },
+      { "id": 5, "tier": "Tier 5 Subscription", "orderId": "#123460", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 99.99" }
+    ],
+    "p2v": [
+      { "id": 1, "title": "Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!", "orderId": "#123461", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 14.99" },
+      { "id": 2, "title": "Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!", "orderId": "#123462", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 24.50" },
+      { "id": 3, "title": "Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!", "orderId": "#123463", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 19.99" },
+      { "id": 4, "title": "Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!", "orderId": "#123464", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 9.99" },
+      { "id": 5, "title": "Record breaking fried chicken eating ! See my attempt to break world’s record! Watch now!", "orderId": "#123465", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 39.00" }
+    ],
+    "merch": [
+      { "id": 1, "type": "Merch", "orderId": "#123466", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 45.00", "bg": "bg-black", "innerBg": "bg-green-500" },
+      { "id": 2, "type": "Merch", "orderId": "#123467", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 65.50", "bg": "bg-black", "innerBg": "bg-green-500" },
+      { "id": 3, "type": "Mixed", "orderId": "#123468", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 120.00", "bg": "bg-green-500", "innerBg": "outline-black outline-2" },
+      { "id": 4, "type": "Mixed", "orderId": "#123469", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 89.99", "bg": "bg-green-500", "innerBg": "outline-black outline-2" },
+      { "id": 5, "type": "Mixed", "orderId": "#123470", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 34.00", "bg": "bg-black", "innerBg": "bg-green-500" }
+    ],
+    "customRequest": [
+      { "id": 1, "type": "Kinks", "orderId": "#123471", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 150.00", "bg": "bg-black" },
+      { "id": 2, "type": "Kinks", "orderId": "#123472", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 200.00", "bg": "bg-black" },
+      { "id": 3, "type": "Clips", "orderId": "#123473", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 45.00", "bg": "bg-green-500" },
+      { "id": 4, "type": "Clips", "orderId": "#123474", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 60.00", "bg": "bg-green-500" },
+      { "id": 5, "type": "Clips", "orderId": "#123475", "handle": "@Mangoes4eva", "status": "New", "date": "22 Jan 2022", "total": "USD$ 35.00", "bg": "bg-black" }
+    ],
+    "wishtender": [
+      { "id": 1, "title": "Shure MV7 USB Microphone", "orderId": "#123476", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 249.00" },
+      { "id": 2, "title": "Sony Alpha a7 IV Mirrorless Camera", "orderId": "#123478", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 2,698.00" },
+      { "id": 3, "title": "Apple 2023 MacBook Pro Laptop", "orderId": "#123479", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 1,999.00" },
+      { "id": 4, "title": "Elgato Stream Deck MK.2 – Studio Controller", "orderId": "#123480", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 149.99" },
+      { "id": 5, "title": "DJI Mini 3 Pro Drone with RC Remote", "orderId": "#123481", "handle": "@Mangoes4eva", "date": "22 Jan 2022", "total": "USD$ 759.00" }
+    ]
+  },
   "earnings": {
     "daily": [
+      {
+        "period": "2026-03-31",
+        "subscription": 70,
+        "paytoview": 15,
+        "merch": 50,
+        "wishtender": 10,
+        "customrequest": 5,
+        "total": 150.00,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 100,
+        "tipTokens": 10,
+        "callTokens": 20,
+        "chatTokens": 50,
+        "liveStreamTokens": 20
+      },
+      {
+        "period": "2026-04-01",
+        "subscription": 85.50,
+        "paytoview": 20,
+        "merch": 60,
+        "wishtender": 5,
+        "customrequest": 10,
+        "total": 180.50,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 120,
+        "tipTokens": 5,
+        "callTokens": 25,
+        "chatTokens": 70,
+        "liveStreamTokens": 20
+      },
+      {
+        "period": "2026-04-02",
+        "subscription": 100,
+        "paytoview": 25,
+        "merch": 70,
+        "wishtender": 15,
+        "customrequest": 0,
+        "total": 210.00,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 140,
+        "tipTokens": 15,
+        "callTokens": 30,
+        "chatTokens": 80,
+        "liveStreamTokens": 15
+      },
+      {
+        "period": "2026-04-03",
+        "subscription": 90.25,
+        "paytoview": 15,
+        "merch": 65,
+        "wishtender": 10,
+        "customrequest": 10,
+        "total": 190.25,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 110,
+        "tipTokens": 10,
+        "callTokens": 20,
+        "chatTokens": 60,
+        "liveStreamTokens": 20
+      },
+      {
+        "period": "2026-04-04",
+        "subscription": 120,
+        "paytoview": 30,
+        "merch": 80,
+        "wishtender": 10,
+        "customrequest": 10,
+        "total": 250.00,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 160,
+        "tipTokens": 10,
+        "callTokens": 40,
+        "chatTokens": 90,
+        "liveStreamTokens": 20
+      },
+      {
+        "period": "2026-04-05",
+        "subscription": 110.10,
+        "paytoview": 25,
+        "merch": 75,
+        "wishtender": 10,
+        "customrequest": 10,
+        "total": 230.10,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 150,
+        "tipTokens": 10,
+        "callTokens": 35,
+        "chatTokens": 85,
+        "liveStreamTokens": 20
+      },
+      {
+        "period": "2026-04-06",
+        "subscription": 130.40,
+        "paytoview": 35,
+        "merch": 85,
+        "wishtender": 10,
+        "customrequest": 10,
+        "total": 270.40,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 180,
+        "tipTokens": 10,
+        "callTokens": 45,
+        "chatTokens": 100,
+        "liveStreamTokens": 25
+      },
+      {
+        "period": "2026-04-07",
+        "subscription": 115,
+        "paytoview": 20,
+        "merch": 80,
+        "wishtender": 15,
+        "customrequest": 10,
+        "total": 240.00,
+        "subscriptionTokens": 0,
+        "paytoviewTokens": 0,
+        "merchTokens": 0,
+        "wishtenderTokens": 0,
+        "customrequestTokens": 0,
+        "totalTokens": 160,
+        "tipTokens": 15,
+        "callTokens": 35,
+        "chatTokens": 90,
+        "liveStreamTokens": 20
+      },
       {
         "period": "2026-04-08",
         "subscription": 104.89000000000001,
@@ -1130,8 +1319,53 @@
       },
       {
         "period": "2026-04-09",
-        "rank": 1,
+        "rank": 2,
         "media": "Media #9007",
+        "views": 6,
+        "salesUSD": 9.99,
+        "salesCount": 0,
+        "ppvSalesUSD": 9.99,
+        "ppvSalesCount": 0,
+        "clicks": 0,
+        "rpmUSD": 1665,
+        "watchDurationSec": 0,
+        "tags": [],
+        "thumbnailUrl": ""
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 3,
+        "media": "Media #9008",
+        "views": 6,
+        "salesUSD": 9.99,
+        "salesCount": 0,
+        "ppvSalesUSD": 9,
+        "ppvSalesCount": 0,
+        "clicks": 0,
+        "rpmUSD": 165,
+        "watchDurationSec": 0,
+        "tags": [],
+        "thumbnailUrl": ""
+      },
+      {
+        "period": "2026-04-09",
+        "rank": 4,
+        "media": "Media #9009",
+        "views": 6,
+        "salesUSD": 9.99,
+        "salesCount": 0,
+        "ppvSalesUSD": 9.99,
+        "ppvSalesCount": 0,
+        "clicks": 0,
+        "rpmUSD": 1665,
+        "watchDurationSec": 0,
+        "tags": [],
+        "thumbnailUrl": ""
+      },
+       {
+        "period": "2026-04-09",
+        "rank": 5,
+        "media": "Media #9089",
         "views": 6,
         "salesUSD": 9.99,
         "salesCount": 0,
@@ -2397,22 +2631,16 @@
   },
   "trendingCountries": {
     "daily": [
-      {
-        "period": "2026-04-09",
-        "rank": 1,
-        "country": "Country 276",
-        "earningsUSD": 19.98,
-        "salesUSD": 19.98,
-        "views": 0
-      },
-      {
-        "period": "2026-04-09",
-        "rank": 1,
-        "country": "Country 392",
-        "earningsUSD": 9.99,
-        "salesUSD": 9.99,
-        "views": 0
-      }
+      { "period": "2026-04-09", "rank": 1, "country": "Country 840", "earningsUSD": 167.98, "salesUSD": 167.98, "views": 1500 },
+      { "period": "2026-04-09", "rank": 2, "country": "Country 826", "earningsUSD": 84.96, "salesUSD": 84.96, "views": 1200 },
+      { "period": "2026-04-09", "rank": 3, "country": "Country 36", "earningsUSD": 69.96, "salesUSD": 69.96, "views": 900 },
+      { "period": "2026-04-09", "rank": 4, "country": "Country 276", "earningsUSD": 49.98, "salesUSD": 49.98, "views": 800 },
+      { "period": "2026-04-09", "rank": 5, "country": "Country 392", "earningsUSD": 39.99, "salesUSD": 39.99, "views": 700 },
+      { "period": "2026-04-09", "rank": 6, "country": "Country 124", "earningsUSD": 29.99, "salesUSD": 29.99, "views": 600 },
+      { "period": "2026-04-09", "rank": 7, "country": "Country 250", "earningsUSD": 24.99, "salesUSD": 24.99, "views": 500 },
+      { "period": "2026-04-09", "rank": 8, "country": "Country 380", "earningsUSD": 19.99, "salesUSD": 19.99, "views": 400 },
+      { "period": "2026-04-09", "rank": 9, "country": "Country 724", "earningsUSD": 14.99, "salesUSD": 14.99, "views": 300 },
+      { "period": "2026-04-09", "rank": 10, "country": "Country 528", "earningsUSD": 9.99, "salesUSD": 9.99, "views": 200 }
     ],
     "weekly": [
       {
@@ -2715,102 +2943,35 @@
       }
     ],
     "yearly": [
-      {
-        "period": "Jan",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 192,
-        "salesUSD": 192,
-        "views": 0
-      },
-      {
-        "period": "Feb",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 246,
-        "salesUSD": 246,
-        "views": 0
-      },
-      {
-        "period": "Mar",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 213,
-        "salesUSD": 213,
-        "views": 0
-      },
-      {
-        "period": "Apr",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 303,
-        "salesUSD": 303,
-        "views": 0
-      },
-      {
-        "period": "May",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 318,
-        "salesUSD": 318,
-        "views": 0
-      },
-      {
-        "period": "Jun",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 292,
-        "salesUSD": 292,
-        "views": 0
-      },
-      {
-        "period": "Jul",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 417,
-        "salesUSD": 417,
-        "views": 0
-      },
-      {
-        "period": "Aug",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 372,
-        "salesUSD": 372,
-        "views": 0
-      },
-      {
-        "period": "Sep",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 395,
-        "salesUSD": 395,
-        "views": 0
-      },
-      {
-        "period": "Oct",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 517,
-        "salesUSD": 517,
-        "views": 0
-      },
-      {
-        "period": "Nov",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 420,
-        "salesUSD": 420,
-        "views": 0
-      },
-      {
-        "period": "Dec",
-        "rank": 1,
-        "country": "Country 36",
-        "earningsUSD": 522,
-        "salesUSD": 522,
-        "views": 0
-      }
+      { "period": "2026", "rank": 1, "country": "Country 840", "earningsUSD": 15000.50, "salesUSD": 15000.50, "views": 120000 },
+      { "period": "2026", "rank": 2, "country": "Country 826", "earningsUSD": 12000.75, "salesUSD": 12000.75, "views": 95000 },
+      { "period": "2026", "rank": 3, "country": "Country 36", "earningsUSD": 10500.20, "salesUSD": 10500.20, "views": 82000 },
+      { "period": "2026", "rank": 4, "country": "Country 276", "earningsUSD": 8900.60, "salesUSD": 8900.60, "views": 71000 },
+      { "period": "2026", "rank": 5, "country": "Country 392", "earningsUSD": 7500.40, "salesUSD": 7500.40, "views": 60000 },
+      { "period": "2026", "rank": 6, "country": "Country 124", "earningsUSD": 6200.30, "salesUSD": 6200.30, "views": 52000 },
+      { "period": "2026", "rank": 7, "country": "Country 250", "earningsUSD": 5800.15, "salesUSD": 5800.15, "views": 48000 },
+      { "period": "2026", "rank": 8, "country": "Country 380", "earningsUSD": 4900.90, "salesUSD": 4900.90, "views": 41000 },
+      { "period": "2026", "rank": 9, "country": "Country 724", "earningsUSD": 4200.45, "salesUSD": 4200.45, "views": 35000 },
+      { "period": "2026", "rank": 10, "country": "Country 528", "earningsUSD": 3800.10, "salesUSD": 3800.10, "views": 32000 },
+      { "period": "2026", "rank": 11, "country": "Country 752", "earningsUSD": 3100.55, "salesUSD": 3100.55, "views": 28000 },
+      { "period": "2026", "rank": 12, "country": "Country 756", "earningsUSD": 2900.30, "salesUSD": 2900.30, "views": 25000 },
+      { "period": "2026", "rank": 13, "country": "Country 56", "earningsUSD": 2400.85, "salesUSD": 2400.85, "views": 21000 },
+      { "period": "2026", "rank": 14, "country": "Country 40", "earningsUSD": 2100.40, "salesUSD": 2100.40, "views": 18000 },
+      { "period": "2026", "rank": 15, "country": "Country 372", "earningsUSD": 1800.25, "salesUSD": 1800.25, "views": 15000 },
+      { "period": "2026", "rank": 16, "country": "Country 76", "earningsUSD": 1500.10, "salesUSD": 1500.10, "views": 12000 },
+      { "period": "2026", "rank": 17, "country": "Country 484", "earningsUSD": 1200.95, "salesUSD": 1200.95, "views": 10000 },
+      { "period": "2026", "rank": 18, "country": "Country 356", "earningsUSD": 950.40, "salesUSD": 950.40, "views": 8500 },
+      { "period": "2026", "rank": 19, "country": "Country 156", "earningsUSD": 820.20, "salesUSD": 820.20, "views": 7200 },
+      { "period": "2026", "rank": 20, "country": "Country 410", "earningsUSD": 700.15, "salesUSD": 700.15, "views": 6100 },
+      { "period": "2026", "rank": 21, "country": "Country 360", "earningsUSD": 620.10, "salesUSD": 620.10, "views": 5400 },
+      { "period": "2026", "rank": 22, "country": "Country 608", "earningsUSD": 550.00, "salesUSD": 550.00, "views": 4800 },
+      { "period": "2026", "rank": 23, "country": "Country 458", "earningsUSD": 480.00, "salesUSD": 480.00, "views": 4200 },
+      { "period": "2026", "rank": 24, "country": "Country 704", "earningsUSD": 410.00, "salesUSD": 410.00, "views": 3600 },
+      { "period": "2026", "rank": 25, "country": "Country 792", "earningsUSD": 350.00, "salesUSD": 350.00, "views": 3100 },
+      { "period": "2026", "rank": 26, "country": "Country 710", "earningsUSD": 300.00, "salesUSD": 300.00, "views": 2700 },
+      { "period": "2026", "rank": 27, "country": "Country 616", "earningsUSD": 250.00, "salesUSD": 250.00, "views": 2200 },
+      { "period": "2026", "rank": 28, "country": "Country 300", "earningsUSD": 200.00, "salesUSD": 200.00, "views": 1800 },
+      { "period": "2026", "rank": 29, "country": "Country 642", "earningsUSD": 150.00, "salesUSD": 150.00, "views": 1400 }
     ],
     "alltime": [
       {
@@ -4451,7 +4612,56 @@
         "tag": "Tag 12896008",
         "views": 1,
         "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12896006",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-39",
+        "tag": "Tag 12896008",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12896002",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12896001",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12896003",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12896005",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12897005",
+        "views": 1,
+        "salesUSD": 0
+      },
+      {
+        "period": "2026-04-09",
+        "tag": "Tag 12895005",
+        "views": 1,
+        "salesUSD": 0
       }
+      
     ],
     "weekly": [
       {
@@ -6556,3 +6766,4 @@
     ]
   }
 }
+

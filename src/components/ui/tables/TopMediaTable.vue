@@ -34,7 +34,7 @@
         class="w-full flex-1 pt-4">
         <FlexTable :columns="selectedTopMediaTab === 'Views' ? topMediaColumns : p2vSalesColumns"
           :rows="selectedTopMediaTab === 'Views' ? topMediaRows : p2vSalesRows" :theme="topMediaTheme"
-          :inner-scroll="true" max-height="60vh" :sticky-header="true">
+          :inner-scroll="true" max-height="73vh" :sticky-header="true">
           <template #cell.media="{ row }">
             <div class="flex items-center gap-3 h-full">
               <div class="relative w-[3.5rem] sm:w-[5rem] h-[6rem] flex-shrink-0 -my-2 -ml-2.5">
@@ -147,7 +147,7 @@ const p2vSalesRows = computed(() => {
 
 const topMediaTheme = {
   container: 'relative bg-transparent border-none w-full ',
-  header: 'bg-transparent text-gray-500',
+  header: 'bg-transparent text-gray-500  sticky top-0 z-30 backdrop-blur-md',
   headerRow: 'flex items-center border-b border-gray-500',
   headerCell: 'px-2.5 py-2.5 text-sm font-normal',
   row: 'flex items-center min-h-[6rem] odd:bg-transparent even:bg-gray-100/50 ',
