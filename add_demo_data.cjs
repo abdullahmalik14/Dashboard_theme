@@ -116,7 +116,15 @@ if (bundle.trendingsMedia) {
     })).map((item, idx) => ({
       ...item,
       media: mediaTitles[idx % mediaTitles.length],
-      thumbnailUrl: mediaImages[idx % mediaImages.length]
+      thumbnailUrl: mediaImages[idx % mediaImages.length],
+      views: item.views || Math.floor(Math.random() * 5000) + 100,
+      clicks: item.clicks || Math.floor(Math.random() * 1000) + 50,
+      watchDurationSec: item.watchDurationSec || Math.floor(Math.random() * 300000) + 3600,
+      salesCount: item.salesCount || Math.floor(Math.random() * 15) + 2,
+      salesUSD: item.salesUSD || +(Math.random() * 200 + 5).toFixed(2),
+      ppvSalesCount: (item.ppvSalesCount > 0 ? item.ppvSalesCount : Math.floor(Math.random() * 12) + 1),
+      ppvSalesUSD: (item.ppvSalesUSD > 0 ? item.ppvSalesUSD : +(Math.random() * 150 + 4.99).toFixed(2)),
+      rpmUSD: item.rpmUSD || +(Math.random() * 10 + 0.5).toFixed(2),
     }));
   });
 }
@@ -136,7 +144,11 @@ if (bundle.trendingMerch) {
     })).map((item, idx) => ({
       ...item,
       merch: merchTitles[idx % merchTitles.length],
-      thumbnailUrl: merchImages[idx % merchImages.length]
+      thumbnailUrl: merchImages[idx % merchImages.length],
+      views: item.views || Math.floor(Math.random() * 2000) + 100,
+      clicks: item.clicks || Math.floor(Math.random() * 500) + 20,
+      salesCount: (item.salesCount > 0 ? item.salesCount : Math.floor(Math.random() * 30) + 3),
+      salesUSD: (item.salesUSD > 0 ? item.salesUSD : +(Math.random() * 400 + 14.99).toFixed(2)),
     }));
   });
 }
